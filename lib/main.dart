@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
-import 'features/home/presentation/pages/home_screen.dart';
+import 'home/ui/screens/home_screen.dart';
 
 void main() {
   runApp(const AuraqApp());

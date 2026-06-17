@@ -1,3 +1,7 @@
+import 'package:auraq/core/app_colors.dart';
+import 'package:auraq/core/services/haptic_feedback.dart';
+import 'package:auraq/core/services/settings_controller.dart';
+import 'package:auraq/features/quran/presentation/views/quran_home_screen.dart';
 import 'package:auraq/home/controllers/prayer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
@@ -15,39 +19,67 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
-  // Live local variable jo state update track karegi
   DateTime _currentDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
+    final settings = ref.watch(settingsControllerProvider);
+
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 20),
+            const SizedBox(height: 10),
 
-            UserProfileWidget(
-              name: "Khadija",
-              pUrl: "https://media.gettyimages.com/id/956842252/photo/portrait-of-a-confident-muslim-girl.jpg?s=170667a&w=gi&k=20&c=DonQKYjWv-OgPjWQxPpMK1mljHEfihmiZow2iYnpdGg=",
+            // Minimal Header with Settings
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  UserProfileWidget(
+                    name: "Khadija",
+                    pUrl: "https://media.gettyimages.com/id/956842252/photo/portrait-of-a-confident-muslim-girl.jpg?s=170667a&w=gi&k=20&c=DonQKYjWv-OgPjWQxPpMK1mljHEfihmiZow2iYnpdGg=",
+                  ),
+                  // Minimalist Language Toggle
+                  Container(
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryTeal.withAlpha(20),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: TextButton.icon(
+                      onPressed: () {
+                        final newLang = settings.language == 'en' ? 'ur' : 'en';
+                        ref.read(settingsControllerProvider.notifier).setLanguage(newLang);
+                        hapticFeedBack();
+                      },
+                      icon: const Icon(Icons.language, size: 18, color: AppColors.primaryTeal),
+                      label: Text(
+                        settings.language == 'en' ? 'English' : 'اردو',
+                        style: const TextStyle(
+                          color: AppColors.primaryTeal,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
 
             const SizedBox(height: 10),
 
             Expanded(
               child: RefreshIndicator(
-                color: Colors.amber,
+                color: AppColors.primaryTeal,
                 onRefresh: () async {
-                  // 1. Local dynamic timestamp ko update kiya (phone settings time dynamic pull karne ke liye)
                   setState(() {
                     _currentDate = DateTime.now();
                   });
-
-                  // 2. Hardware state reset kiya
                   ref.invalidate(locationProvider);
-
-                  // 3. Dynamic input reference family refresh hit kiya
                   await ref.refresh(prayerTimesProvider(_currentDate).future);
                 },
                 child: SingleChildScrollView(
@@ -57,27 +89,68 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // LIVE SEEDING: Card ab dynamic parameter read karega
                       PrayerCard(date: _currentDate),
 
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0,
+                          vertical: 8.0,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            // FIX: Row se external Expanded widgets ko clean kar diya hai kyunki FeatureCard internal level pr already Expanded use kar rha hai
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                FeatureCard(title: "Quran", icon: FlutterIslamicIcons.quran, onTap: () {}),
-                                FeatureCard(title: "Hadith", icon: FlutterIslamicIcons.quran2, onTap: () {}),
-                                FeatureCard(title: "Adhkar", icon: FlutterIslamicIcons.tasbihHand, onTap: () {}),
+                                FeatureCard(
+                                  title: "Quran",
+                                  icon: FlutterIslamicIcons.quran,
+                                  onTap: () {
+                                    hapticFeedBack();
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const QuranHomeScreen(),
+                                      ),
+                                    );
+                                  },
+                                ),
+                                const SizedBox(width: 8),
+                                FeatureCard(
+                                  title: "Hadith",
+                                  icon: FlutterIslamicIcons.quran2,
+                                  onTap: () {},
+                                ),
+                                const SizedBox(width: 8),
+                                FeatureCard(
+                                  title: "Adhkar",
+                                  icon: FlutterIslamicIcons.tasbihHand,
+                                  onTap: () {},
+                                ),
                               ],
                             ),
-                            const SizedBox(height: 8),
+                            const SizedBox(height: 12),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                FeatureCard(title: "Shifa", icon: FlutterIslamicIcons.prayingPerson, onTap: () {}),
-                                FeatureCard(title: "Qibla", icon: FlutterIslamicIcons.qibla2, onTap: () {}),
-                                FeatureCard(title: "Duas", icon: FlutterIslamicIcons.prayer, onTap: () {}),
+                                FeatureCard(
+                                  title: "Shifa",
+                                  icon: FlutterIslamicIcons.prayingPerson,
+                                  onTap: () {},
+                                ),
+                                const SizedBox(width: 8),
+                                FeatureCard(
+                                  title: "Qibla",
+                                  icon: FlutterIslamicIcons.qibla2,
+                                  onTap: () {},
+                                ),
+                                const SizedBox(width: 8),
+                                FeatureCard(
+                                  title: "Duas",
+                                  icon: FlutterIslamicIcons.prayer,
+                                  onTap: () {},
+                                ),
                               ],
                             ),
                             const SizedBox(height: 24),

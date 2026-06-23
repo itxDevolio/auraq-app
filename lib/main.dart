@@ -19,6 +19,8 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox(DbConstants.appBox);
   await Hive.openBox('hadith_cache');
+  await Hive.openBox('adhkar_box');
+  await Hive.openBox('tasbeeh_box');
   runApp(const ProviderScope(child: AuraqApp()));
 }
 

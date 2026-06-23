@@ -1,6 +1,7 @@
 import 'package:auraq/core/app_colors.dart';
 import 'package:auraq/core/services/haptic_feedback.dart';
 import 'package:auraq/core/services/settings_controller.dart';
+import 'package:auraq/features/adhkar/presentation/screens/adhkar_home_screen.dart';
 import 'package:auraq/features/hadith/presentation/screens/books_screen.dart';
 import 'package:auraq/features/quran/presentation/views/quran_home_screen.dart';
 import 'package:auraq/features/settings/presentation/settings_screen.dart';
@@ -46,7 +47,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                   UserProfileWidget(
                     name: "Khadija",
                     pUrl:
-                    "https://media.gettyimages.com/id/956842252/photo/portrait-of-a-confident-muslim-girl.jpg?s=170667a&w=gi&k=20&c=DonQKYjWv-OgPjWQxPpMK1mljHEfihmiZow2iYnpdGg=",
+                        "https://media.gettyimages.com/id/956842252/photo/portrait-of-a-confident-muslim-girl.jpg?s=170667a&w=gi&k=20&c=DonQKYjWv-OgPjWQxPpMK1mljHEfihmiZow2iYnpdGg=",
                   ),
                   // Settings button
                   IconButton(
@@ -111,7 +112,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                        const QuranHomeScreen(),
+                                            const QuranHomeScreen(),
                                       ),
                                     );
                                   },
@@ -121,14 +122,27 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   title: "Hadith",
                                   icon: FlutterIslamicIcons.quran2,
                                   onTap: () {
-                                    Navigator.push(context,MaterialPageRoute(builder: (context) => BooksScreen(),));
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => BooksScreen(),
+                                      ),
+                                    );
                                   },
                                 ),
                                 const SizedBox(width: 8),
                                 FeatureCard(
                                   title: "Adhkar",
                                   icon: FlutterIslamicIcons.tasbihHand,
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            AdhkarHomeScreen(),
+                                      ),
+                                    );
+                                  },
                                 ),
                               ],
                             ),
@@ -177,17 +191,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   InfoGuideCard(
                                     title: "Namaz-e-Janaza ka Tariqa",
                                     subTitle:
-                                    "Step by step mukammal masail aur azkar ke sath seekhein.",
+                                        "Step by step mukammal masail aur azkar ke sath seekhein.",
                                     imageUrl:
-                                    "https://images.unsplash.com/photo-1542838132-92c53300491e",
+                                        "https://images.unsplash.com/photo-1542838132-92c53300491e",
                                     onTap: () {},
                                   ),
                                   InfoGuideCard(
                                     title: "Eidain ki Namaz ka Tariqa",
                                     subTitle:
-                                    "6 zayd takbeeraat ke sath Eid ki namaz ka mukammal tareeqa.",
+                                        "6 zayd takbeeraat ke sath Eid ki namaz ka mukammal tareeqa.",
                                     imageUrl:
-                                    "https://images.unsplash.com/photo-1564507592333-c60657eea523",
+                                        "https://images.unsplash.com/photo-1564507592333-c60657eea523",
                                     onTap: () {},
                                   ),
                                 ],

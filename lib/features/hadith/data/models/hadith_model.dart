@@ -14,11 +14,11 @@ class HadithModel extends HadithEntity {
   factory HadithModel.fromJson(Map<String, dynamic> json) {
     return HadithModel(
       id: json['id'].toString(),
-      hadithNumber: json['hadithNumber'].toString(),
-      chapterNumber: json['chapter'].toString(),
-      englishText: json['englishText'] ?? '',
-      urduText: json['urduText'] ?? '',
-      arabicText: json['arab'] ?? '',
+      hadithNumber: (json['hadithNumber'] ?? json['hadith_number']).toString(),
+      chapterNumber: (json['chapterNumber'] ?? json['chapter']).toString(),
+      englishText: json['hadithEnglish'] ?? json['englishText'] ?? '',
+      urduText: json['hadithUrdu'] ?? json['urduText'] ?? '',
+      arabicText: json['hadithArabic'] ?? json['arabicText'] ?? json['arab'] ?? '',
       status: json['status'] ?? '',
     );
   }

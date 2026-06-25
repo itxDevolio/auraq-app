@@ -76,10 +76,10 @@ class TasbeehListScreen extends ConsumerWidget {
       backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       appBar: AppBar(
         title: Text(
-         isUrdu ? "تسبیحات" : "Tasbeeh",
+          isUrdu ? "تسبیحات" : "Tasbeeh",
           style: isUrdu 
-              ? GoogleFonts.notoNastaliqUrdu(fontSize: 18, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87)
-              : GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.bold, color: isDark ? Colors.white : Colors.black87),
+            ? GoogleFonts.notoNastaliqUrdu(fontWeight: FontWeight.bold, fontSize: 20, color: isDark ? Colors.white : Colors.black87)
+            : GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18, color: isDark ? Colors.white : Colors.black87),
         ),
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -96,135 +96,140 @@ class TasbeehListScreen extends ConsumerWidget {
       body: Directionality(
         textDirection: isUrdu ? TextDirection.rtl : TextDirection.ltr,
         child: ListView.separated(
-          padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           itemCount: tasbeehList.length,
           physics: const BouncingScrollPhysics(),
-          separatorBuilder: (context, index) => const SizedBox(height: 14),
+          separatorBuilder: (context, index) => const SizedBox(height: 16),
           itemBuilder: (context, index) {
             final item = tasbeehList[index];
-            return Container(
+            return AnimatedContainer(
+              duration: const Duration(milliseconds: 300),
               decoration: BoxDecoration(
+                color: isDark ? AppColors.surfaceDark : Colors.white,
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
-                    blurRadius: 15,
-                    offset: const Offset(0, 8),
+                    color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+                    blurRadius: 12,
+                    offset: const Offset(0, 4),
                   )
                 ],
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24),
-                child: Material(
-                  color: isDark ? AppColors.surfaceDark : Colors.white,
-                  child: InkWell(
-                    onTap: () {
-                      hapticFeedBack();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => TasbeehScreen(
-                            dhikrId: item['id']!,
-                            dhikrTitle: item['titleAr']!,
-                          ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(24),
+                  onTap: () {
+                    hapticFeedBack();
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => TasbeehScreen(
+                          dhikrId: item['id']!,
+                          dhikrTitle: item['titleAr']!,
                         ),
-                      );
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          // 1. Fazilat (Virtue) Box
-                          Container(
-                            padding: const EdgeInsets.all(12),
-                            decoration: BoxDecoration(
-                              color: AppColors.primaryTeal.withValues(alpha: 0.05),
-                              borderRadius: BorderRadius.circular(12),
-                              border: Border.all(color: AppColors.primaryTeal.withValues(alpha: 0.1)),
-                            ),
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Icon(Icons.auto_awesome, size: 16, color: AppColors.primaryTeal),
-                                const SizedBox(width: 8),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        isUrdu 
-                                          ? (item['fazilatUr'] ?? item['fazilatEn']!) 
-                                          : (item['fazilatEn'] ?? item['fazilatUr']!),
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                          color: isDark ? Colors.white70 : Colors.black87,
-                                          fontStyle: FontStyle.italic,
-                                          fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
-                                          height: isUrdu ? 1.8 : null,
-                                        ),
-                                        textAlign: isUrdu ? TextAlign.right : TextAlign.left,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 16),
-
-                          // 2. Arabic
-                          Text(
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                      children: [
+                        // Arabic Text - Prominent & Beautiful
+                        Container(
+                          width: double.infinity,
+                          alignment: Alignment.center,
+                          padding: const EdgeInsets.symmetric(vertical: 8),
+                          child: Text(
                             item['titleAr']!,
                             style: GoogleFonts.amiri(
                               color: AppColors.primaryTeal,
-                              fontSize: 24,
+                              fontSize: 26,
                               fontWeight: FontWeight.bold,
-                              height: 1.6,
+                              height: 1.4,
                             ),
                             textAlign: TextAlign.center,
                             textDirection: TextDirection.rtl,
                           ),
-                          const SizedBox(height: 16),
+                        ),
+                        
+                        const SizedBox(height: 16),
+                        
+                        // Translation
+                        Text(
+                          isUrdu ? item['meaningUr']! : item['meaningEn']!,
+                          style: isUrdu 
+                            ? GoogleFonts.notoNastaliqUrdu(
+                                fontSize: 14,
+                                color: isDark ? Colors.white70 : Colors.black87,
+                                height: 2.2,
+                              )
+                            : TextStyle(
+                                fontSize: 14,
+                                color: isDark ? Colors.white70 : Colors.black87,
+                                height: 1.5,
+                              ),
+                          textAlign: isUrdu ? TextAlign.right : TextAlign.left,
+                        ),
 
-                          // 3. Translations based on App Language
-                          if (isUrdu)
-                            Text(
-                              item['meaningUr']!,
-                              style: GoogleFonts.notoNastaliqUrdu(
-                                fontSize: 14,
-                                color: isDark ? Colors.white70 : Colors.black87,
-                                height: 2.0,
+                        const SizedBox(height: 16),
+
+                        // Fazilat Box - Minimal Accent
+                        Container(
+                          width: double.infinity,
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryTeal.withValues(alpha: 0.05),
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: AppColors.primaryTeal.withValues(alpha: 0.1)),
+                          ),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Icon(Icons.auto_awesome, size: 14, color: AppColors.primaryTeal.withValues(alpha: 0.7)),
+                              const SizedBox(width: 8),
+                              Expanded(
+                                child: Text(
+                                  isUrdu ? item['fazilatUr']! : item['fazilatEn']!,
+                                  style: isUrdu 
+                                    ? GoogleFonts.notoNastaliqUrdu(
+                                        fontSize: 12,
+                                        color: isDark ? Colors.white60 : Colors.black54,
+                                        height: 2.0,
+                                        fontStyle: FontStyle.italic,
+                                      )
+                                    : TextStyle(
+                                        fontSize: 12,
+                                        color: isDark ? Colors.white60 : Colors.black54,
+                                        fontStyle: FontStyle.italic,
+                                        height: 1.4,
+                                      ),
+                                  textAlign: isUrdu ? TextAlign.right : TextAlign.left,
+                                ),
                               ),
-                              textAlign: TextAlign.right,
-                            )
-                          else
-                            Text(
-                              item['meaningEn']!,
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: isDark ? Colors.white70 : Colors.black87,
-                                height: 1.4,
+                            ],
+                          ),
+                        ),
+                        
+                        if (item['reference'] != null) ...[
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: isUrdu ? MainAxisAlignment.end : MainAxisAlignment.start,
+                            children: [
+                              Icon(Icons.menu_book_outlined, size: 12, color: isDark ? Colors.white24 : Colors.black26),
+                              const SizedBox(width: 6),
+                              Text(
+                                item['reference']!,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: isDark ? Colors.white24 : Colors.black26,
+                                ),
                               ),
-                              textAlign: TextAlign.left,
-                            ),
-                          
-                          // 4. Reference
-                          if (item['reference'] != null) ...[
-                            const SizedBox(height: 12),
-                            Text(
-                              "Ref: ${item['reference']}",
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontStyle: FontStyle.italic,
-                                color: isDark ? Colors.white38 : Colors.black38,
-                              ),
-                              textAlign: isUrdu ? TextAlign.right : TextAlign.left,
-                            ),
-                          ],
+                            ],
+                          ),
                         ],
-                      ),
+                      ],
                     ),
                   ),
                 ),

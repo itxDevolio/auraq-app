@@ -7,14 +7,34 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../domain/entities/dhikr_entity.dart';
 import '../controller/adhkar_provider.dart';
 
-class AdhkarListScreen extends ConsumerWidget {
+class AdhkarListScreen extends ConsumerStatefulWidget {
   final List<DhikrEntity> dhikrList;
   final String title;
 
   const AdhkarListScreen({super.key, required this.dhikrList, required this.title});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<AdhkarListScreen> createState() => _AdhkarListScreenState();
+}
+
+class _AdhkarListScreenState extends ConsumerState<AdhkarListScreen> {
+  late PageController _pageController;
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final settings = ref.watch(settingsControllerProvider);
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bool isUrdu = settings.language == 'ur';
@@ -23,7 +43,7 @@ class AdhkarListScreen extends ConsumerWidget {
       backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       appBar: AppBar(
         title: Text(
-          title,
+          widget.title,
           style: isUrdu 
             ? GoogleFonts.notoNastaliqUrdu(
                 fontWeight: FontWeight.bold,
@@ -47,169 +67,223 @@ class AdhkarListScreen extends ConsumerWidget {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-      ),
-      body: ListView.separated(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
-        itemCount: dhikrList.length,
-        physics: const BouncingScrollPhysics(),
-        separatorBuilder: (context, index) => const SizedBox(height: 16),
-        itemBuilder: (context, index) {
-          final dhikr = dhikrList[index];
-          final count = ref.watch(adhkarCountProvider(dhikr.id));
-          final isCompleted = count >= dhikr.targetCount;
-          
-          return AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
-              boxShadow: [
-                BoxShadow(
-                  color: isCompleted 
-                      ? AppColors.primaryTeal.withValues(alpha: 0.1) 
-                      : Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
-                  blurRadius: 15,
-                  offset: const Offset(0, 8),
-                )
-              ],
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(24),
-              child: Material(
-                color: isDark ? AppColors.surfaceDark : Colors.white,
-                child: InkWell(
-                  onTap: isCompleted ? null : () {
-                    hapticFeedBack();
-                    ref.read(adhkarCountProvider(dhikr.id).notifier).increment();
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                      children: [
-
-
-                        Text(
-                          dhikr.arabic,
-                          style: GoogleFonts.amiri(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                            height: 1.6,
-                            color: isDark ? Colors.white : AppColors.textPrimaryLight,
-                          ),
-                          textAlign: TextAlign.right,
-                          textDirection: TextDirection.rtl,
-                        ),
-                        const SizedBox(height: 16),
-                        // App Language Based Translation & Fazilat
-                        if (isUrdu) ...[
-                          _buildTranslationBlock(dhikr.urdu, "ترجمہ", isDark, isUrdu: true),
-                          if (dhikr.fazilatUrdu != null) ...[
-                            const SizedBox(height: 12),
-                            _buildFazilatBlock(dhikr.fazilatUrdu!, "فضیلت", isDark, isUrdu: true),
-                          ],
-                        ] else ...[
-                          _buildTranslationBlock(dhikr.english, "Translation", isDark, isUrdu: false),
-                          if (dhikr.fazilatEnglish != null) ...[
-                            const SizedBox(height: 12),
-                            _buildFazilatBlock(dhikr.fazilatEnglish!, "Virtue", isDark, isUrdu: false),
-                          ],
-                        ],
-                        
-                        if (dhikr.reference != null && dhikr.reference!.isNotEmpty) ...[
-                          const SizedBox(height: 12),
-                          Row(
-                            mainAxisAlignment: isUrdu ? MainAxisAlignment.end : MainAxisAlignment.start,
-                            children: [
-                              if (!isUrdu) Icon(Icons.menu_book_outlined, size: 14, color: AppColors.primaryTeal.withValues(alpha: 0.6)),
-                              if (!isUrdu) const SizedBox(width: 4),
-                              Text(
-                                dhikr.reference!,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontStyle: FontStyle.italic,
-                                  color: isDark ? Colors.white54 : Colors.black54,
-                                ),
-                              ),
-                              if (isUrdu) const SizedBox(width: 4),
-                              if (isUrdu) Icon(Icons.menu_book_outlined, size: 14, color: AppColors.primaryTeal.withValues(alpha: 0.6)),
-                            ],
-                          ),
-                        ],
-
-                        const SizedBox(height: 24),
-                        
-                        // Counter Row
-                        Row(
-                          textDirection: isUrdu ? TextDirection.rtl : TextDirection.ltr,
-                          children: [
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    isUrdu ? "ہدف: ${dhikr.targetCount} مرتبہ" : "Goal: Read ${dhikr.targetCount} times",
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold,
-                                      color: isCompleted ? AppColors.primaryTeal : (isDark ? Colors.white70 : Colors.black87),
-                                      fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
-                                    ),
-                                    textAlign: isUrdu ? TextAlign.right : TextAlign.left,
-                                  ),
-                                  const SizedBox(height: 8),
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(4),
-                                    child: LinearProgressIndicator(
-                                      value: (count / dhikr.targetCount).clamp(0.0, 1.0),
-                                      backgroundColor: AppColors.primaryTeal.withValues(alpha: 0.1),
-                                      valueColor: const AlwaysStoppedAnimation<Color>(AppColors.primaryTeal),
-                                      minHeight: 8,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(width: 20),
-                            // Modern Counter Indicator
-                            Container(
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: isCompleted ? AppColors.primaryTeal : AppColors.primaryTeal.withValues(alpha: 0.1),
-                                border: Border.all(color: AppColors.primaryTeal, width: 2),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "$count",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: isCompleted ? Colors.white : AppColors.primaryTeal,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Center(
+              child: Text(
+                "${_currentIndex + 1}/${widget.dhikrList.length}",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: isDark ? Colors.white70 : Colors.black54,
                 ),
               ),
             ),
-          );
-        },
+          ),
+        ],
+      ),
+      body: Directionality(
+        textDirection: isUrdu ? TextDirection.rtl : TextDirection.ltr,
+        child: PageView.builder(
+          controller: _pageController,
+          itemCount: widget.dhikrList.length,
+          onPageChanged: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          itemBuilder: (context, index) {
+            final dhikr = widget.dhikrList[index];
+            final count = ref.watch(adhkarCountProvider(dhikr.id));
+            final isCompleted = count >= dhikr.targetCount;
+
+            return SingleChildScrollView(
+              padding: const EdgeInsets.fromLTRB(24, 20, 24, 40),
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+                children: [
+                  // Arabic Text - Large and Centered for "One by One" view
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
+                    decoration: BoxDecoration(
+                      color: isDark ? AppColors.surfaceDark : Colors.white,
+                      borderRadius: BorderRadius.circular(32),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.05),
+                          blurRadius: 20,
+                          offset: const Offset(0, 10),
+                        )
+                      ],
+                    ),
+                    child: Text(
+                      dhikr.arabic,
+                      style: GoogleFonts.amiri(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        height: 1.8,
+                        color: isDark ? Colors.white : AppColors.textPrimaryLight,
+                      ),
+                      textAlign: TextAlign.center,
+                      textDirection: TextDirection.rtl,
+                    ),
+                  ),
+                  
+                  const SizedBox(height: 32),
+
+                  // Translation Section
+                  Text(
+                    isUrdu ? "ترجمہ" : "Translation",
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.primaryTeal.withValues(alpha: 0.6),
+                      letterSpacing: 1.0,
+                      fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    isUrdu ? dhikr.urdu : dhikr.english,
+                    style: isUrdu 
+                      ? GoogleFonts.notoNastaliqUrdu(
+                          fontSize: 16,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                          height: 2.2,
+                        )
+                      : TextStyle(
+                          fontSize: 16,
+                          color: isDark ? Colors.white70 : Colors.black87,
+                          height: 1.5,
+                        ),
+                    textAlign: isUrdu ? TextAlign.right : TextAlign.left,
+                  ),
+
+                  const SizedBox(height: 24),
+
+                  // Fazilat Section
+                  if ((isUrdu ? dhikr.fazilatUrdu : dhikr.fazilatEnglish) != null) ...[
+                    _buildFazilatBlock(
+                      isUrdu ? dhikr.fazilatUrdu! : dhikr.fazilatEnglish!, 
+                      isUrdu ? "فضیلت" : "Virtue", 
+                      isDark, 
+                      isUrdu: isUrdu
+                    ),
+                    const SizedBox(height: 24),
+                  ],
+
+                  // Reference
+                  if (dhikr.reference != null && dhikr.reference!.isNotEmpty)
+                    Row(
+                      mainAxisAlignment: isUrdu ? MainAxisAlignment.end : MainAxisAlignment.start,
+                      children: [
+                        Icon(Icons.menu_book_outlined, size: 14, color: AppColors.primaryTeal.withValues(alpha: 0.6)),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            dhikr.reference!,
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontStyle: FontStyle.italic,
+                              color: isDark ? Colors.white54 : Colors.black54,
+                            ),
+                            textAlign: isUrdu ? TextAlign.right : TextAlign.left,
+                          ),
+                        ),
+                      ],
+                    ),
+
+                  const SizedBox(height: 40),
+
+                  // Counter & Action Area
+                  Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          isUrdu ? "ہدف: ${dhikr.targetCount} مرتبہ" : "Goal: ${dhikr.targetCount} times",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: isDark ? Colors.white60 : Colors.black54,
+                            fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        
+                        // Large Counter Button
+                        InkWell(
+                          onTap: isCompleted ? null : () {
+                            hapticFeedBack();
+                            ref.read(adhkarCountProvider(dhikr.id).notifier).increment();
+                          },
+                          borderRadius: BorderRadius.circular(100),
+                          child: AnimatedContainer(
+                            duration: const Duration(milliseconds: 300),
+                            width: 120,
+                            height: 120,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: isCompleted ? AppColors.primaryTeal : AppColors.primaryTeal.withValues(alpha: 0.1),
+                              border: Border.all(color: AppColors.primaryTeal, width: 4),
+                              boxShadow: [
+                                if (!isCompleted)
+                                  BoxShadow(
+                                    color: AppColors.primaryTeal.withValues(alpha: 0.2),
+                                    blurRadius: 20,
+                                    spreadRadius: 5,
+                                  )
+                              ],
+                            ),
+                            child: Center(
+                              child: isCompleted 
+                                ? const Icon(Icons.check, size: 60, color: Colors.white)
+                                : Text(
+                                    "$count",
+                                    style: TextStyle(
+                                      fontSize: 40,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.primaryTeal,
+                                    ),
+                                  ),
+                            ),
+                          ),
+                        ),
+                        
+                        const SizedBox(height: 30),
+                        
+                        if (isCompleted && index < widget.dhikrList.length - 1)
+                          TextButton.icon(
+                            onPressed: () {
+                              _pageController.nextPage(
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.easeInOut,
+                              );
+                            },
+                            icon: Icon(isUrdu ? Icons.arrow_back : Icons.arrow_forward),
+                            label: Text(isUrdu ? "اگلا ذکر" : "Next Dhikr"),
+                            style: TextButton.styleFrom(foregroundColor: AppColors.primaryTeal),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }
 
   Widget _buildFazilatBlock(String text, String label, bool isDark, {bool isUrdu = false}) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      width: double.infinity,
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: AppColors.primaryTeal.withValues(alpha: 0.05),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
         crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
@@ -217,36 +291,36 @@ class AdhkarListScreen extends ConsumerWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              if (!isUrdu) Icon(Icons.auto_awesome, size: 10, color: AppColors.primaryTeal),
-              if (!isUrdu) const SizedBox(width: 4),
+              if (!isUrdu) Icon(Icons.auto_awesome, size: 14, color: AppColors.primaryTeal),
+              if (!isUrdu) const SizedBox(width: 6),
               Text(
                 label,
                 style: TextStyle(
-                  fontSize: 10,
+                  fontSize: 11,
                   fontWeight: FontWeight.bold,
                   color: AppColors.primaryTeal,
                   letterSpacing: 0.5,
                   fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
                 ),
               ),
-              if (isUrdu) const SizedBox(width: 4),
-              if (isUrdu) Icon(Icons.auto_awesome, size: 10, color: AppColors.primaryTeal),
+              if (isUrdu) const SizedBox(width: 6),
+              if (isUrdu) Icon(Icons.auto_awesome, size: 14, color: AppColors.primaryTeal),
             ],
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 8),
           Text(
             text,
             style: isUrdu 
               ? GoogleFonts.notoNastaliqUrdu(
-                  fontSize: 12,
+                  fontSize: 13,
                   color: isDark ? Colors.white70 : Colors.black87,
                   height: 2.2,
                 )
               : TextStyle(
-                  fontSize: 12,
+                  fontSize: 13,
                   color: isDark ? Colors.white70 : Colors.black87,
-                  height: 1.4,
-                 
+                  height: 1.5,
+                  fontStyle: FontStyle.italic,
                 ),
             textAlign: isUrdu ? TextAlign.right : TextAlign.left,
           ),
@@ -274,12 +348,12 @@ class AdhkarListScreen extends ConsumerWidget {
           text,
           style: isUrdu 
             ? GoogleFonts.notoNastaliqUrdu(
-                fontSize: 12,
+                fontSize: 14,
                 color: isDark ? Colors.white70 : Colors.black87,
                 height: 2.2,
               )
             : TextStyle(
-                fontSize: 13,
+                fontSize: 15,
                 color: isDark ? Colors.white70 : Colors.black87,
                 height: 1.5,
               ),

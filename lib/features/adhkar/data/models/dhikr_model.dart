@@ -7,6 +7,8 @@ class DhikrModel extends DhikrEntity {
     required super.english,
     required super.urdu,
     super.reference,
+    super.fazilatEnglish,
+    super.fazilatUrdu,
     super.count,
     super.targetCount,
   });
@@ -18,6 +20,8 @@ class DhikrModel extends DhikrEntity {
       'english': english,
       'urdu': urdu,
       'reference': reference,
+      'fazilatEnglish': fazilatEnglish,
+      'fazilatUrdu': fazilatUrdu,
       'count': count,
       'targetCount': targetCount,
     };
@@ -30,6 +34,8 @@ class DhikrModel extends DhikrEntity {
       english: map['english'],
       urdu: map['urdu'],
       reference: map['reference'],
+      fazilatEnglish: map['fazilatEnglish'],
+      fazilatUrdu: map['fazilatUrdu'],
       count: map['count'] ?? 0,
       targetCount: map['targetCount'] ?? 1,
     );

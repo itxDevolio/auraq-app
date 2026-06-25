@@ -4,6 +4,8 @@ class DhikrEntity {
   final String english;
   final String urdu;
   final String? reference;
+  final String? fazilatEnglish;
+  final String? fazilatUrdu;
   final int count;
   final int targetCount;
 
@@ -13,6 +15,8 @@ class DhikrEntity {
     required this.english,
     required this.urdu,
     this.reference,
+    this.fazilatEnglish,
+    this.fazilatUrdu,
     this.count = 0,
     this.targetCount = 1,
   });

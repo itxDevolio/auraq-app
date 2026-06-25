@@ -22,11 +22,12 @@ class AdhkarHomeScreen extends ConsumerWidget {
       backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       appBar: AppBar(
         title: Text(
-         "Adhkar & Tasbeeh",
+         isUrdu ? "اذکار اور تسبیح" : "Adhkar & Tasbeeh",
           style: TextStyle(
             fontWeight: FontWeight.bold,
             letterSpacing: 0.5,
             color: isDark ? Colors.white : Colors.black87,
+            fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : GoogleFonts.poppins().fontFamily,
           ),
         ),
         backgroundColor: Colors.transparent,
@@ -56,11 +57,12 @@ class AdhkarHomeScreen extends ConsumerWidget {
               const SizedBox(height: 30),
               
               Text(
-              "Explore Adhkar",
+              isUrdu ? "اذکار دریافت کریں" : "Explore Adhkar",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : AppColors.textPrimaryLight,
+                  fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
                 ),
               ),
               const SizedBox(height: 16),
@@ -111,7 +113,7 @@ class AdhkarHomeScreen extends ConsumerWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primaryTeal.withOpacity(0.3),
+              color: AppColors.primaryTeal.withValues(alpha: 0.3),
               blurRadius: 12,
               offset: const Offset(0, 6),
             )
@@ -122,7 +124,7 @@ class AdhkarHomeScreen extends ConsumerWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.15),
+                color: Colors.white.withValues(alpha: 0.15),
                 borderRadius: BorderRadius.circular(14),
               ),
               child: const Icon(FlutterIslamicIcons.tasbih3, color: Colors.white, size: 28),
@@ -133,19 +135,20 @@ class AdhkarHomeScreen extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                   "Tasbeeh Counter",
+                   isUrdu ? "تسبیح کاؤنٹر" : "Tasbeeh Counter",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      fontFamily: isUrdu ? GoogleFonts.amiri().fontFamily : null,
+                      fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
                     ),
                   ),
                   Text(
-                   "Count your daily dhikr",
+                   isUrdu ? "اپنا روزانہ ذکر شمار کریں" : "Count your daily dhikr",
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                       fontSize: 12,
+                      fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
                     ),
                   ),
                 ],
@@ -219,7 +222,7 @@ class AdhkarHomeScreen extends ConsumerWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
                 color: isDark ? Colors.white : AppColors.textPrimaryLight,
-                fontFamily: isUrdu ? GoogleFonts.amiri().fontFamily : null,
+                fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
               ),
             ),
           ],

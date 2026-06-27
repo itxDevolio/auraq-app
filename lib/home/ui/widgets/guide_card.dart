@@ -60,24 +60,31 @@ class InfoGuideCard extends StatelessWidget {
                   topLeft: Radius.circular(14),
                   topRight: Radius.circular(14),
                 ),
-                child: Image.network(
-                  imageUrl,
-                  height: componentHeight,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Container(
+                child: imageUrl.startsWith('assets') 
+                  ? Image.asset(
+                      imageUrl,
                       height: componentHeight,
-                      color: getThemeColor(context, light: Colors.grey[200]!, dark: Colors.grey[800]!),
-                      child: const Center(
-                        child: Icon(
-                          Icons.image_not_supported_outlined,
-                          size: 20,
-                        ),
-                      ),
-                    );
-                  },
-                ),
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    )
+                  : Image.network(
+                      imageUrl,
+                      height: componentHeight,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Container(
+                          height: componentHeight,
+                          color: getThemeColor(context, light: Colors.grey[200]!, dark: Colors.grey[800]!),
+                          child: const Center(
+                            child: Icon(
+                              Icons.image_not_supported_outlined,
+                              size: 20,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
               ),
 
               // 2. TEXT CONTENT SECTION (Neeche se padding tight)

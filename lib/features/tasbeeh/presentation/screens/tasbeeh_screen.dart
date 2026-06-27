@@ -25,7 +25,7 @@ class TasbeehScreen extends ConsumerWidget {
       backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       appBar: AppBar(
         title: Text(
-          isUrdu ? "تسبیح کاؤنٹر" : "Tasbeeh Counter",
+          "Tasbeeh Counter",
           style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 18),
         ),
         backgroundColor: Colors.transparent,
@@ -76,7 +76,6 @@ class TasbeehScreen extends ConsumerWidget {
                         dhikrTitle,
                         style: GoogleFonts.amiri(
                           fontSize: constraints.maxWidth * 0.1,
-                          fontWeight: FontWeight.bold,
                           color: AppColors.primaryTeal,
                           height: 1.2,
                         ),
@@ -85,7 +84,7 @@ class TasbeehScreen extends ConsumerWidget {
                     ),
                   ),
                   
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
                   
                   // Modern Large Counter with Neon Glow effect
                   Container(
@@ -136,32 +135,25 @@ class TasbeehScreen extends ConsumerWidget {
   }
 
   Widget _buildInstruction(bool isDark, bool isUrdu) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.touch_app_outlined,
-            size: 16,
-            color: isDark ? Colors.white38 : Colors.black38,
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          Icons.touch_app_outlined,
+          size: 16,
+          color: isDark ? Colors.white38 : Colors.black38,
+        ),
+        const SizedBox(width: 8),
+        Text(
+          "TAP ANYWHERE TO COUNT",
+          style: TextStyle(
+            color: isDark ? Colors.white24 : Colors.black26,
+            letterSpacing: isUrdu ? 0 : 1.5,
+            fontWeight: FontWeight.bold,
+            fontSize: 11,
           ),
-          const SizedBox(width: 8),
-          Text(
-            isUrdu ? "پڑھنے کے لیے کہیں بھی کلک کریں" : "TAP ANYWHERE TO COUNT",
-            style: TextStyle(
-              color: isDark ? Colors.white38 : Colors.black38,
-              letterSpacing: isUrdu ? 0 : 1.5,
-              fontWeight: FontWeight.bold,
-              fontSize: 11,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

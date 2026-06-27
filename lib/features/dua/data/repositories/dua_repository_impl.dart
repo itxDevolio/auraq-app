@@ -9,6 +9,11 @@ class DuaRepositoryImpl implements DuaRepository {
   }
 
   @override
+  List<DuaEntity> getAllDuas() {
+    return DuaConstants.allDuas;
+  }
+
+  @override
   List<DuaEntity> searchDuas(String query) {
     if (query.isEmpty) return DuaConstants.allDuas;
     final lowerQuery = query.toLowerCase();

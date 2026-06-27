@@ -10,23 +10,23 @@ sealed class ShifaState {}
 class ShifaInitial extends ShifaState {}
 class ShifaLoading extends ShifaState {}
 class ShifaLoaded extends ShifaState {
-  final List<ShifaCategory> categories;
+  final List<ShifaEntity> allDuas;
   final List<ShifaEntity> searchedDuas;
   final String searchQuery;
   
   ShifaLoaded({
-    required this.categories, 
+    required this.allDuas, 
     this.searchedDuas = const [],
     this.searchQuery = '',
   });
 
   ShifaLoaded copyWith({
-    List<ShifaCategory>? categories,
+    List<ShifaEntity>? allDuas,
     List<ShifaEntity>? searchedDuas,
     String? searchQuery,
   }) {
     return ShifaLoaded(
-      categories: categories ?? this.categories,
+      allDuas: allDuas ?? this.allDuas,
       searchedDuas: searchedDuas ?? this.searchedDuas,
       searchQuery: searchQuery ?? this.searchQuery,
     );
@@ -37,13 +37,13 @@ class ShifaNotifier extends StateNotifier<ShifaState> {
   final ShifaRepository repository;
 
   ShifaNotifier(this.repository) : super(ShifaInitial()) {
-    loadCategories();
+    loadDuas();
   }
 
-  void loadCategories() {
+  void loadDuas() {
     state = ShifaLoading();
-    final categories = repository.getCategories();
-    state = ShifaLoaded(categories: categories);
+    final duas = repository.getAllDuas();
+    state = ShifaLoaded(allDuas: duas);
   }
 
   void searchDuas(String query) {

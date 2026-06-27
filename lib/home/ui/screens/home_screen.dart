@@ -11,6 +11,8 @@ import 'package:auraq/home/controllers/prayer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../features/qibla/presentation/pages/qibla_page.dart';
+import '../../../features/guides/presentation/pages/janaza_guide_screen.dart';
 import '../widgets/feature_card.dart';
 import '../widgets/guide_card.dart';
 import '../widgets/user_profile_widget.dart';
@@ -170,7 +172,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 FeatureCard(
                                   title: "Qibla",
                                   icon: FlutterIslamicIcons.qibla2,
-                                  onTap: () {},
+                                  onTap: () {// Example navigation
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  QiblaPage()));},
                                 ),
                                 const SizedBox(width: 8),
                                 FeatureCard(
@@ -209,12 +212,19 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                 padding: EdgeInsets.zero,
                                 children: [
                                   InfoGuideCard(
-                                    title: "Namaz-e-Janaza ka Tariqa",
+                                    title: "Funeral Prayer Guide",
                                     subTitle:
-                                        "Step by step mukammal masail aur azkar ke sath seekhein.",
+                                        "Step-by-step authentic method and supplications.",
                                     imageUrl:
-                                        "https://images.unsplash.com/photo-1542838132-92c53300491e",
-                                    onTap: () {},
+                                        "assets/app_logos/funeral.png",
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const JanazaGuideScreen(),
+                                        ),
+                                      );
+                                    },
                                   ),
                                   InfoGuideCard(
                                     title: "Eidain ki Namaz ka Tariqa",

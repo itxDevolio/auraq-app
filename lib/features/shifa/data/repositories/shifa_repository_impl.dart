@@ -9,6 +9,11 @@ class ShifaRepositoryImpl implements ShifaRepository {
   }
 
   @override
+  List<ShifaEntity> getAllDuas() {
+    return ShifaConstants.allDuas;
+  }
+
+  @override
   List<ShifaEntity> getDuasByCategory(String categoryId) {
     return ShifaConstants.categories
         .firstWhere((cat) => cat.id == categoryId,

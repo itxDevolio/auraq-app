@@ -9,23 +9,23 @@ sealed class DuaState {}
 class DuaInitial extends DuaState {}
 class DuaLoading extends DuaState {}
 class DuaLoaded extends DuaState {
-  final List<DuaCategory> categories;
+  final List<DuaEntity> allDuas;
   final List<DuaEntity> searchedDuas;
   final String searchQuery;
   
   DuaLoaded({
-    required this.categories, 
+    required this.allDuas, 
     this.searchedDuas = const [],
     this.searchQuery = '',
   });
 
   DuaLoaded copyWith({
-    List<DuaCategory>? categories,
+    List<DuaEntity>? allDuas,
     List<DuaEntity>? searchedDuas,
     String? searchQuery,
   }) {
     return DuaLoaded(
-      categories: categories ?? this.categories,
+      allDuas: allDuas ?? this.allDuas,
       searchedDuas: searchedDuas ?? this.searchedDuas,
       searchQuery: searchQuery ?? this.searchQuery,
     );
@@ -36,13 +36,13 @@ class DuaNotifier extends StateNotifier<DuaState> {
   final DuaRepository repository;
 
   DuaNotifier(this.repository) : super(DuaInitial()) {
-    loadCategories();
+    loadDuas();
   }
 
-  void loadCategories() {
+  void loadDuas() {
     state = DuaLoading();
-    final categories = repository.getCategories();
-    state = DuaLoaded(categories: categories);
+    final duas = repository.getAllDuas();
+    state = DuaLoaded(allDuas: duas);
   }
 
   void searchDuas(String query) {

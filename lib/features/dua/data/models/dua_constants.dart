@@ -54,7 +54,7 @@ class DuaConstants {
       'In the name of Allah. O Allah, I seek refuge in You from the male and female evil spirits.',
       translationUr:
       'اللہ کے نام سے۔ اے اللہ! میں تیری پناہ مانگتا ہوں خبیث جنوں اور جنیوں سے۔',
-      reference: 'Sahih al-Bukhari: 142, Sahih Muslim: 375',
+      reference: 'Sahih al-Bukhari: 142,',
     ),
     DuaEntity(
       id: 't2',
@@ -76,7 +76,7 @@ class DuaConstants {
       arabic: 'بِسْمِ اللَّهِ',
       translationEn: 'In the name of Allah.',
       translationUr: 'اللہ کے نام سے۔',
-      reference: 'Abu Dawud: 101, Tirmidhi: 25',
+      reference: 'Abu Dawud: 101,',
     ),
     DuaEntity(
       id: 'wz2',
@@ -88,7 +88,7 @@ class DuaConstants {
       'I bear witness that there is none worthy of worship except Allah, alone, without partner, and I bear witness that Muhammad is His slave and Messenger. O Allah, make me of those who repent and make me of those who purify themselves.',
       translationUr:
       'میں گواہی دیتا ہوں کہ اللہ کے سوا کوئی معبود نہیں، اکیلا ہے، اس کا کوئی شریک نہیں، اور میں گواہی دیتا ہوں کہ محمد ﷺ اس کے بندے اور رسول ہیں۔ اے اللہ! مجھے توبہ کرنے والوں میں سے بنا اور مجھے پاکیزگی اختیار کرنے والوں میں سے بنا۔',
-      reference: 'Sahih Muslim: 234, Tirmidhi: 55',
+      reference: 'Sahih Muslim: 234',
     ),
   ];
 
@@ -104,7 +104,7 @@ class DuaConstants {
       'Praise is to Allah who has clothed me with this garment and provided it for me, with no power or might from myself.',
       translationUr:
       'تمام تعریفیں اللہ کے لیے ہیں جس نے مجھے یہ کپڑا پہنایا اور بغیر میری کسی طاقت اور قوت کے مجھے یہ عطا کیا۔',
-      reference: 'Abu Dawud: 4023, Tirmidhi: 3560',
+      reference: 'Abu Dawud: 4023',
     ),
     DuaEntity(
       id: 'cl2',
@@ -113,17 +113,10 @@ class DuaConstants {
       arabic: 'بِسْمِ اللَّهِ',
       translationEn: 'In the name of Allah.',
       translationUr: 'اللہ کے نام سے۔',
-      reference: 'Ibn al-Sunni: 490',
+      reference: 'tirmidhi:  606',
     ),
-    DuaEntity(
-      id: 'cl3',
-      titleEn: 'When Wearing New Clothes (to another person)',
-      titleUr: 'کسی کو نئے کپڑے پہنے دیکھ کر دعا',
-      arabic: 'تُبْلِي وَيُخْلِفُ اللَّهُ تَعَالَى',
-      translationEn: 'May you wear it out and may Allah replace it (with something better).',
-      translationUr: 'اللہ تجھے اسے پرانا کرنے اور اس سے بہتر کا بدل دینے کی توفیق دے۔',
-      reference: 'Abu Dawud: 4020',
-    ),
+
+
   ];
 
   // ─── LEAVING & ENTERING HOME ─────────────────────────────────────────────────
@@ -145,13 +138,14 @@ class DuaConstants {
       titleEn: 'When Entering the House',
       titleUr: 'گھر میں داخل ہونے کی دعا',
       arabic:
-      'بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا',
+      'اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ، بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَى اللَّهِ رَبِّنَا تَوَكَّلْنَا',
       translationEn:
-      'In the name of Allah we enter, and in the name of Allah we leave, and upon Allah our Lord we trust.',
+      'O Allah! I ask You for the good both when entering and when going out. In the name of Allah we enter, and in the name of Allah we leave, and upon Allah our Lord we rely.',
       translationUr:
-      'اللہ کے نام سے ہم داخل ہوئے، اللہ کے نام سے ہم نکلے، اور اللہ جو ہمارا رب ہے اس پر ہم نے بھروسہ کیا۔',
-      reference: 'Abu Dawud: 5096',
-    ),
+      'اے اللہ! میں تجھ سے داخل ہونے کی اور نکلنے کی بھلائی مانگتا ہوں، اللہ کے نام سے ہم داخل ہوئے، اور اللہ کے نام سے ہم نکلے، اور اللہ جو ہمارا رب ہے اس پر ہم نے بھروسہ کیا۔',
+      reference: 'Sunan Abi Dawud: 5096',
+    )
+
   ];
 
   // ─── FOOD & DRINK ────────────────────────────────────────────────────────────
@@ -163,7 +157,7 @@ class DuaConstants {
       arabic: 'بِسْمِ اللَّهِ',
       translationEn: 'In the name of Allah.',
       translationUr: 'اللہ کے نام سے۔',
-      reference: 'Abu Dawud: 3767, Tirmidhi: 1858',
+      reference: 'Abu Dawud: 3767',
     ),
     DuaEntity(
       id: 'fd2',
@@ -172,7 +166,7 @@ class DuaConstants {
       arabic: 'بِسْمِ اللَّهِ فِي أَوَّلِهِ وَآخِرِهِ',
       translationEn: 'In the name of Allah, at its beginning and at its end.',
       translationUr: 'اللہ کے نام سے اس کے شروع میں بھی اور آخر میں بھی۔',
-      reference: 'Abu Dawud: 3767, Tirmidhi: 1858',
+      reference: 'Abu Dawud: 3767',
     ),
     DuaEntity(
       id: 'fd3',
@@ -196,7 +190,7 @@ class DuaConstants {
       'Praise is to Allah who has fed us and given us drink and made us Muslims.',
       translationUr:
       'تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں کھلایا اور پلایا اور ہمیں مسلمان بنایا۔',
-      reference: 'Abu Dawud: 3850, Tirmidhi: 3457',
+      reference: 'Abu Dawud: 3850',
     ),
     DuaEntity(
       id: 'fd5',
@@ -217,30 +211,9 @@ class DuaConstants {
       translationUr: 'اے اللہ! میں نے تیرے لیے روزہ رکھا اور تیرے ہی رزق سے افطار کیا۔',
       reference: 'Abu Dawud: 2358',
     ),
-    DuaEntity(
-      id: 'fd7',
-      titleEn: 'Dua When Guest Is Hosted (Said by Host)',
-      titleUr: 'مہمان کے لیے دعا',
-      arabic:
-      'اللَّهُمَّ بَارِكْ لَهُمْ فِيمَا رَزَقْتَهُمْ وَاغْفِرْ لَهُمْ وَارْحَمْهُمْ',
-      translationEn:
-      'O Allah, bless them in what You have provided for them, forgive them and have mercy on them.',
-      translationUr:
-      'اے اللہ! انہیں جو رزق تو نے دیا ہے اس میں برکت عطا فرما، انہیں بخش دے اور ان پر رحم فرما۔',
-      reference: 'Sahih Muslim: 2042',
-    ),
-    DuaEntity(
-      id: 'fd8',
-      titleEn: 'Dua Said by Guest for the Host',
-      titleUr: 'مہمان کا میزبان کے لیے دعا',
-      arabic:
-      'اللَّهُمَّ بَارِكْ لَهُمْ فِيمَا رَزَقْتَهُمْ وَاغْفِرْ لَهُمْ وَارْحَمْهُمْ',
-      translationEn:
-      'O Allah, bless them in what You have provided for them, forgive them and have mercy on them.',
-      translationUr:
-      'اے اللہ! انہیں جو رزق تو نے دیا ہے اس میں برکت عطا فرما، انہیں بخش دے اور ان پر رحم فرما۔',
-      reference: 'Sahih Muslim: 2042',
-    ),
+
+
+
     DuaEntity(
       id: 'fd9',
       titleEn: 'Before Drinking Water',
@@ -257,7 +230,7 @@ class DuaConstants {
       arabic: 'اللَّهُمَّ بَارِكْ لَنَا فِيهِ وَزِدْنَا مِنْهُ',
       translationEn: 'O Allah, bless us in it and give us more of it.',
       translationUr: 'اے اللہ! اس میں ہمارے لیے برکت دے اور اس میں اضافہ فرما۔',
-      reference: 'Abu Dawud: 3730, Tirmidhi: 3455',
+      reference: 'Abu Dawud: 3730',
     ),
   ];
 
@@ -333,19 +306,7 @@ class DuaConstants {
       'Supplicate between the adhan and iqamah; this time is when dua is not rejected.',
       translationUr:
       'اذان اور اقامت کے درمیان دعا مانگو؛ یہ وقت ہے جب دعا رد نہیں ہوتی۔',
-      reference: 'Abu Dawud: 521, Tirmidhi: 212',
-    ),
-    DuaEntity(
-      id: 'sl3',
-      titleEn: 'Dua for Guidance After Prayer',
-      titleUr: 'نماز کے بعد ہدایت کی دعا',
-      arabic:
-      'اللَّهُمَّ اهْدِنِي فِيمَنْ هَدَيْتَ وَعَافِنِي فِيمَنْ عَافَيْتَ وَتَوَلَّنِي فِيمَنْ تَوَلَّيْتَ وَبَارِكْ لِي فِيمَا أَعْطَيْتَ',
-      translationEn:
-      'O Allah, guide me along with those whom You have guided, pardon me along with those whom You have pardoned, be an ally to me along with those whom You are an ally to and bless me in what You have bestowed.',
-      translationUr:
-      'اے اللہ! مجھے ہدایت دے ان لوگوں کے ساتھ جنہیں تو نے ہدایت دی، مجھے عافیت دے ان کے ساتھ جنہیں تو نے عافیت دی، میرا ولی بن جا ان کے ساتھ جن کے تو ولی بنا، اور جو تو نے مجھے دیا ہے اس میں برکت عطا فرما۔',
-      reference: 'Abu Dawud: 1425, Tirmidhi: 464',
+      reference: 'Abu Dawud: 521',
     ),
   ];
 
@@ -361,19 +322,7 @@ class DuaConstants {
       'In the name of Allah, all praise is for Allah. How perfect He is, the One Who has placed this (transport) at our service and we ourselves would not have been capable of that, and to our Lord is our final destiny.',
       translationUr:
       'اللہ کے نام سے، تمام تعریفیں اللہ کے لیے ہیں۔ پاک ہے وہ ذات جس نے اسے ہمارے لیے مسخر کر دیا ورنہ ہم اسے قابو میں نہیں کر سکتے تھے، اور ہم اپنے رب کی طرف لوٹنے والے ہیں۔',
-      reference: 'Abu Dawud: 2602, Tirmidhi: 3446',
-    ),
-    DuaEntity(
-      id: 'tr2',
-      titleEn: 'When Beginning a Journey',
-      titleUr: 'سفر شروع کرتے وقت',
-      arabic:
-      'اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَذَا الْبِرَّ وَالتَّقْوَى وَمِنَ الْعَمَلِ مَا تَرْضَى، اللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَذَا وَاطْوِ عَنَّا بُعْدَهُ',
-      translationEn:
-      'O Allah, we ask You in this journey of ours for righteousness and piety, and for deeds which please You. O Allah, make this journey of ours easy for us and fold up its distance for us.',
-      translationUr:
-      'اے اللہ! ہم اس سفر میں تجھ سے نیکی، تقوی اور ایسے اعمال مانگتے ہیں جن سے تو راضی ہو۔ اے اللہ! اس سفر کو ہمارے لیے آسان کر دے اور اس کی دوری کو ہمارے لیے سمیٹ دے۔',
-      reference: 'Sahih Muslim: 1342',
+      reference: 'Abu Dawud: 2602',
     ),
     DuaEntity(
       id: 'tr3',
@@ -385,7 +334,7 @@ class DuaConstants {
       'We return, repent, worship and praise our Lord.',
       translationUr:
       'ہم لوٹنے والے، توبہ کرنے والے، عبادت کرنے والے اور اپنے رب کی تعریف کرنے والے ہیں۔',
-      reference: 'Sahih al-Bukhari: 3084, Sahih Muslim: 1342',
+      reference: 'Sahih al-Bukhari: 3084',
     ),
     DuaEntity(
       id: 'tr4',
@@ -425,7 +374,7 @@ class DuaConstants {
       'There is none worthy of worship except Allah, alone, without partner. To Him belongs sovereignty and all praise. He gives life and causes death, and He is living and does not die. In His hand is all good and He is capable of all things.',
       translationUr:
       'اللہ کے سوا کوئی معبود نہیں، اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہت ہے اور اسی کے لیے تعریف ہے، وہ زندہ کرتا ہے اور مارتا ہے، وہ خود زندہ ہے کبھی نہیں مرے گا، اس کے ہاتھ میں ہر بھلائی ہے اور وہ ہر چیز پر قادر ہے۔',
-      reference: 'Tirmidhi: 3428, Ibn Majah: 2235',
+      reference: 'Tirmidhi: 3428',
     ),
   ];
 
@@ -467,7 +416,7 @@ class DuaConstants {
       'I place you in the trust of Allah, whose trusts are never lost.',
       translationUr:
       'میں تجھے اللہ کے سپرد کرتا ہوں جس کی امانتیں کبھی ضائع نہیں ہوتیں۔',
-      reference: 'Ibn Majah: 2825, Ahmad',
+      reference: 'Ibn Majah: 2825',
     ),
     DuaEntity(
       id: 'gr5',
@@ -478,30 +427,8 @@ class DuaConstants {
       translationUr: 'اللہ تجھے بہترین بدلہ دے۔',
       reference: 'Tirmidhi: 2035',
     ),
-    DuaEntity(
-      id: 'gr6',
-      titleEn: 'When Visiting the Sick',
-      titleUr: 'بیمار کی عیادت کے وقت',
-      arabic:
-      'لَا بَأْسَ، طَهُورٌ إِنْ شَاءَ اللَّهُ',
-      translationEn:
-      'Do not worry, it will be a purification, if Allah wills.',
-      translationUr:
-      'کوئی فکر نہ کرو، یہ (بیماری) پاکیزگی کا ذریعہ ہوگی، ان شاء اللہ۔',
-      reference: 'Sahih al-Bukhari: 3616',
-    ),
-    DuaEntity(
-      id: 'gr7',
-      titleEn: 'Dua for the Sick Person',
-      titleUr: 'بیمار کے لیے دعا',
-      arabic:
-      'اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَاسَ اشْفِهِ وَأَنْتَ الشَّافِي لَا شِفَاءَ إِلَّا شِفَاؤُكَ شِفَاءً لَا يُغَادِرُ سَقَماً',
-      translationEn:
-      'O Allah, Lord of the people, remove the difficulty and cure him, for You are the Healer. There is no cure except Your cure, a cure which leaves behind no ailment.',
-      translationUr:
-      'اے اللہ! لوگوں کے رب، تکلیف کو دور فرما، اسے شفا دے اور تو ہی شفا دینے والا ہے، تیری شفا کے سوا کوئی شفا نہیں، ایسی شفا جو کوئی بیماری نہ چھوڑے۔',
-      reference: 'Sahih al-Bukhari: 5675, Sahih Muslim: 2191',
-    ),
+
+
   ];
 
   // ─── SNEEZING & YAWNING ──────────────────────────────────────────────────────
@@ -580,14 +507,13 @@ class DuaConstants {
       titleEn: 'When Seeing the Crescent Moon',
       titleUr: 'نیا چاند دیکھنے پر',
       arabic:
-      'اللَّهُ أَكْبَرُ، اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ، رَبِّي وَرَبُّكَ اللَّهُ',
+      '، اللَّهُمَّ أَهِلَّهُ عَلَيْنَا بِالْأَمْنِ وَالْإِيمَانِ وَالسَّلَامَةِ وَالْإِسْلَامِ، رَبِّي وَرَبُّكَ اللَّهُ',
       translationEn:
-      'Allah is the Greatest. O Allah, let this moon appear on us with security, faith, safety and Islam. My Lord and your Lord is Allah.',
+      'A O Allah, let this moon appear on us with security, faith, safety and Islam. My Lord and your Lord is Allah.',
       translationUr:
-      'اللہ سب سے بڑا ہے۔ اے اللہ! اس چاند کو ہم پر امن، ایمان، سلامتی اور اسلام کے ساتھ طلوع فرما۔ میرا اور تیرا رب اللہ ہے۔',
+      'ا اے اللہ! اس چاند کو ہم پر امن، ایمان، سلامتی اور اسلام کے ساتھ طلوع فرما۔ میرا اور تیرا رب اللہ ہے۔',
       reference: 'Tirmidhi: 3451, Ahmad',
-    ),
-    DuaEntity(
+    ),DuaEntity(
       id: 'wt5',
       titleEn: 'When Strong Wind Blows',
       titleUr: 'تیز ہوا چلنے پر',
@@ -596,25 +522,15 @@ class DuaConstants {
       translationEn:
       'O Allah, I ask You for the good of it, the good of what it contains, and the good of what it is sent with; and I seek refuge in You from the evil of it, the evil of what it contains, and the evil of what it is sent with.',
       translationUr:
-      'اے اللہ! میں تجھ سے اس کی بھلائی، اس میں جو ہے اس کی بھلائی اور اسے جس کے ساتھ بھیجا گیا اس کی بھلائی مانگتا ہوں، اور اس کے شر سے، اس میں جو ہے اس کے شر سے اور اسے جس کے ساتھ بھیجا گیا اس کے شر سے تیری پناہ مانگتا ہوں۔',
+      'اے اللہ! میں تجھ سے اس کی بھلائی، اس میں جو ہے اس کی بھلائی اور اسے جس کے ساتھ بھیجا گیا اس کی بھلائی مانگتا ہوں، اور اس کے شر سے، اس میں جو ہے اس کے شر سے اور اسے جس کے ساتھ بھیجا گیا اس کے شر سے تیری پناہ مانگتا ہو۔',
       reference: 'Sahih Muslim: 899',
-    ),
+    )
+
   ];
 
   // ─── MORNING ROUTINE ─────────────────────────────────────────────────────────
   static List<DuaEntity> morningDuas = [
-    DuaEntity(
-      id: 'm1',
-      titleEn: 'Upon Waking Up',
-      titleUr: 'سو کر اٹھنے کی دعا',
-      arabic:
-      'الْحَمْدُ للهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ',
-      translationEn:
-      'Praise is to Allah who gave us life after He had caused us to die and to Him is the return.',
-      translationUr:
-      'تمام تعریفیں اللہ کے لیے ہیں جس نے ہمیں مارنے (سلانے) کے بعد زندہ کیا اور اسی کی طرف لوٹ کر جانا ہے۔',
-      reference: 'Sahih al-Bukhari: 6312',
-    ),
+
   ];
 
   // ─── SLEEPING ────────────────────────────────────────────────────────────────
@@ -628,30 +544,8 @@ class DuaConstants {
       translationUr: 'اے اللہ! تیرے ہی نام کے ساتھ میں مرتا ہوں اور جیتا ہوں۔',
       reference: 'Sahih al-Bukhari: 6312',
     ),
-    DuaEntity(
-      id: 'sp2',
-      titleEn: 'Before Sleeping (Ayatul Kursi)',
-      titleUr: 'سونے سے پہلے آیت الکرسی',
-      arabic:
-      'اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ',
-      translationEn:
-      'Allah – there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep...',
-      translationUr:
-      'اللہ – اس کے سوا کوئی معبود نہیں، وہ زندہ اور قائم رہنے والا ہے، اسے نہ اونگھ آتی ہے نہ نیند…',
-      reference: 'Sahih al-Bukhari: 2311 (Quran 2:255)',
-    ),
-    DuaEntity(
-      id: 'sp3',
-      titleEn: 'Before Sleeping (Another Dua)',
-      titleUr: 'سونے سے پہلے دوسری دعا',
-      arabic:
-      'اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ',
-      translationEn:
-      'O Allah, protect me from Your punishment on the Day You resurrect Your servants.',
-      translationUr:
-      'اے اللہ! اس دن اپنے عذاب سے مجھے بچا جس دن تو اپنے بندوں کو اٹھائے گا۔',
-      reference: 'Abu Dawud: 5045, Tirmidhi: 3398',
-    ),
+
+
     DuaEntity(
       id: 'sp4',
       titleEn: 'When Having a Nightmare',
@@ -663,18 +557,6 @@ class DuaConstants {
       translationUr:
       'میں اللہ کے کامل کلمات کی پناہ مانگتا ہوں اس کے غضب سے، اس کے عذاب سے، اس کے بندوں کے شر سے، شیطانوں کے وسوسوں سے اور ان کی حاضری سے۔',
       reference: 'Abu Dawud: 3893, Tirmidhi: 3528',
-    ),
-    DuaEntity(
-      id: 'sp5',
-      titleEn: 'When Turning Over During Sleep',
-      titleUr: 'نیند میں کروٹ بدلتے وقت',
-      arabic:
-      'لَا إِلَهَ إِلَّا اللَّهُ الْوَاحِدُ الْقَهَّارُ رَبُّ السَّمَوَاتِ وَالأَرْضِ وَمَا بَيْنَهُمَا الْعَزِيزُ الْغَفَّارُ',
-      translationEn:
-      'There is none worthy of worship except Allah, the One, the Subduer, Lord of the heavens and the earth and all that is between them, the All-Mighty, the All-Forgiving.',
-      translationUr:
-      'اللہ کے سوا کوئی معبود نہیں، وہ یکتا اور سب پر غالب ہے، آسمانوں، زمین اور ان کے درمیان جو کچھ ہے سب کا رب ہے، عزیز اور غفار ہے۔',
-      reference: 'al-Nasai: 10624, Tabarani in al-Kabir',
     ),
   ];
 
@@ -712,17 +594,7 @@ class DuaConstants {
       translationUr: 'اے میرے رب! مجھے نیک (اولاد) عطا فرما۔',
       reference: 'Quran 37:100',
     ),
-    DuaEntity(
-      id: 'hf4',
-      titleEn: 'When a Child Is Born',
-      titleUr: 'بچے کی پیدائش پر',
-      arabic: 'بَارَكَ اللَّهُ لَكَ فِي الْمَوْهُوبِ لَكَ وَشَكَرْتَ الْوَاهِبَ وَبَلَغَ أَشُدَّهُ وَرُزِقْتَ بِرَّهُ',
-      translationEn:
-      'May Allah bless you with what has been given to you, may you give thanks to the Giver and may he reach maturity and may you be blessed with his righteousness.',
-      translationUr:
-      'اللہ تجھے عطا ہونے والے (بچے) میں برکت دے، تو دینے والے کا شکر ادا کرے، وہ جوانی کو پہنچے اور تجھے اس کی نیکی نصیب ہو۔',
-      reference: 'al-Hasan al-Basri, Ibn al-Sunni: 623',
-    ),
+
   ];
 
   // ─── WORK & STUDY ─────────────────────────────────────────────────────────────
@@ -791,7 +663,7 @@ class DuaConstants {
       'Our Lord, give us in this world (that which is) good and in the Hereafter (that which is) good and protect us from the punishment of the Fire.',
       translationUr:
       'اے ہمارے رب! ہمیں دنیا میں بھی بھلائی دے اور آخرت میں بھی بھلائی دے اور ہمیں آگ کے عذاب سے بچا۔',
-      reference: 'Quran 2:201, Sahih al-Bukhari: 4522',
+      reference: 'Quran 2:201',
     ),
   ];
 
@@ -813,18 +685,7 @@ class DuaConstants {
 
   // ─── MISCELLANEOUS DAILY DUAS ─────────────────────────────────────────────────
   static List<DuaEntity> miscDuas = [
-    DuaEntity(
-      id: 'ms1',
-      titleEn: 'When Feeling Pain in the Body',
-      titleUr: 'جسم میں درد ہو تو',
-      arabic:
-      'بِسْمِ اللَّهِ (ثَلَاثَ مَرَّاتٍ) أَعُوذُ بِعِزَّةِ اللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ (سَبْعَ مَرَّاتٍ)',
-      translationEn:
-      'In the name of Allah (3x), I seek refuge in Allah\'s might and power from the evil of what I am experiencing and what I fear (7x).',
-      translationUr:
-      'اللہ کے نام سے (3 بار)، میں اللہ کی عزت اور قدرت کی پناہ مانگتا ہوں اس تکلیف اور خوف کے شر سے جو مجھے ہو رہی ہے (7 بار)۔',
-      reference: 'Sahih Muslim: 2202',
-    ),
+
     DuaEntity(
       id: 'ms2',
       titleEn: 'When Something Good Happens or Is Praised',
@@ -834,15 +695,7 @@ class DuaConstants {
       translationUr: 'تمام تعریفیں اللہ کے لیے ہیں۔',
       reference: 'Quran 1:2, Sahih al-Bukhari: 4812',
     ),
-    DuaEntity(
-      id: 'ms3',
-      titleEn: 'When Startled or Surprised',
-      titleUr: 'اچانک گھبراہٹ ہو تو',
-      arabic: 'سُبْحَانَ اللَّهِ',
-      translationEn: 'Glory be to Allah.',
-      translationUr: 'اللہ پاک ہے۔',
-      reference: 'Sahih al-Bukhari: 1206',
-    ),
+
     DuaEntity(
       id: 'ms4',
       titleEn: 'When Something Undesirable Happens',
@@ -873,17 +726,7 @@ class DuaConstants {
       'تمام تعریفیں اللہ کے لیے ہیں جس نے مجھے اس آزمائش سے بچایا جس میں اس نے تجھے مبتلا کیا اور اپنی بہت سی مخلوق پر مجھے فضیلت دی۔',
       reference: 'Tirmidhi: 3432',
     ),
-    DuaEntity(
-      id: 'ms7',
-      titleEn: 'When Pleased With Something',
-      titleUr: 'کسی چیز سے خوش ہونے پر',
-      arabic: 'اللَّهُمَّ لَا تُؤَاخِذْنَا بِمَا يَقُولُ الْجَاهِلُونَ',
-      translationEn:
-      'O Allah, do not take us to account for what the foolish say.',
-      translationUr:
-      'اے اللہ! جو نادان لوگ کہتے ہیں اس پر ہمارا محاسبہ نہ کرنا۔',
-      reference: 'Sahih al-Bukhari: 6313',
-    ),
+
     DuaEntity(
       id: 'ms8',
       titleEn: 'When Experiencing Hardship',
@@ -908,18 +751,7 @@ class DuaConstants {
       'اے اللہ! میں تیرا بندہ ہوں، تیرے بندے کا بیٹا ہوں، تیری بندی کا بیٹا ہوں، میری پیشانی تیرے ہاتھ میں ہے، تیرا حکم مجھ پر جاری ہے، تیرا فیصلہ میرے بارے میں عدل پر ہے۔ میں تجھ سے تیرے ہر اس نام کے واسطے سے مانگتا ہوں جو تو نے خود رکھا یا اپنی کتاب میں نازل کیا یا اپنی کسی مخلوق کو سکھایا یا علم غیب میں اپنے پاس محفوظ رکھا کہ قرآن کو میرے دل کی بہار، میرے سینے کا نور، میرے غم کا علاج اور میری پریشانی کا خاتمہ بنا دے۔',
       reference: 'Ahmad: 3712 – Graded Sahih by Ibn Hibban and others',
     ),
-    DuaEntity(
-      id: 'ms10',
-      titleEn: 'When Feeling Fear',
-      titleUr: 'خوف محسوس ہو تو',
-      arabic:
-      'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
-      translationEn:
-      'I seek refuge in the perfect words of Allah from the evil of what He has created.',
-      translationUr:
-      'میں اللہ کے کامل کلمات کی پناہ مانگتا ہوں اس کی مخلوق کے شر سے۔',
-      reference: 'Sahih Muslim: 2708',
-    ),
+
     DuaEntity(
       id: 'ms11',
       titleEn: 'When Pleased by Good Deeds',
@@ -951,27 +783,7 @@ class DuaConstants {
       'اے اللہ! تو میرا رب ہے، تیرے سوا کوئی معبود نہیں، تو نے مجھے پیدا کیا اور میں تیرا بندہ ہوں، میں اپنی استطاعت کے مطابق تیرے عہد اور وعدے پر قائم ہوں، جو برائیاں میں نے کی ہیں ان کے شر سے تیری پناہ مانگتا ہوں، اپنے اوپر تیری نعمتوں کا اقرار کرتا ہوں اور اپنے گناہوں کا اعتراف کرتا ہوں، پس مجھے بخش دے کیونکہ گناہ معاف کرنے والا تیرے سوا کوئی نہیں۔',
       reference: 'Sahih al-Bukhari: 6306',
     ),
-    DuaEntity(
-      id: 'ms14',
-      titleEn: 'When Seeing One\'s Reflection',
-      titleUr: 'اپنا عکس دیکھنے پر',
-      arabic:
-      'اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي',
-      translationEn:
-      'O Allah, just as You have made my external features good, make my character good as well.',
-      translationUr:
-      'اے اللہ! جیسے تو نے میری ظاہری ساخت اچھی بنائی ہے، ویسے ہی میرے اخلاق بھی اچھے بنا دے۔',
-      reference: 'Ahmad: 3823',
-    ),
-    DuaEntity(
-      id: 'ms15',
-      titleEn: 'When Repaying a Debt',
-      titleUr: 'قرض ادا کرنے پر',
-      arabic: 'بَارَكَ اللَّهُ لَكَ فِي أَهْلِكَ وَمَالِكَ',
-      translationEn: 'May Allah bless you in your family and your wealth.',
-      translationUr: 'اللہ تمہارے اہل و عیال اور مال میں برکت دے۔',
-      reference: 'Sahih al-Bukhari: 2393',
-    ),
+
     DuaEntity(
       id: 'ms16',
       titleEn: 'When Wearing New Clothes (Personal Dua)',
@@ -984,15 +796,7 @@ class DuaConstants {
       'اے اللہ! تمام تعریفیں تیرے لیے ہیں، تو نے مجھے یہ پہنایا، میں تجھ سے اس کی بھلائی اور جس مقصد کے لیے بنایا گیا اس کی بھلائی مانگتا ہوں، اور اس کے شر اور جس مقصد کے لیے بنایا گیا اس کے شر سے تیری پناہ مانگتا ہوں۔',
       reference: 'Abu Dawud: 4020, Tirmidhi: 1767',
     ),
-    DuaEntity(
-      id: 'ms17',
-      titleEn: 'When Seeing a Muslim Smile',
-      titleUr: 'کسی مسلمان کو مسکراتے دیکھنے پر',
-      arabic: 'أَضْحَكَ اللَّهُ سِنَّكَ',
-      translationEn: 'May Allah keep you smiling.',
-      translationUr: 'اللہ تیری مسکراہٹ قائم رکھے۔',
-      reference: 'Abu Dawud: 5229',
-    ),
+
     DuaEntity(
       id: 'ms18',
       titleEn: 'Before Starting Any Speech or Khutbah',
@@ -1024,7 +828,7 @@ class DuaConstants {
       'How perfect You are O Allah, and I praise You. I bear witness that none has the right to be worshipped except You. I seek Your forgiveness and repent to You.',
       translationUr:
       'اے اللہ! تو پاک ہے اور میں تیری تعریف کرتا ہوں، میں گواہی دیتا ہوں کہ تیرے سوا کوئی معبود نہیں، میں تجھ سے مغفرت مانگتا ہوں اور تیری طرف توبہ کرتا ہوں۔',
-      reference: 'Abu Dawud: 4859, Tirmidhi: 3433',
+      reference: 'Abu Dawud: 4857',
     ),
     DuaEntity(
       id: 'ms21',
@@ -1079,15 +883,7 @@ class DuaConstants {
       translationUr: 'اللہ نے جو چاہا (وہ ہوتا ہے)؛ کوئی طاقت نہیں مگر اللہ کے ساتھ۔',
       reference: 'Quran 18:39',
     ),
-    DuaEntity(
-      id: 'ms26',
-      titleEn: 'When Someone Admires Your Wealth or Child (to protect from Evil Eye)',
-      titleUr: 'کسی کی تعریف پر نظر سے بچانے کی دعا',
-      arabic: 'اللَّهُمَّ بَارِكْ عَلَيْهِ',
-      translationEn: 'O Allah, bless him/it.',
-      translationUr: 'اے اللہ! اس میں برکت دے۔',
-      reference: 'Ibn al-Sunni: 200',
-    ),
+
     DuaEntity(
       id: 'ms27',
       titleEn: 'Dua When Offered Something Undesirable',
@@ -1154,24 +950,8 @@ class DuaConstants {
       'بے شک ہم اللہ کے ہیں اور اسی کی طرف لوٹنے والے ہیں۔ اے اللہ! اسے بخش دے، اس پر رحم فرما، اسے عافیت دے اور اسے معاف کر دے۔',
       reference: 'Sahih Muslim: 963',
     ),
-    DuaEntity(
-      id: 'ms33',
-      titleEn: 'When Wearing Shoes',
-      titleUr: 'جوتا پہننے کی دعا',
-      arabic: 'بِسْمِ اللَّهِ',
-      translationEn: 'In the name of Allah.',
-      translationUr: 'اللہ کے نام سے۔',
-      reference: 'Ibn al-Sunni: 197',
-    ),
-    DuaEntity(
-      id: 'ms34',
-      titleEn: 'When Removing Shoes',
-      titleUr: 'جوتا اتارنے کی دعا',
-      arabic: 'بِسْمِ اللَّهِ',
-      translationEn: 'In the name of Allah.',
-      translationUr: 'اللہ کے نام سے۔',
-      reference: 'Ibn al-Sunni: 197',
-    ),
+
+
     DuaEntity(
       id: 'ms35',
       titleEn: 'Dua Against Evil Eye (Ruqyah)',

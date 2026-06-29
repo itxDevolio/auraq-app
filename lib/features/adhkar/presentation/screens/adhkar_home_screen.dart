@@ -192,7 +192,7 @@ class AdhkarHomeScreen extends ConsumerWidget {
           MaterialPageRoute(
             builder: (_) => AdhkarListScreen(
               dhikrList: category.dhikrs,
-              title: isUrdu ? category.titleUr : category.titleEn,
+              title:  category.titleEn,
             ),
           ),
         );
@@ -213,7 +213,7 @@ class AdhkarHomeScreen extends ConsumerWidget {
             Icon(icon, size: 32, color: color),
             const SizedBox(height: 12),
             Text(
-              isUrdu ? category.titleUr : category.titleEn,
+              category.titleEn,
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,

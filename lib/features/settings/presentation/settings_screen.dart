@@ -3,6 +3,7 @@ import 'package:auraq/core/services/settings_controller.dart';
 import 'package:auraq/core/services/haptic_feedback.dart';
 import 'package:auraq/features/quran/domain/entities/reciter.dart';
 import 'package:auraq/features/quran/presentation/controllers/quran_audio_player_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,9 +22,10 @@ class SettingsScreen extends ConsumerWidget {
         title: Text(
           'Settings',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w900,
+            fontSize: 22,
             color: isDark ? Colors.white : Colors.black87,
-            letterSpacing: 0.5,
+            letterSpacing: -0.5,
           ),
         ),
         backgroundColor: Colors.transparent,
@@ -31,8 +33,8 @@ class SettingsScreen extends ConsumerWidget {
         centerTitle: true,
         leading: IconButton(
           icon: Icon(
-            Icons.arrow_back_ios_new,
-            size: 20,
+            Icons.arrow_back_ios_new_rounded,
+            size: 18,
             color: isDark ? Colors.white : Colors.black87,
           ),
           onPressed: () => Navigator.pop(context),
@@ -41,16 +43,16 @@ class SettingsScreen extends ConsumerWidget {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 12.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildSectionHeader('General Preferences'),
+              _buildSectionHeader('PREFERENCES'),
               _buildSettingsCard(
                 isDark,
                 children: [
                   _buildSettingsTile(
-                    icon: Icons.language_rounded,
+                    icon: Icons.translate_rounded,
                     title: 'App Language',
                     subtitle: settings.language == 'en' ? 'English' : 'Urdu (اردو)',
                     isDark: isDark,
@@ -58,90 +60,110 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   _buildDivider(isDark),
                   _buildSettingsTile(
-                    icon: Icons.account_balance_rounded,
-                    title: 'Calculation Madhab',
+                    icon: Icons.auto_awesome_mosaic_rounded,
+                    title: 'Prayer Calculation',
                     subtitle: settings.madhab == 'hanafi' ? 'Hanafi (Later Asr)' : 'Shafi\'i (Earlier Asr)',
                     isDark: isDark,
                     onTap: () => _showMadhabDialog(context, ref, settings.madhab),
                   ),
                   _buildDivider(isDark),
                   _buildSettingsTile(
-                    icon: Icons.play_circle_outline_rounded,
+                    icon: Icons.headphones_rounded,
                     title: 'Background Play',
-                    subtitle: settings.keepPlayingInBackground ? 'Keep playing when app is minimized' : 'Stop playing when app is minimized',
+                    subtitle: 'Keep audio active when app is minimized',
                     isDark: isDark,
-                    trailing: Switch(
+                    trailing: CupertinoSwitch(
                       value: settings.keepPlayingInBackground,
+                      activeColor: AppColors.primaryTeal,
                       onChanged: (val) {
                         hapticFeedBack();
                         ref.read(settingsControllerProvider.notifier).setKeepPlayingInBackground(val);
                       },
-                      activeTrackColor: AppColors.primaryTeal,
                     ),
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
-              _buildSectionHeader('Quran & Audio'),
+              const SizedBox(height: 30),
+              _buildSectionHeader('QURAN AUDIO'),
               _buildSettingsCard(
                 isDark,
                 children: [
                   _buildSettingsTile(
-                    icon: Icons.record_voice_over_outlined,
-                    title: 'Audio Reciter',
+                    icon: Icons.mic_external_on_rounded,
+                    title: 'Primary Reciter',
                     subtitle: audioState.currentReciter.name,
                     isDark: isDark,
                     onTap: () => _showReciterDialog(context, ref, audioState.currentReciter),
                   ),
-                  _buildDivider(isDark),
-                  _buildSettingsTile(
-                    icon: Icons.translate_rounded,
-                    title: 'Quran Translation',
-                    subtitle: 'English / Urdu text',
-                    isDark: isDark,
-                    onTap: () {},
-                  ),
-                  _buildDivider(isDark),
-                  _buildSettingsTile(
-                    icon: Icons.font_download_outlined,
-                    title: 'Arabic Script & Size',
-                    subtitle: 'Amiri / IndoPak script',
-                    isDark: isDark,
-                    onTap: () {},
-                  ),
                 ],
               ),
-              const SizedBox(height: 24),
-              _buildSectionHeader('Support & About'),
+              const SizedBox(height: 30),
+              _buildSectionHeader('SUPPORT & LEGAL'),
               _buildSettingsCard(
                 isDark,
                 children: [
                   _buildSettingsTile(
-                    icon: Icons.share_outlined,
+                    icon: Icons.ios_share_rounded,
                     title: 'Share Auraq',
-                    subtitle: 'Invite friends and family',
+                    subtitle: 'Spread the word to friends & family',
                     isDark: isDark,
-                    onTap: () {},
+                    onTap: () {
+                      hapticFeedBack();
+                      // Share logic
+                    },
                   ),
                   _buildDivider(isDark),
                   _buildSettingsTile(
-                    icon: Icons.star_border_rounded,
+                    icon: Icons.star_outline_rounded,
                     title: 'Rate & Review',
-                    subtitle: 'Support us on App Store',
+                    subtitle: 'Support us on the Play Store',
                     isDark: isDark,
-                    onTap: () {},
+                    onTap: () {
+                      hapticFeedBack();
+                      // Store link logic
+                    },
                   ),
                   _buildDivider(isDark),
                   _buildSettingsTile(
                     icon: Icons.info_outline_rounded,
-                    title: 'App Version',
-                    subtitle: 'Version 1.0.0 (Beta)',
+                    title: 'About Auraq',
+                    subtitle: 'Our mission and vision',
                     isDark: isDark,
-                    trailing: const SizedBox.shrink(),
+                    onTap: () => _showAboutDialog(context, isDark),
+                  ),
+                  _buildDivider(isDark),
+                  _buildSettingsTile(
+                    icon: Icons.policy_outlined,
+                    title: 'Privacy Policy',
+                    subtitle: 'Data protection and usage terms',
+                    isDark: isDark,
+                    onTap: () {
+                      hapticFeedBack();
+                      // Policy link logic
+                    },
                   ),
                 ],
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 40),
+              Center(
+                child: Opacity(
+                  opacity: 0.3,
+                  child: Column(
+                    children: [
+                      const Text(
+                        'AURAQ ISLAMIC SUITE',
+                        style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 3, fontSize: 10),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Designed for the Modern Ummah',
+                        style: TextStyle(fontSize: 10, color: isDark ? Colors.white : Colors.black87),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 40),
             ],
           ),
         ),
@@ -151,14 +173,14 @@ class SettingsScreen extends ConsumerWidget {
 
   Widget _buildSectionHeader(String title) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+      padding: const EdgeInsets.only(left: 12.0, bottom: 10.0),
       child: Text(
         title,
         style: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.bold,
+          fontSize: 11,
+          fontWeight: FontWeight.w900,
           color: AppColors.primaryTeal,
-          letterSpacing: 0.5,
+          letterSpacing: 1.5,
         ),
       ),
     );
@@ -167,14 +189,25 @@ class SettingsScreen extends ConsumerWidget {
   Widget _buildSettingsCard(bool isDark, {required List<Widget> children}) {
     return Container(
       decoration: BoxDecoration(
-        color: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-        borderRadius: BorderRadius.circular(16),
+        color: isDark ? Colors.white.withOpacity(0.04) : Colors.white,
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isDark ? AppColors.borderDark : AppColors.borderLight,
+          color: isDark ? Colors.white.withOpacity(0.08) : Colors.black.withOpacity(0.05),
           width: 1,
         ),
+        boxShadow: [
+          if (!isDark)
+            BoxShadow(
+              color: Colors.black.withOpacity(0.02),
+              blurRadius: 15,
+              offset: const Offset(0, 5),
+            )
+        ],
       ),
-      child: Column(children: children),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Column(children: children),
+      ),
     );
   }
 
@@ -188,44 +221,66 @@ class SettingsScreen extends ConsumerWidget {
   }) {
     return ListTile(
       onTap: onTap,
-      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
       leading: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: AppColors.primaryTeal.withAlpha(20),
-          borderRadius: BorderRadius.circular(10),
+          color: AppColors.primaryTeal.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(12),
         ),
-        child: Icon(icon, color: AppColors.primaryTeal, size: 22),
+        child: Icon(icon, color: AppColors.primaryTeal, size: 20),
       ),
       title: Text(
         title,
         style: TextStyle(
           fontSize: 15,
-          fontWeight: FontWeight.w600,
-          color: isDark ? Colors.white : Colors.black87,
+          fontWeight: FontWeight.bold,
+          color: isDark ? Colors.white.withOpacity(0.9) : Colors.black87,
         ),
       ),
       subtitle: Text(
         subtitle,
         style: TextStyle(
           fontSize: 12,
-          color: isDark ? Colors.white60 : Colors.black54,
+          color: isDark ? Colors.white38 : Colors.black45,
         ),
       ),
       trailing: trailing ??
           Icon(
-            Icons.arrow_forward_ios_rounded,
-            size: 14,
-            color: isDark ? Colors.white30 : Colors.black26,
+            Icons.chevron_right_rounded,
+            size: 20,
+            color: isDark ? Colors.white12 : Colors.black12,
           ),
     );
   }
 
   Widget _buildDivider(bool isDark) {
     return Divider(
-      color: isDark ? AppColors.borderDark : AppColors.borderLight,
+      color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
       height: 1,
-      indent: 56,
+      indent: 64,
+      endIndent: 20,
+    );
+  }
+
+  void _showAboutDialog(BuildContext context, bool isDark) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+        backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
+        title: const Text('About Auraq', style: TextStyle(fontWeight: FontWeight.bold)),
+        content: const Text(
+          'Auraq is a comprehensive Islamic companion designed to bring peace and guidance to your daily life through Quran, Hadith, Adhkar, and Prayer tools.',
+          style: TextStyle(height: 1.5),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Close', style: TextStyle(color: AppColors.primaryTeal)),
+          ),
+        ],
+      ),
     );
   }
 
@@ -235,7 +290,7 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
       ),
       builder: (context) {
         return Padding(
@@ -243,18 +298,21 @@ class SettingsScreen extends ConsumerWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
+              Container(
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(color: Colors.grey.withOpacity(0.2), borderRadius: BorderRadius.circular(2)),
+              ),
+              const SizedBox(height: 24),
+              const Text(
                 'Select Reciter',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: isDark ? Colors.white : Colors.black87,
-                ),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900, letterSpacing: -0.5),
               ),
               const SizedBox(height: 16),
               Flexible(
                 child: ListView.builder(
                   shrinkWrap: true,
+                  physics: const BouncingScrollPhysics(),
                   itemCount: availableReciters.length,
                   itemBuilder: (context, index) {
                     final reciter = availableReciters[index];
@@ -265,11 +323,13 @@ class SettingsScreen extends ConsumerWidget {
                         ref.read(quranAudioPlayerControllerProvider.notifier).setReciter(reciter);
                         Navigator.pop(context);
                       },
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
                       leading: CircleAvatar(
-                        backgroundColor: isSelected ? AppColors.primaryTeal : Colors.transparent,
+                        backgroundColor: isSelected ? AppColors.primaryTeal : AppColors.primaryTeal.withOpacity(0.1),
                         child: Icon(
                           Icons.person_rounded,
                           color: isSelected ? Colors.white : AppColors.primaryTeal,
+                          size: 20,
                         ),
                       ),
                       title: Text(
@@ -279,7 +339,7 @@ class SettingsScreen extends ConsumerWidget {
                           fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                         ),
                       ),
-                      trailing: isSelected ? const Icon(Icons.check_circle, color: AppColors.primaryTeal) : null,
+                      trailing: isSelected ? const Icon(Icons.check_circle_rounded, color: AppColors.primaryTeal) : null,
                     );
                   },
                 ),
@@ -297,11 +357,11 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          backgroundColor: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-          title: Text(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
+          title: const Text(
             'Select Language',
-            style: TextStyle(color: isDark ? Colors.white : Colors.black87),
+            style: TextStyle(fontWeight: FontWeight.w900),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -315,7 +375,7 @@ class SettingsScreen extends ConsumerWidget {
                 isDark: isDark,
                 onSelect: (val) => ref.read(settingsControllerProvider.notifier).setLanguage(val),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               _buildOption(
                 context, 
                 ref, 
@@ -338,11 +398,11 @@ class SettingsScreen extends ConsumerWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          backgroundColor: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
-          title: Text(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+          backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
+          title: const Text(
             'Select Madhab',
-            style: TextStyle(color: isDark ? Colors.white : Colors.black87),
+            style: TextStyle(fontWeight: FontWeight.w900),
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -350,17 +410,17 @@ class SettingsScreen extends ConsumerWidget {
               _buildOption(
                 context, 
                 ref, 
-                title: 'Hanafi', 
+                title: 'Hanafi (Later Asr)', 
                 value: 'hanafi', 
                 isSelected: currentMadhab == 'hanafi',
                 isDark: isDark,
                 onSelect: (val) => ref.read(settingsControllerProvider.notifier).setMadhab(val),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               _buildOption(
                 context, 
                 ref, 
-                title: 'Shafi\'i', 
+                title: 'Shafi\'i (Earlier Asr)', 
                 value: 'shafi', 
                 isSelected: currentMadhab == 'shafi',
                 isDark: isDark,
@@ -388,14 +448,14 @@ class SettingsScreen extends ConsumerWidget {
         onSelect(value);
         Navigator.pop(context);
       },
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(16),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primaryTeal.withAlpha(20) : Colors.transparent,
-          borderRadius: BorderRadius.circular(12),
+          color: isSelected ? AppColors.primaryTeal.withOpacity(0.1) : Colors.transparent,
+          borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isSelected ? AppColors.primaryTeal : (isDark ? AppColors.borderDark : AppColors.borderLight),
+            color: isSelected ? AppColors.primaryTeal : (isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
             width: 1,
           ),
         ),
@@ -405,12 +465,12 @@ class SettingsScreen extends ConsumerWidget {
             Text(
               title,
               style: TextStyle(
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                fontWeight: isSelected ? FontWeight.w900 : FontWeight.normal,
                 color: isDark ? Colors.white : Colors.black87,
               ),
             ),
             if (isSelected)
-              const Icon(Icons.check_circle_rounded, color: AppColors.primaryTeal, size: 20),
+              const Icon(Icons.check_circle_rounded, color: AppColors.primaryTeal, size: 22),
           ],
         ),
       ),

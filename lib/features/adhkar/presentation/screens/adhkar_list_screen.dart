@@ -42,6 +42,7 @@ class _AdhkarListScreenState extends ConsumerState<AdhkarListScreen> {
         final currentCount = ref.watch(adhkarCountProvider(dhikr.id));
         final remaining = (dhikr.targetCount - currentCount).clamp(0, dhikr.targetCount);
         final isCompleted = remaining == 0;
+        final bool showTranslation = dhikr.english.isNotEmpty || dhikr.urdu.isNotEmpty;
 
         return Scaffold(
           backgroundColor: isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
@@ -81,21 +82,23 @@ class _AdhkarListScreenState extends ConsumerState<AdhkarListScreen> {
                     // Arabic Text
                     Text(
                       dhikr.arabic,
-                      style: GoogleFonts.amiriQuran(fontSize: 28, color: AppColors.primaryTeal),
+                      style: GoogleFonts.amiriQuran(fontSize: 22,height: 2, color: AppColors.primaryTeal),
                       textAlign: TextAlign.center,
                       textDirection: TextDirection.rtl,
                     ),
 
-                    const SizedBox(height: 30),
+                    if (showTranslation) ...[
+                      const SizedBox(height: 30),
 
-                    // Translation Text
-                    Text(
-                      isUrdu ? dhikr.urdu : dhikr.english,
-                      style: isUrdu
-                          ? GoogleFonts.notoNastaliqUrdu(fontSize: 15, color: isDark ? Colors.white70 : Colors.grey[700], height: 2.0)
-                          : TextStyle(fontSize: 14, color: isDark ? Colors.white60 : Colors.grey[600]),
-                      textAlign: TextAlign.center,
-                    ),
+                      // Translation Text
+                      Text(
+                        isUrdu ? dhikr.urdu : dhikr.english,
+                        style: isUrdu
+                            ? GoogleFonts.notoNastaliqUrdu(fontSize: 15, color: isDark ? Colors.white70 : Colors.grey[700], height: 2.0)
+                            : TextStyle(fontSize: 14, color: isDark ? Colors.white60 : Colors.grey[600]),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
 
                     const SizedBox(height: 50),
 

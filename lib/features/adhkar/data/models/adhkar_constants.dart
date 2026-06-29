@@ -1,15 +1,14 @@
 import '../../domain/entities/dhikr_entity.dart';
+import 'package:quran/quran.dart' as quran;
 
 class AdhkarCategory {
   final String id;
   final String titleEn;
-  final String titleUr;
   final List<DhikrEntity> dhikrs;
 
   AdhkarCategory({
     required this.id,
     required this.titleEn,
-    required this.titleUr,
     required this.dhikrs,
   });
 }
@@ -92,7 +91,7 @@ safety.""",
           'یہ کلمات پڑھنے والے کو نہ تو کوئی شے نقصان پہنچا سکتی ہے اور نہ ہی کوئی اچانک ناگہانی مصیبت اُسے پہنچے گی۔ (3 مرتبہ صبح اور شام)',
       count: 0,
       targetCount: 3,
-    ), // Number 6
+    ),
     DhikrEntity(
       id: 'm6',
       arabic: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
@@ -108,7 +107,6 @@ safety.""",
       count: 0,
       targetCount: 3,
     ),
-    // Number 7
     DhikrEntity(
       id: 'm7',
       arabic:
@@ -121,11 +119,10 @@ safety.""",
       fazilatEnglish:
           'The one who recites these words gets more reward than the person who worships continuously from the Fajr prayer till forenoon. (Recite 3 times in the morning.)',
       fazilatUrdu:
-          'یہ کلمات پڑھنے والے کو نمازِ فجر سے لے کر اشراق تک مسلسل عبادت کرنے والے شخص سے بھی زیادہ ثواب حاصل ہوتا ہے۔ (3 مرتبہ صبح)',
+          'یہ کلمات پڑھنے والے کو نمازِ فجر سے لے کر اشراق تک مسلسل عبادت کرنے والے شخص سے भी زیادہ ثواب حاصل ہوتا ہے۔ (3 مرتبہ صبح)',
       count: 0,
       targetCount: 3,
     ),
-    // Number 8
     DhikrEntity(
       id: 'm8',
       arabic:
@@ -142,7 +139,6 @@ safety.""",
       count: 0,
       targetCount: 3,
     ),
-    // Number 9
     DhikrEntity(
       id: 'm9',
       arabic: 'اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ',
@@ -156,8 +152,6 @@ safety.""",
       count: 0,
       targetCount: 7,
     ),
-    // Number 10
-    // 10
     DhikrEntity(
       id: 'm10',
       arabic:
@@ -173,11 +167,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 11
     DhikrEntity(
       id: 'm11',
       arabic:
-          'أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلامِ وَعَلَى كَلِمَةِ الْإِخْلَاصِ وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيمَ حَنِيفًا مُسلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ',
+          'أَصْبَحْنَا عَلَى فِطْرَةِ الْإِسْلامِ وَعَلَى كَلِمَةِ الْإِخْلَاصِ وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيمَ حَنِيفًا مُسلِمًا وَمَا کَانَ مِنَ الْمُشْرِكِينَ',
       english:
           'We have entered the morning while we are on the innateness of Islam, the word of sincere devotion, the religion of our Prophet Muhammad and on the creed of our forefather Abraham, he was upright, and a Muslim. He was not from those who associate partners with Allah.',
       urdu:
@@ -188,11 +181,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 12
     DhikrEntity(
       id: 'm12',
       arabic:
-      'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
+      'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِیکَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
       english:
       'We have reached the morning and the Dominion belongs to Allah, and all praise is for Allah. There is no deity worthy of worship except Allah, alone, without partner. To Him belongs the dominion and to Him belongs all praise, and He is over all things Omnipotent. My Lord, I ask You for the good of this day and the good of what follows it, and I seek refuge in You from the evil of this day and the evil of what follows it. My Lord, I seek refuge in You from laziness and the hardships of old age. My Lord, I seek refuge in You from the punishment of the Fire and the punishment of the grave.',
       urdu:
@@ -203,8 +195,6 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-
-    // 13
     DhikrEntity(
       id: 'm13',
       arabic:
@@ -217,7 +207,6 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 14
     DhikrEntity(
       id: 'm14',
       arabic:
@@ -230,11 +219,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 15
     DhikrEntity(
       id: 'm15',
       arabic:
-          'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ',
+          'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ',
       english:
           'O Allah! Knower of the Unseen and the Seen, Originator of the heavens and the earth, Lord of everything and its Possessor also, I bear witness that there is none worthy of worship except You, I seek refuge in You from the evil of my soul and from the evil of Shaitan and his participation (in my works).',
       urdu:
@@ -243,11 +231,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 16 (Sayyad ul Istighfar)
     DhikrEntity(
       id: 'm16',
       arabic:
-          'اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ',
+          'اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ',
       english:
           'O Allah! You are my Lord, None has the right to be worshipped but You. You created me and I am Your slave, and I am faithful to my covenant and my promise (to You) as much as I can. I seek refuge with You from all the evil I have done. I acknowledge before You all the blessings You have bestowed upon me, and I confess to You all my sins. So I entreat You to forgive my sins, for nobody can forgive sins except You.',
       urdu:
@@ -256,7 +243,6 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 17
     DhikrEntity(
       id: 'm17',
       arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
@@ -266,17 +252,15 @@ safety.""",
       count: 0,
       targetCount: 100,
     ),
-    // 18
     DhikrEntity(
       id: 'm18',
       arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',
       english: 'I seek Allah’s forgiveness and I turn to Him in repentance.',
-      urdu: 'میں اللہ سے مغفرت طلب کرتا ہوں اور میں اُسی کی طرف توبہ کرتا ہوں۔',
+      urdu: 'میں اللہ سے مغفرت طلب کرتا ہوں اور میں اُسی کی طرف توبہ کرتا ہو۔',
       reference: 'Bukhari: 6307, Muslim: 6858',
       count: 0,
       targetCount: 100,
     ),
-
     DhikrEntity(
       id: 'm19',
       arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
@@ -290,7 +274,7 @@ safety.""",
       targetCount: 1,
     ),
     DhikrEntity(
-      id: 'm20', // آپ اپنی ترتیب کے مطابق id بدل سکتے ہیں
+      id: 'm20',
       arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',
       english: 'O Allah, send blessings and peace upon our Prophet Muhammad.',
       urdu: 'اے اللہ! ہمارے نبی محمد ﷺ پر رحمتیں اور سلامتی نازل فرما۔',
@@ -300,7 +284,6 @@ safety.""",
       count: 0,
       targetCount: 10,
     ),
-
   ];
 
   static List<DhikrEntity> eveningAdhkar = [
@@ -379,7 +362,6 @@ safety.""",
       count: 0,
       targetCount: 3,
     ),
-    // Number 6
     DhikrEntity(
       id: 'e6',
       arabic: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
@@ -395,7 +377,6 @@ safety.""",
       count: 0,
       targetCount: 3,
     ),
-    // Number 7
     DhikrEntity(
       id: 'e7',
       arabic:
@@ -412,7 +393,6 @@ safety.""",
       count: 0,
       targetCount: 3,
     ),
-    // Number 8
     DhikrEntity(
       id: 'e8',
       arabic:
@@ -429,7 +409,6 @@ safety.""",
       count: 0,
       targetCount: 3,
     ),
-    // Number 9
     DhikrEntity(
       id: 'e9',
       arabic: 'اللَّهُمَّ أَجِرْنِي مِنَ النَّارِ',
@@ -443,8 +422,6 @@ safety.""",
       count: 0,
       targetCount: 7,
     ),
-    // Number 10
-    // 10
     DhikrEntity(
       id: 'e10',
       arabic:
@@ -460,11 +437,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 11
     DhikrEntity(
       id: 'e11',
       arabic:
-          'أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلامِ وَعَلَى كَلِمَةِ الْإِخْلَاصِ وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيمَ حَنِيفًا مُسلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ',
+          'أَمْسَيْنَا عَلَى فِطْرَةِ الْإِسْلامِ وَعَلَى کَلِمَةِ الْإِخْلَاصِ وَعَلَى دِينِ نَبِيِّنَا مُحَمَّدٍ وَعَلَى مِلَّةِ أَبِيْنَا إِبْرَاهِيمَ حَنِيفًا مُسلِمًا وَمَا کَانَ مِنَ الْمُشْرِكِينَ',
       english:
           'We have entered the evening while we are on the innateness of Islam...',
       urdu:
@@ -475,11 +451,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 12
     DhikrEntity(
       id: 'e12',
       arabic:
-      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
+      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِیکَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
       english:
       'We have reached the evening and the Dominion belongs to Allah, and all praise is for Allah. There is no deity worthy of worship except Allah, alone, without partner. To Him belongs the dominion and to Him belongs all praise, and He is over all things Omnipotent. My Lord, I ask You for the good of this night and the good of what follows it, and I seek refuge in You from the evil of this night and the evil of what follows it. My Lord, I seek refuge in You from laziness and the hardships of old age. My Lord, I seek refuge in You from the punishment of the Fire and the punishment of the grave.',
       urdu:
@@ -490,7 +465,6 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-
     DhikrEntity(
       id: 'e13',
       arabic:
@@ -503,11 +477,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 14
     DhikrEntity(
       id: 'e14',
       arabic:
-          'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي',
+          'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِن| رَوْعَاتِي اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي',
       english:
           'O Allah, I ask You for well being in this world and in the Hereafter...',
       urdu: 'اے اللہ! میں تجھ سے سوال کرتا ہوں عافیت کا دنیا اور آخرت میں...',
@@ -515,11 +488,10 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 15
     DhikrEntity(
       id: 'e15',
       arabic:
-          'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ',
+          'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ',
       english: 'O Allah! Knower of the Unseen and the Seen...',
       urdu:
           'اے اللہ! جاننے والے غیب اور حاضر کے، پیدا کرنے والے آسمانوں اور زمین کو...',
@@ -527,18 +499,16 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-    // 16
     DhikrEntity(
       id: 'e16',
       arabic:
-          'اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ',
+          'اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ خَلقتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ',
       english: 'O Allah! You are my Lord...',
       urdu: 'اے اللہ! تو ہی میرا رب ہے، نہیں ہے کوئی معبود مگر تو...',
       reference: 'Bukhari: 6306',
       count: 0,
       targetCount: 1,
     ),
-    // 17
     DhikrEntity(
       id: 'e17',
       arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
@@ -548,7 +518,6 @@ safety.""",
       count: 0,
       targetCount: 100,
     ),
-    // 18
     DhikrEntity(
       id: 'e18',
       arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',
@@ -558,10 +527,6 @@ safety.""",
       count: 0,
       targetCount: 100,
     ),
-    // 19
-
-
-    // 21
     DhikrEntity(
       id: 'e19',
       arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
@@ -574,12 +539,9 @@ safety.""",
       count: 0,
       targetCount: 1,
     ),
-
-
-    // 24
     DhikrEntity(
       id: 'e20',
-      arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',
+      arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',
       english: 'Darood Sharif (10 times).',
       urdu: 'درود شریف (10 مرتبہ شام)',
       reference: 'Majma` az-Zawa\'id: 17022',
@@ -588,22 +550,243 @@ safety.""",
       count: 0,
       targetCount: 10,
     ),
+  ];
 
+  static List<DhikrEntity> sleepingAdhkar = [
+
+// ── SURAHS ──────────
+    // ── SURAHS ──────────
+
+    DhikrEntity(
+      id: 'sleep_surah_mulk',
+      arabic: 'سُورَةُ الْمُلْك',
+      english: 'Recite 1 time. (Surah Index: 67)',
+      urdu: 'صرف 1 بار پڑھنا ہے۔ (سورت نمبر: 67)',
+      reference: 'Sunan Abu Dawud: 1400 | Jami at-Tirmidhi: 2891',
+      fazilatEnglish: 'Intercedes for its reciter until he is forgiven. The Prophet (ﷺ) never slept without reciting it.',
+      fazilatUrdu: 'قیامت کے دن اپنے پڑھنے والے کی سفارش کرے گی یہاں تک کہ اسے بخش دیا جائے۔ نبی ﷺ اسے پڑھے بغیر نہیں سوتے تھے۔',
+      count: 0,
+      targetCount: 1,
+    ),
+    DhikrEntity(
+      id: 'sleep_surah_sajda',
+      arabic: 'سُورَةُ السَّجْدَة',
+      english: 'Recite 1 time. (Surah Index: 32)',
+      urdu: 'صرف 1 بار پڑھنا ہے۔ (سورت نمبر: 32)',
+      reference: 'Jami at-Tirmidhi: 2892 )',
+      fazilatEnglish: 'The Prophet (ﷺ) would not sleep until he recited Surah As-Sajdah. It contains Laylat al-Qadr blessings.',
+      fazilatUrdu: 'نبی ﷺ سورۃ السجدہ پڑھے بغیر نہیں سوتے تھے۔ اس میں شب قدر کی برکات ہیں۔',
+      count: 0,
+      targetCount: 1,
+    ),
+    DhikrEntity(
+      id: 'sleep_surah_waqia',
+      arabic: 'سُورَةُ الْوَاقِعَة',
+      english: 'Recite 1 time. (Surah Index: 56)',
+      urdu: 'صرف 1 بار پڑھنا ہے۔ (سورت نمبر: 56)',
+      reference: 'Shu\'ab al-Iman, Al-Bayhaqi: 2269 (Hasan)',
+      fazilatEnglish: 'Whoever recites Surah Al-Waqi\'ah every night will never be afflicted by poverty.',
+      fazilatUrdu: 'جو ہر رات سورۃ الواقعہ پڑھے، اسے کبھی فقر (محتاجی) نہیں آئے گا۔',
+      count: 0,
+      targetCount: 1,
+    ),
+
+    DhikrEntity(
+      id: 'sleep_surah_ikhlas_falaq_nas',
+      arabic: 'سُورَةُ الإِخْلَاصِ \n سُورَةُ الْفَلَقِ \n سُورَةُ النَّاسِ', // معوذات
+      english: 'Recitation of Surah Al-Ikhlas, Surah Al-Falaq, and Surah An-Nas.',
+      urdu: 'سورۃ الاخلاص، سورۃ الفلق اور سورۃ الناس کی تلاوت۔',
+      reference: 'Sunan Abu Dawud: 5056 ',
+      fazilatEnglish: 'Recite each 3 times, blow into palms, and wipe over the entire body starting from the head. Sufficient protection for everything.',
+      fazilatUrdu: 'ہر ایک تین مرتبہ پڑھ کر ہتھیلیوں میں پھونکیں اور سر سے پاؤں تک جسم پر پھیریں۔ ہر چیز سے حفاظت کے لیے کافی ہے۔',
+      count: 0,
+      targetCount: 3,
+    ),
+    // سورۃ البقرہ کی آخری دو آیات کا نیا مستند آبجیکٹ
+    DhikrEntity(
+      id: 'sleep_surah_baqarah_last_two_verses',
+      arabic: 'آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهو وَالْمُؤْمِنُونَ ۚ كُلٌّ آمَنَ بِاللَّهِ وَمَلَائِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لَا نُفَرِّقُ بَيْنَ أَحَدٍ مِنْ رُسُلِهِ ۚ وَقَالُوا سَمِعْنَا وَأَطَعْنَا ۖ غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ ﴿٢٨٥﴾ لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا ۚ لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ ۗ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَسِينَا أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَا إِصْرًا كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِنْ قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِ ۖ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا ۚ أَنْتَ مَوْلَانَا فَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 5009 ',
+      fazilatEnglish: 'The Prophet (ﷺ) said: "Whoever recites the last two verses of Surat al-Baqarah at night, it is sufficient for him."',
+      fazilatUrdu: 'رسول اللہ ﷺ نے فرمایا: "جو شخص رات کے وقت سورۃ البقرہ کی آخری دو آیتیں پڑھ لے گا، وہ اسے (ہر آفت اور شر سے) بچانے کے لیے کافی ہو جائیں گی۔"',
+      count: 0,
+      targetCount: 1, // رات میں صرف ایک بار پڑھنا مسنون ہے
+    ),
+
+    // ── TASBIH FATIMAH ────────────────────────────────────────────
+    DhikrEntity(
+      id: 'sleep_tasbih_fatimah_subhan',
+      arabic: 'سُبْحَانَ اللَّهِ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 3113 ',
+      fazilatEnglish:
+      'Tasbih Fatimah — recite SubhanAllah 33 times, Alhamdulillah 33 times, '
+          'and Allahu Akbar 34 times before sleeping. Better than a servant for you.',
+      fazilatUrdu:
+      'تسبیح فاطمہ — سونے سے پہلے 33 بار سبحان اللہ، 33 بار الحمدللہ '
+          'اور 34 بار اللہ اکبر پڑھیں۔ یہ خادم سے بہتر ہے۔',
+      targetCount: 33,
+    ),
+    DhikrEntity(
+      id: 'sleep_tasbih_fatimah_alhamd',
+      arabic: 'الْحَمْدُ لِلَّهِ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 3113 ',
+      fazilatEnglish: 'Part of Tasbih Fatimah — recite 33 times before sleeping.',
+      fazilatUrdu: 'تسبیح فاطمہ کا حصہ — سونے سے پہلے 33 مرتبہ پڑھیں۔',
+      targetCount: 33,
+    ),
+    DhikrEntity(
+      id: 'sleep_tasbih_fatimah_akbar',
+      arabic: 'اللَّهُ أَكْبَرُ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 3113 ',
+      fazilatEnglish: 'Part of Tasbih Fatimah — recite 34 times before sleeping.',
+      fazilatUrdu: 'تسبیح فاطمہ کا حصہ — سونے سے پہلے 34 مرتبہ پڑھیں۔',
+      targetCount: 34,
+    ),
+
+    DhikrEntity(
+      id: 's1',
+      arabic:
+      'بِاسْمِكَ رَبِّي وَضَعْتُ جَنْبِي، وَبِكَ أَرْفَعُهُ، فَإِنْ أَمْسَكْتَ نَفْسِي فَارْحَمْهَا، وَإِنْ أَرْسَلْتَهَا فَاحْفَظْهَا بِمَا تَحْفَظُ بِهِ عِبَادَكَ الصَّالِحِينَ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 6320 ',
+      fazilatEnglish: 'Seeking Allah\'s protection and mercy during sleep.',
+      fazilatUrdu: 'سوتے وقت اللہ کی حفاظت اور رحمت طلب کرنے کی دعا۔',
+      targetCount: 1,
+    ),
+    DhikrEntity(
+      id: 's2',
+      arabic: 'اللَّهُمَّ قِنِي عَذَابَكَ يَوْمَ تَبْعَثُ عِبَادَكَ',
+      english: '',
+      urdu: '',
+      reference: 'Sunan Abu Dawud: 5045',
+      fazilatEnglish: 'Protection from the punishment of the Day of Resurrection.',
+      fazilatUrdu: 'قیامت کے دن کے عذاب سے بچنے کی دعا۔',
+      targetCount: 3,
+    ),
+    DhikrEntity(
+      id: 's3',
+      arabic: 'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 6312 ',
+      fazilatEnglish: 'Acknowledging life and death in Allah\'s name before sleep.',
+      fazilatUrdu: 'سونے سے پہلے اللہ کے نام کے ساتھ جینے اور مرنے کا اعتراف۔',
+      targetCount: 1,
+    ),
+
+    DhikrEntity(
+      id: 's4',
+      arabic:
+      'اللَّهُمَّ أَسْلَمْتُ نَفْسِي إِلَيْكَ، وَفَوَّضْتُ أَمْرِي إِلَيْكَ، '
+          'وَوَجَّهْتُ وَجْهِي إِلَيْكَ، وَأَلْجَأْتُ ظَهْرِي إِلَيْكَ، '
+          'رَغْبَةً وَرَهْبَةً إِلَيْكَ، لَا مَلْجَأَ وَلَا مَنْجَا مِنْكَ إِلَّا إِلَيْكَ، '
+          'آمَنْتُ بِكِتَابِكَ الَّذِي أَنْزَلْتَ، وَبِنَبِيِّكَ الَّذِي أَرْسَلْتَ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 6313',
+      fazilatEnglish:
+      'Whoever says this and dies that night dies upon the Fitrah (natural disposition of Islam).',
+      fazilatUrdu:
+      'جو یہ پڑھ کر سوئے اور اسی رات انتقال ہو جائے تو وہ فطرت (اسلام) پر مرا۔',
+      targetCount: 1,
+    ),
+    DhikrEntity(
+      id: 's5',
+      arabic:
+      'اللَّهُمَّ خَلَقْتَ نَفْسِي وَأَنْتَ تَتَوَفَّاهَا، لَكَ مَمَاتُهَا وَمَحْيَاهَا، '
+          'إِنْ أَحْيَيْتَهَا فَاحْفَظْهَا، وَإِنْ أَمَتَّهَا فَاغْفِرْ لَهَا. '
+          'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih Muslim: 2712',
+      fazilatEnglish:
+      'A comprehensive dua acknowledging Allah\'s complete authority over life and death, and asking for His protection and forgiveness.',
+      fazilatUrdu:
+      'زندگی اور موت پر اللہ کے مکمل اختیار کا اعتراف اور اس کی حفاظت و مغفرت طلب کرنے کی جامع دعا۔',
+      targetCount: 1,
+    ),
+
+    DhikrEntity(
+      id: 's7',
+      arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَهَ إِلَّا أَنْتَ',
+      english: '',
+      urdu: '',
+      reference: 'Sunan Abu Dawud: 5090',
+      fazilatEnglish:
+      'Seeking refuge from three great trials: disbelief, poverty, and punishment of the grave.',
+      fazilatUrdu:
+      'تین بڑی آزمائشوں سے پناہ: کفر، فقر اور عذاب قبر۔',
+      targetCount: 3,
+    ),
+    DhikrEntity(
+      id: 's8',
+      arabic:
+      'اللَّهُمَّ رَبَّ السَّمَاوَاتِ وَرَبَّ الْأَرْضِ وَرَبَّ الْعَرْشِ الْعَظِيمِ، '
+          'رَبَّنَا وَرَبَّ كُلِّ شَيْءٍ، فَالِقَ الْحَبِّ وَالنَّوَى، '
+          'مُنْزِلَ التَّوْرَاةِ وَالْإِنْجِيلِ وَالْقُرْآنِ، '
+          'أَعُوذُ بِكَ مِنْ شَرِّ كُلِّ ذِي شَرٍّ أَنْتَ آخِذٌ بِنَاصِيَتِهِ، '
+          'أَنْتَ الْأَوَّلُ فَلَيْسَ قَبْلَكَ شَيْءٌ، وَأَنْتَ الْآخِرُ فَلَيْسَ بَعْدَكَ شَيْءٌ، '
+          'وَأَنْتَ الظَّاهِرُ فَلَيْسَ فَوْقَكَ شَيْءٌ، وَأَنْتَ الْبَاطِنُ فَلَيْسَ دُونَكَ شَيْءٌ، '
+          'اقْضِ عَنَّا الدَّيْنَ وَأَغْنِنَا مِنَ الْفَقْرِ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih Muslim: 2713',
+      fazilatEnglish:
+      'A comprehensive dua recited by the Prophet (ﷺ) before sleeping, affirming Allah\'s absolute dominion and seeking refuge from all evil.',
+      fazilatUrdu:
+      'نبی کریم ﷺ کی سونے سے پہلے کی جامع دعا جو اللہ کی مکمل بادشاہت کا اعتراف اور ہر شر سے پناہ ہے۔',
+      targetCount: 1,
+    ),
+    DhikrEntity(
+      id: 's9',
+      arabic: 'الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا، وَكَفَانَا، وَآوَانَا، فَكَمْ مِمَّنْ لَا كَافِيَ لَهُ وَلَا مُؤْوِيَ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih Muslim: 2715',
+      fazilatEnglish:
+      'Expressing gratitude to Allah for His countless blessings before sleeping.',
+      fazilatUrdu:
+      'سونے سے پہلے اللہ کی بے شمار نعمتوں پر شکر ادا کرنے کی دعا۔',
+      targetCount: 1,
+    ),
+    DhikrEntity(
+      id: 's10',
+      arabic: 'اللَّهُمَّ بِاسْمِكَ أَحْيَا وَأَمُوتُ',
+      english: '',
+      urdu: '',
+      reference: 'Sahih al-Bukhari: 6312',
+      fazilatEnglish:
+      'The Prophet (ﷺ) said this when going to sleep, completely entrusting his life to Allah.',
+      fazilatUrdu:
+      'نبی کریم ﷺ سوتے وقت یہ پڑھتے تھے، اپنی زندگی مکمل طور پر اللہ کے سپرد کرتے ہوئے۔',
+      targetCount: 1,
+    ),
   ];
 
   static List<AdhkarCategory> categories = [
     AdhkarCategory(
       id: 'morning',
       titleEn: 'Morning Adhkar',
-      titleUr: 'Morning Adhkar',
-
       dhikrs: morningAdhkar,
     ),
     AdhkarCategory(
       id: 'evening',
       titleEn: 'Evening Adhkar',
-      titleUr: 'Evening Adhkar',
       dhikrs: eveningAdhkar,
+    ),
+    AdhkarCategory(
+      id: 'sleeping',
+      titleEn: 'Sleeping Adhkar',
+       dhikrs: sleepingAdhkar,
     ),
   ];
 }

@@ -8,22 +8,26 @@ class SettingsState {
   final String language;
   final Reciter currentReciter;
   final bool keepPlayingInBackground;
+  final String madhab; // 'hanafi' or 'shafi'
 
   SettingsState({
     this.language = 'en',
     Reciter? currentReciter,
     this.keepPlayingInBackground = false,
+    this.madhab = 'hanafi',
   }) : currentReciter = currentReciter ?? availableReciters.first;
 
   SettingsState copyWith({
     String? language,
     Reciter? currentReciter,
     bool? keepPlayingInBackground,
+    String? madhab,
   }) {
     return SettingsState(
       language: language ?? this.language,
       currentReciter: currentReciter ?? this.currentReciter,
       keepPlayingInBackground: keepPlayingInBackground ?? this.keepPlayingInBackground,
+      madhab: madhab ?? this.madhab,
     );
   }
 }
@@ -46,6 +50,11 @@ class SettingsController extends StateNotifier<SettingsState> {
       defaultValue: false,
     );
 
+    final String madhab = box.get(
+      'madhab',
+      defaultValue: 'hanafi',
+    );
+
     final String? reciterName = box.get('reciterName');
 
     Reciter reciter = availableReciters.first;
@@ -61,6 +70,7 @@ class SettingsController extends StateNotifier<SettingsState> {
       language: lang,
       currentReciter: reciter,
       keepPlayingInBackground: keepBg,
+      madhab: madhab,
     );
   }
 
@@ -68,6 +78,12 @@ class SettingsController extends StateNotifier<SettingsState> {
     final box = Hive.box(DbConstants.appBox);
     await box.put('language', lang);
     state = state.copyWith(language: lang);
+  }
+
+  Future<void> setMadhab(String madhab) async {
+    final box = Hive.box(DbConstants.appBox);
+    await box.put('madhab', madhab);
+    state = state.copyWith(madhab: madhab);
   }
 
   Future<void> setReciter(Reciter reciter) async {

@@ -5,7 +5,6 @@ import 'package:auraq/features/quran/domain/entities/reciter.dart';
 import 'package:auraq/features/quran/presentation/controllers/quran_audio_player_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -59,18 +58,11 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   _buildDivider(isDark),
                   _buildSettingsTile(
-                    icon: Icons.dark_mode_outlined,
-                    title: 'Theme Mode',
-                    subtitle: isDark ? 'Dark Mode' : 'Light Mode',
+                    icon: Icons.account_balance_rounded,
+                    title: 'Calculation Madhab',
+                    subtitle: settings.madhab == 'hanafi' ? 'Hanafi (Later Asr)' : 'Shafi\'i (Earlier Asr)',
                     isDark: isDark,
-                    trailing: Switch(
-                      value: isDark,
-                      onChanged: (val) {
-                        hapticFeedBack();
-                        // Theme switching logic
-                      },
-                      activeTrackColor: AppColors.primaryTeal,
-                    ),
+                    onTap: () => _showMadhabDialog(context, ref, settings.madhab),
                   ),
                   _buildDivider(isDark),
                   _buildSettingsTile(
@@ -117,21 +109,6 @@ class SettingsScreen extends ConsumerWidget {
                     isDark: isDark,
                     onTap: () {},
                   ),
-                  _buildDivider(isDark),
-                  _buildSettingsTile(
-                    icon: Icons.play_circle_outline_rounded,
-                    title: 'Background Play',
-                    subtitle: settings.keepPlayingInBackground ? 'Keep playing when app is minimized' : 'Stop playing when app is minimized',
-                    isDark: isDark,
-                    trailing: Switch(
-                      value: settings.keepPlayingInBackground,
-                      onChanged: (val) {
-                        hapticFeedBack();
-                        ref.read(settingsControllerProvider.notifier).setKeepPlayingInBackground(val);
-                      },
-                      activeTrackColor: AppColors.primaryTeal,
-                    ),
-                  ),
                 ],
               ),
               const SizedBox(height: 24),
@@ -161,21 +138,6 @@ class SettingsScreen extends ConsumerWidget {
                     subtitle: 'Version 1.0.0 (Beta)',
                     isDark: isDark,
                     trailing: const SizedBox.shrink(),
-                  ),
-                  _buildDivider(isDark),
-                  _buildSettingsTile(
-                    icon: Icons.play_circle_outline_rounded,
-                    title: 'Background Play',
-                    subtitle: settings.keepPlayingInBackground ? 'Keep playing when app is minimized' : 'Stop playing when app is minimized',
-                    isDark: isDark,
-                    trailing: Switch(
-                      value: settings.keepPlayingInBackground,
-                      onChanged: (val) {
-                        hapticFeedBack();
-                        ref.read(settingsControllerProvider.notifier).setKeepPlayingInBackground(val);
-                      },
-                      activeTrackColor: AppColors.primaryTeal,
-                    ),
                   ),
                 ],
               ),
@@ -344,22 +306,24 @@ class SettingsScreen extends ConsumerWidget {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _buildLanguageOption(
+              _buildOption(
                 context, 
                 ref, 
                 title: 'English', 
                 value: 'en', 
                 isSelected: currentLang == 'en',
                 isDark: isDark,
+                onSelect: (val) => ref.read(settingsControllerProvider.notifier).setLanguage(val),
               ),
               const SizedBox(height: 8),
-              _buildLanguageOption(
+              _buildOption(
                 context, 
                 ref, 
                 title: 'اردو (Urdu)', 
                 value: 'ur', 
                 isSelected: currentLang == 'ur',
                 isDark: isDark,
+                onSelect: (val) => ref.read(settingsControllerProvider.notifier).setLanguage(val),
               ),
             ],
           ),
@@ -368,18 +332,60 @@ class SettingsScreen extends ConsumerWidget {
     );
   }
 
-  Widget _buildLanguageOption(
+  void _showMadhabDialog(BuildContext context, WidgetRef ref, String currentMadhab) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+          backgroundColor: isDark ? AppColors.surfaceDark : AppColors.surfaceLight,
+          title: Text(
+            'Select Madhab',
+            style: TextStyle(color: isDark ? Colors.white : Colors.black87),
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _buildOption(
+                context, 
+                ref, 
+                title: 'Hanafi', 
+                value: 'hanafi', 
+                isSelected: currentMadhab == 'hanafi',
+                isDark: isDark,
+                onSelect: (val) => ref.read(settingsControllerProvider.notifier).setMadhab(val),
+              ),
+              const SizedBox(height: 8),
+              _buildOption(
+                context, 
+                ref, 
+                title: 'Shafi\'i', 
+                value: 'shafi', 
+                isSelected: currentMadhab == 'shafi',
+                isDark: isDark,
+                onSelect: (val) => ref.read(settingsControllerProvider.notifier).setMadhab(val),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildOption(
     BuildContext context, 
     WidgetRef ref, {
     required String title, 
     required String value, 
     required bool isSelected,
     required bool isDark,
+    required Function(String) onSelect,
   }) {
     return InkWell(
       onTap: () {
         hapticFeedBack();
-        ref.read(settingsControllerProvider.notifier).setLanguage(value);
+        onSelect(value);
         Navigator.pop(context);
       },
       borderRadius: BorderRadius.circular(12),

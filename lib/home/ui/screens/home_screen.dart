@@ -12,6 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../features/qibla/presentation/pages/qibla_page.dart';
+import '../../../features/guides/presentation/pages/istikhara_guide_screen.dart';
 import '../../../features/guides/presentation/pages/janaza_guide_screen.dart';
 import '../widgets/feature_card.dart';
 import '../widgets/guide_card.dart';
@@ -222,6 +223,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                         context,
                                         MaterialPageRoute(
                                           builder: (context) => const JanazaGuideScreen(),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                  InfoGuideCard(
+                                    title: "Istikhara Prayer Guide",
+                                    subTitle:
+                                        "Seek Allah's counsel for your important decisions.",
+                                    imageUrl:
+                                        "assets/app_logos/istikhara.png",
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => const IstikharaGuideScreen(),
                                         ),
                                       );
                                     },

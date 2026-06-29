@@ -1,13 +1,11 @@
 import 'package:adhan_dart/adhan_dart.dart';
 import 'package:auraq/core/constant/db_consts.dart';
+import 'package:auraq/core/services/settings_controller.dart';
 import 'package:auraq/home/service/locatoin_service.dart';
 import 'package:auraq/home/service/prayer_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_riverpod/legacy.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:hive/hive.dart';
-
-final isShafiProvider = StateProvider<bool>((ref) => true);
 
 final locationProvider = FutureProvider<Position?>((ref) async {
   try {
@@ -25,7 +23,8 @@ final prayerTimesProvider = FutureProvider.family<PrayerTimes?, DateTime>((
   ref.keepAlive();
 
   final box = Hive.box(DbConstants.appBox);
-  final isShafi = ref.watch(isShafiProvider);
+  final settings = ref.watch(settingsControllerProvider);
+  final isHanafi = settings.madhab == 'hanafi';
   final prayerService = PrayerService();
 
   final double? savedLat = box.get('lat');
@@ -41,7 +40,7 @@ final prayerTimesProvider = FutureProvider.family<PrayerTimes?, DateTime>((
     });
 
     // 🔥 Target date ke sath offline calculation return ki
-    return await prayerService.getPrayerTime(savedLat, savedLng, isShafi);
+    return await prayerService.getPrayerTime(savedLat, savedLng, isHanafi);
   }
 
   final position = await ref.watch(locationProvider.future);
@@ -52,7 +51,7 @@ final prayerTimesProvider = FutureProvider.family<PrayerTimes?, DateTime>((
     return await prayerService.getPrayerTime(
       position.latitude,
       position.longitude,
-      isShafi,
+      isHanafi,
     );
   }
 

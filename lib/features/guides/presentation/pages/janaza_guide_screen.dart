@@ -1,51 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../../../../core/app_colors.dart';
+import '../../../../core/services/settings_controller.dart';
 import 'janaza_detail_screen.dart';
 
-class JanazaGuideScreen extends StatelessWidget {
+class JanazaGuideScreen extends ConsumerWidget {
   const JanazaGuideScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+    final settings = ref.watch(settingsControllerProvider);
+    final isUrdu = settings.language == 'ur';
 
     return Scaffold(
       backgroundColor: theme.scaffoldBackgroundColor,
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          "Funeral Prayer (Janaza)",
-          style: TextStyle(fontWeight: FontWeight.bold),
+        title: Text(
+          isUrdu ? "نمازِ جنازہ کا طریقہ" : "Funeral Prayer (Janaza)",
+          style: isUrdu 
+            ? GoogleFonts.notoNastaliqUrdu(fontWeight: FontWeight.bold) 
+            : const TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             Text(
-              "Select Category",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: theme.colorScheme.onSurface,
-              ),
+              isUrdu ? "درجہ منتخب کریں" : "Select Category",
+              style: isUrdu 
+                ? GoogleFonts.notoNastaliqUrdu(fontSize: 22, fontWeight: FontWeight.bold)
+                : const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
-              "Supplications differ slightly for adults and children.",
-              style: TextStyle(
-                fontSize: 14,
-                color: theme.colorScheme.onSurface.withOpacity(0.6),
-              ),
+              isUrdu 
+                ? "بالغ اور نابالغ کی نمازِ جنازہ کی دعائیں تھوڑی مختلف ہوتی ہیں۔"
+                : "Supplications differ slightly for adults and children.",
+              textAlign: isUrdu ? TextAlign.right : TextAlign.left,
+              style: isUrdu 
+                ? GoogleFonts.notoNastaliqUrdu(fontSize: 14, color: theme.colorScheme.onSurface.withOpacity(0.6), height: 1.8)
+                : TextStyle(fontSize: 14, color: theme.colorScheme.onSurface.withOpacity(0.6)),
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 40),
             _SelectionCard(
-              title: "For Adults",
-              subtitle: "Janaza prayer for men and women",
+              title: isUrdu ? "بالغ کے لیے" : "For Adults",
+              subtitle: isUrdu ? "مردوں اور عورتوں کے لیے طریقہ" : "Janaza prayer for men and women",
               icons: const [FlutterIslamicIcons.muslim, FlutterIslamicIcons.muslimah],
+              isUrdu: isUrdu,
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -55,9 +62,10 @@ class JanazaGuideScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             _SelectionCard(
-              title: "For Children",
-              subtitle: "Janaza prayer for boys and girls",
+              title: isUrdu ? "نابالغ کے لیے" : "For Children",
+              subtitle: isUrdu ? "لڑکوں اور لڑکیوں کے لیے طریقہ" : "Janaza prayer for boys and girls",
               icons: const [FlutterIslamicIcons.muslim2, FlutterIslamicIcons.muslimah2],
+              isUrdu: isUrdu,
               onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -76,12 +84,14 @@ class _SelectionCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final List<IconData> icons;
+  final bool isUrdu;
   final VoidCallback onTap;
 
   const _SelectionCard({
     required this.title,
     required this.subtitle,
     required this.icons,
+    required this.isUrdu,
     required this.onTap,
   });
 
@@ -95,7 +105,7 @@ class _SelectionCard extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         decoration: BoxDecoration(
           color: isDark ? Colors.black45 : Colors.white,
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(24),
           border: Border.all(
             color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05),
           ),
@@ -109,20 +119,22 @@ class _SelectionCard extends StatelessWidget {
           ],
         ),
         child: Row(
+          textDirection: isUrdu ? TextDirection.rtl : TextDirection.ltr,
           children: [
             Stack(
               clipBehavior: Clip.none,
               children: [
                 Container(
-                  padding: const EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: AppColors.primaryTeal.withOpacity(0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(icons[0], color: AppColors.primaryTeal, size: 24),
+                  child: Icon(icons[0], color: AppColors.primaryTeal, size: 26),
                 ),
                 Positioned(
-                  right: -10,
+                  right: isUrdu ? null : -10,
+                  left: isUrdu ? -10 : null,
                   bottom: -5,
                   child: Container(
                     padding: const EdgeInsets.all(6),
@@ -138,32 +150,30 @@ class _SelectionCard extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(width: 24),
+            const SizedBox(width: 30),
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: isUrdu 
+                      ? GoogleFonts.notoNastaliqUrdu(fontSize: 18, fontWeight: FontWeight.bold)
+                      : const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.grey.shade600,
-                    ),
+                    style: isUrdu 
+                      ? GoogleFonts.notoNastaliqUrdu(fontSize: 12, color: Colors.grey.shade600, height: 1.8)
+                      : TextStyle(fontSize: 13, color: Colors.grey.shade600),
                   ),
                 ],
               ),
             ),
             Icon(
-              Icons.chevron_right_rounded,
-              color: AppColors.primaryTeal.withOpacity(0.5),
+              isUrdu ? Icons.chevron_left_rounded : Icons.chevron_right_rounded,
+              color: AppColors.primaryTeal.withOpacity(0.4),
             ),
           ],
         ),

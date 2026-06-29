@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:auraq/core/app_colors.dart';
+import 'package:mubin/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class OvalTasbeehPainter extends CustomPainter {

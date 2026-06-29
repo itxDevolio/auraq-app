@@ -1,4 +1,4 @@
-import 'package:auraq/core/services/dark_and_light_theme.dart';
+import 'package:mubin/core/services/dark_and_light_theme.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,13 +38,13 @@ class InfoGuideCard extends StatelessWidget {
             color: getThemeColor(context, light: Colors.white, dark: Colors.black54),
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
-              color: getThemeColor(context, light: Colors.black.withOpacity(0.05), dark: Colors.white.withOpacity(0.08)),
+              color: getThemeColor(context, light: Colors.black.withValues(alpha: 0.05), dark: Colors.white.withValues(alpha: 0.08)),
             ),
             boxShadow: isDark
                 ? []
                 : [
                     BoxShadow(
-                      color: getThemeColor(context, light: Colors.black.withOpacity(0.02), dark: Colors.white.withOpacity(0.02)),
+                      color: getThemeColor(context, light: Colors.black.withValues(alpha: 0.02), dark: Colors.white.withValues(alpha: 0.02)),
                       blurRadius: 8,
                       offset: const Offset(0, 3),
                     ),

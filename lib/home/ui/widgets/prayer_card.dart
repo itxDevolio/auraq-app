@@ -1,10 +1,10 @@
-import 'package:auraq/core/app_colors.dart';
-import 'package:auraq/core/services/dark_and_light_theme.dart';
-import 'package:auraq/core/services/haptic_feedback.dart';
-import 'package:auraq/core/widgets/loading_widget.dart';
-import 'package:auraq/home/controllers/prayer_provider.dart';
-import 'package:auraq/home/service/hijri_date_service.dart';
-import 'package:auraq/home/ui/widgets/prayer_time_card.dart';
+import 'package:mubin/core/app_colors.dart';
+import 'package:mubin/core/services/dark_and_light_theme.dart';
+import 'package:mubin/core/services/haptic_feedback.dart';
+import 'package:mubin/core/widgets/loading_widget.dart';
+import 'package:mubin/home/controllers/prayer_provider.dart';
+import 'package:mubin/home/service/hijri_date_service.dart';
+import 'package:mubin/home/ui/widgets/prayer_time_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -41,7 +41,7 @@ class PrayerCard extends ConsumerWidget {
             color: getThemeColor(context, light: Colors.white, dark: Colors.black54),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: getThemeColor(context, light: Colors.black.withOpacity(0.05), dark: Colors.white.withOpacity(0.08)),
+              color: getThemeColor(context, light: Colors.black.withValues(alpha: 0.05), dark: Colors.white.withValues(alpha: 0.08)),
             ),
           ),
           child: Column(
@@ -91,9 +91,7 @@ class PrayerCard extends ConsumerWidget {
                       icon: Icon(
                         Icons.notifications_active,
                         size: 20,
-                        color: themeDark(context)
-                            ? AppColors.primaryTeal
-                            : AppColors.success,
+                        color: Colors.transparent, // Made transparent as requested
                       ),
                     ),
                   ),

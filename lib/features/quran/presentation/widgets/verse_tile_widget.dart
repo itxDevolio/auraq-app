@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:auraq/core/services/dark_and_light_theme.dart';
+import 'package:mubin/core/services/dark_and_light_theme.dart';
 import 'package:google_fonts/google_fonts.dart'; // Add this package import
 import '../../domain/entities/verse.dart';
 

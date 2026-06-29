@@ -22,20 +22,16 @@ class ShifaListScreen extends ConsumerWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          isUrdu ? 'شفاء اور علاج' : 'Shifa & Healing',
-          style: isUrdu ? GoogleFonts.notoNastaliqUrdu(fontWeight: FontWeight.bold) : const TextStyle(fontWeight: FontWeight.bold),
+           'Shifa & Healing',
         ),
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(70),
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
             child: TextField(
-              textAlign: isUrdu ? TextAlign.right : TextAlign.left,
               decoration: InputDecoration(
-                hintText: isUrdu ? 'شفاء تلاش کریں...' : 'Search Shifa...',
-                hintStyle: isUrdu ? GoogleFonts.notoNastaliqUrdu(fontSize: 14) : TextStyle(color: Colors.grey.shade500, fontSize: 14),
-                prefixIcon: isUrdu ? null : Icon(Icons.search, color: AppColors.primaryTeal.withOpacity(0.7)),
-                suffixIcon: isUrdu ? Icon(Icons.search, color: AppColors.primaryTeal.withOpacity(0.7)) : null,
+                hintText:  'Search Shifa...',
+                prefixIcon:  Icon(Icons.search, color: AppColors.primaryTeal.withOpacity(0.7)),
                 filled: true,
                 fillColor: isDark ? Colors.black26 : Colors.white,
                 border: OutlineInputBorder(
@@ -88,8 +84,7 @@ class _ShifaListView extends StatelessWidget {
             Icon(Icons.search_off, size: 64, color: Colors.grey.withOpacity(0.5)),
             const SizedBox(height: 16),
             Text(
-              isUrdu ? 'کوئی نتیجہ نہیں ملا' : 'No results found.',
-              style: isUrdu ? GoogleFonts.notoNastaliqUrdu(color: Colors.grey) : const TextStyle(color: Colors.grey),
+              'No results found.',
             ),
           ],
         ),
@@ -142,7 +137,7 @@ class ShifaTile extends StatelessWidget {
             : const TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
         ),
         trailing: Icon(
-          isUrdu ? Icons.chevron_left : Icons.chevron_right,
+          Icons.chevron_right,
           size: 18,
           color: AppColors.primaryTeal.withOpacity(0.5),
         ),

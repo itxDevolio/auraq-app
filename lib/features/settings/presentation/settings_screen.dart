@@ -1,8 +1,8 @@
-import 'package:auraq/core/app_colors.dart';
-import 'package:auraq/core/services/settings_controller.dart';
-import 'package:auraq/core/services/haptic_feedback.dart';
-import 'package:auraq/features/quran/domain/entities/reciter.dart';
-import 'package:auraq/features/quran/presentation/controllers/quran_audio_player_controller.dart';
+import 'package:mubin/core/app_colors.dart';
+import 'package:mubin/core/services/settings_controller.dart';
+import 'package:mubin/core/services/haptic_feedback.dart';
+import 'package:mubin/features/quran/domain/entities/reciter.dart';
+import 'package:mubin/features/quran/presentation/controllers/quran_audio_player_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -74,7 +74,7 @@ class SettingsScreen extends ConsumerWidget {
                     isDark: isDark,
                     trailing: CupertinoSwitch(
                       value: settings.keepPlayingInBackground,
-                      activeColor: AppColors.primaryTeal,
+                      activeTrackColor: AppColors.primaryTeal,
                       onChanged: (val) {
                         hapticFeedBack();
                         ref.read(settingsControllerProvider.notifier).setKeepPlayingInBackground(val);
@@ -104,7 +104,7 @@ class SettingsScreen extends ConsumerWidget {
                 children: [
                   _buildSettingsTile(
                     icon: Icons.ios_share_rounded,
-                    title: 'Share Auraq',
+                    title: 'Share Mubin',
                     subtitle: 'Spread the word to friends & family',
                     isDark: isDark,
                     onTap: () {
@@ -126,7 +126,7 @@ class SettingsScreen extends ConsumerWidget {
                   _buildDivider(isDark),
                   _buildSettingsTile(
                     icon: Icons.info_outline_rounded,
-                    title: 'About Auraq',
+                    title: 'About Mubin',
                     subtitle: 'Our mission and vision',
                     isDark: isDark,
                     onTap: () => _showAboutDialog(context, isDark),
@@ -151,7 +151,7 @@ class SettingsScreen extends ConsumerWidget {
                   child: Column(
                     children: [
                       const Text(
-                        'AURAQ ISLAMIC SUITE',
+                        'MUBIN ISLAMIC SUITE',
                         style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 3, fontSize: 10),
                       ),
                       const SizedBox(height: 4),
@@ -189,16 +189,16 @@ class SettingsScreen extends ConsumerWidget {
   Widget _buildSettingsCard(bool isDark, {required List<Widget> children}) {
     return Container(
       decoration: BoxDecoration(
-        color: isDark ? Colors.white.withOpacity(0.04) : Colors.white,
+        color: isDark ? Colors.white.withValues(alpha: 0.04) : Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isDark ? Colors.white.withOpacity(0.08) : Colors.black.withOpacity(0.05),
+          color: isDark ? Colors.white.withValues(alpha: 0.08) : Colors.black.withValues(alpha: 0.05),
           width: 1,
         ),
         boxShadow: [
           if (!isDark)
             BoxShadow(
-              color: Colors.black.withOpacity(0.02),
+              color: Colors.black.withValues(alpha: 0.02),
               blurRadius: 15,
               offset: const Offset(0, 5),
             )
@@ -225,7 +225,7 @@ class SettingsScreen extends ConsumerWidget {
       leading: Container(
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: AppColors.primaryTeal.withOpacity(0.1),
+          color: AppColors.primaryTeal.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
         ),
         child: Icon(icon, color: AppColors.primaryTeal, size: 20),
@@ -256,7 +256,7 @@ class SettingsScreen extends ConsumerWidget {
 
   Widget _buildDivider(bool isDark) {
     return Divider(
-      color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
+      color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.03),
       height: 1,
       indent: 64,
       endIndent: 20,
@@ -269,9 +269,9 @@ class SettingsScreen extends ConsumerWidget {
       builder: (context) => AlertDialog(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         backgroundColor: isDark ? AppColors.surfaceDark : Colors.white,
-        title: const Text('About Auraq', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('About Mubin', style: TextStyle(fontWeight: FontWeight.bold)),
         content: const Text(
-          'Auraq is a comprehensive Islamic companion designed to bring peace and guidance to your daily life through Quran, Hadith, Adhkar, and Prayer tools.',
+          'Mubin is a comprehensive Islamic companion designed to bring peace and guidance to your daily life through Quran, Hadith, Adhkar, and Prayer tools.',
           style: TextStyle(height: 1.5),
         ),
         actions: [
@@ -325,7 +325,7 @@ class SettingsScreen extends ConsumerWidget {
                       },
                       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
                       leading: CircleAvatar(
-                        backgroundColor: isSelected ? AppColors.primaryTeal : AppColors.primaryTeal.withOpacity(0.1),
+                        backgroundColor: isSelected ? AppColors.primaryTeal : AppColors.primaryTeal.withValues(alpha: 0.1),
                         child: Icon(
                           Icons.person_rounded,
                           color: isSelected ? Colors.white : AppColors.primaryTeal,
@@ -452,10 +452,10 @@ class SettingsScreen extends ConsumerWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primaryTeal.withOpacity(0.1) : Colors.transparent,
+          color: isSelected ? AppColors.primaryTeal.withValues(alpha: 0.1) : Colors.transparent,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: isSelected ? AppColors.primaryTeal : (isDark ? Colors.white10 : Colors.black.withOpacity(0.05)),
+            color: isSelected ? AppColors.primaryTeal : (isDark ? Colors.white10 : Colors.black.withValues(alpha: 0.05)),
             width: 1,
           ),
         ),

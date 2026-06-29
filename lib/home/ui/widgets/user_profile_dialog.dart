@@ -1,4 +1,4 @@
-import 'package:auraq/core/app_colors.dart';
+import 'package:mubin/core/app_colors.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 

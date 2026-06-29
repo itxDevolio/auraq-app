@@ -1,5 +1,5 @@
-import 'package:auraq/core/app_colors.dart';
-import 'package:auraq/core/services/haptic_feedback.dart';
+import 'package:mubin/core/app_colors.dart';
+import 'package:mubin/core/services/haptic_feedback.dart';
 import 'package:flutter/material.dart';
 
 class TasbeehCounterWidget extends StatelessWidget {

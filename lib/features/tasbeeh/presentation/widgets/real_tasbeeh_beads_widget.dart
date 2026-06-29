@@ -1,4 +1,4 @@
-import 'package:auraq/core/services/haptic_feedback.dart';
+import 'package:mubin/core/services/haptic_feedback.dart';
 import 'package:flutter/material.dart';
 import 'oval_tasbeeh_painter.dart';
 

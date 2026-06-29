@@ -1,11 +1,10 @@
-import 'package:auraq/core/app_colors.dart';
-import 'package:auraq/core/services/haptic_feedback.dart';
-import 'package:auraq/core/services/settings_controller.dart';
-import 'package:auraq/features/tasbeeh/presentation/screens/tasbeeh_list_screen.dart';
+import 'package:mubin/core/app_colors.dart';
+import 'package:mubin/core/services/haptic_feedback.dart';
+import 'package:mubin/core/services/settings_controller.dart';
+import 'package:mubin/features/tasbeeh/presentation/screens/tasbeeh_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../../data/models/adhkar_constants.dart';
 import 'adhkar_list_screen.dart';
 

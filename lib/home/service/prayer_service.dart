@@ -1,5 +1,5 @@
 import 'package:adhan_dart/adhan_dart.dart';
-import 'package:auraq/home/service/check_ramadhan.dart';
+import 'package:mubin/home/service/check_ramadhan.dart';
 import 'package:hive/hive.dart';
 
 import '../../core/constant/db_consts.dart';

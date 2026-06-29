@@ -1,5 +1,5 @@
-import 'package:auraq/core/app_colors.dart';
-import 'package:auraq/core/services/settings_controller.dart';
+import 'package:mubin/core/app_colors.dart';
+import 'package:mubin/core/services/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';

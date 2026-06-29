@@ -1,4 +1,4 @@
-import 'package:auraq/features/quran/domain/entities/reciter.dart';
+import 'package:mubin/features/quran/domain/entities/reciter.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:hive/hive.dart';
 

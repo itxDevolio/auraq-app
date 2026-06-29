@@ -8,20 +8,23 @@ import '../../domain/entities/shifa_entity.dart';
 
 class ShifaDetailScreen extends ConsumerStatefulWidget {
   final ShifaEntity dua;
+
   const ShifaDetailScreen({super.key, required this.dua});
 
   @override
   ConsumerState<ShifaDetailScreen> createState() => _ShifaDetailScreenState();
 }
 
-class _ShifaDetailScreenState extends ConsumerState<ShifaDetailScreen> with SingleTickerProviderStateMixin {
-  int _count = 0;
+class _ShifaDetailScreenState extends ConsumerState<ShifaDetailScreen>
+    with SingleTickerProviderStateMixin {
+  late int _count;
   late AnimationController _animationController;
   late Animation<double> _scaleAnimation;
 
   @override
   void initState() {
     super.initState();
+    _count = widget.dua.targetCount;
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 100),
@@ -37,35 +40,16 @@ class _ShifaDetailScreenState extends ConsumerState<ShifaDetailScreen> with Sing
     super.dispose();
   }
 
-  void _increment() {
-    if (_count < widget.dua.targetCount) {
-      _animationController.forward().then((_) => _animationController.reverse());
+  void _decrement() {
+    if (_count > 0) {
+      _animationController.forward().then(
+        (_) => _animationController.reverse(),
+      );
       HapticFeedback.mediumImpact();
       setState(() {
-        _count++;
+        _count--;
       });
-      if (_count == widget.dua.targetCount) {
-        final isUrdu = ref.read(settingsControllerProvider).language == 'ur';
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            behavior: SnackBarBehavior.floating,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            margin: const EdgeInsets.all(16),
-            content: Text(
-           'Target Achieved! MashaAllah',
-              style: isUrdu ? GoogleFonts.notoNastaliqUrdu(fontSize: 14) : const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            backgroundColor: Colors.green.shade600,
-          ),
-        );
-      }
     }
-  }
-
-  void _reset() {
-    setState(() {
-      _count = 0;
-    });
   }
 
   @override
@@ -74,204 +58,141 @@ class _ShifaDetailScreenState extends ConsumerState<ShifaDetailScreen> with Sing
     final isUrdu = settings.language == 'ur';
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
+    // Poppins font for English, NotoNastaliq for Urdu
+    TextStyle bodyStyle = isUrdu
+        ? GoogleFonts.notoNastaliqUrdu(
+            fontSize: 14,
+            height: 2.0,
+            color: isDark ? Colors.white70 : Colors.black87,
+          )
+        : GoogleFonts.poppins(
+            fontSize: 15,
+            height: 1.6,
+            color: isDark ? Colors.white70 : Colors.black87,
+          );
+
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
           isUrdu ? widget.dua.titleUr : widget.dua.titleEn,
-          style: isUrdu ? GoogleFonts.notoNastaliqUrdu(fontSize: 16, fontWeight: FontWeight.bold) : const TextStyle(fontWeight: FontWeight.bold),
+          style: isUrdu
+              ? GoogleFonts.notoNastaliqUrdu(fontWeight: FontWeight.bold)
+              : GoogleFonts.poppins(fontWeight: FontWeight.bold),
         ),
-
       ),
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Arabic Text Card
+            // Arabic Text
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+              padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
                 color: isDark ? Colors.black45 : Colors.white,
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
-                  color: isDark ? Colors.white10 : Colors.black.withOpacity(0.05),
+                  color: isDark
+                      ? Colors.white10
+                      : Colors.black.withOpacity(0.05),
                 ),
-                boxShadow: [
-                  if(!isDark) BoxShadow(
-                    color: Colors.black.withOpacity(0.02),
-                    blurRadius: 15,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
               ),
               child: Text(
                 widget.dua.arabic,
                 textAlign: TextAlign.center,
-                textDirection: TextDirection.rtl,
                 style: GoogleFonts.amiriQuran(
-                  fontSize: 20,
+                  fontSize: 22,
                   height: 2.2,
-                  fontWeight: FontWeight.bold,
                   color: isDark ? Colors.white : Colors.black87,
                 ),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 20),
 
+            // Translation
             _TranslationSection(
-              title: isUrdu ? 'ترجمہ' : 'Translation',
-              text: isUrdu ? widget.dua.translationUr : widget.dua.translationEn,
+              title:  'Translation',
+              text: isUrdu
+                  ? widget.dua.translationUr
+                  : widget.dua.translationEn,
               isUrdu: isUrdu,
+              bodyStyle: bodyStyle,
             ),
             const SizedBox(height: 12),
 
-            // Reference
-            if (widget.dua.reference.isNotEmpty)
-              Align(
-                alignment: isUrdu ? Alignment.centerRight : Alignment.centerLeft,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: isDark ? Colors.white.withOpacity(0.05) : Colors.black.withOpacity(0.03),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(Icons.menu_book_rounded, size: 14, color: Colors.grey),
-                      const SizedBox(width: 8),
-                      Flexible(
-                        child: Text(
-                          '${ "Ref:          "}${widget.dua.reference}',
-                          style: TextStyle(
-                            fontSize: 11,
-                            color: Colors.grey.shade600,
-                            fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+            // Reference (Always Left)
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
                 ),
-              ),
-            const SizedBox(height: 24),
-
-            // Instructions Card
-            if ((isUrdu && widget.dua.instructionUr.isNotEmpty) || (!isUrdu && widget.dua.instructionEn.isNotEmpty))
-              Container(
-                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: isDark ? Colors.amber.shade900.withOpacity(0.1) : Colors.amber.shade50,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(color: isDark ? Colors.amber.shade700.withOpacity(0.2) : Colors.amber.shade100),
+                  color: isDark
+                      ? Colors.white.withOpacity(0.05)
+                      : Colors.black.withOpacity(0.03),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                child: Column(
-                  crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: isUrdu ? MainAxisAlignment.end : MainAxisAlignment.start,
-                      children: [
-                        Icon(Icons.lightbulb_outline_rounded, color: isDark ? Colors.amber.shade400 : Colors.amber.shade700, size: 18),
-                        const SizedBox(width: 8),
-                        Text(
-                          isUrdu ? 'ہدایات' : 'Instructions',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.0,
-                            color: isDark ? Colors.amber.shade400 : Colors.amber.shade800,
-                            fontSize: 12,
-                            fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      isUrdu ? widget.dua.instructionUr : widget.dua.instructionEn,
-                      textDirection: isUrdu ? TextDirection.rtl : TextDirection.ltr,
-                      style: isUrdu
-                        ? GoogleFonts.notoNastaliqUrdu(fontSize: 12, height: 1.8, color: isDark ? Colors.amber.shade100 : Colors.amber.shade900)
-                        : TextStyle(fontSize: 14, height: 1.6, color: isDark ? Colors.amber.shade100 : Colors.amber.shade900),
-                    ),
-                  ],
+                child: Text(
+                  'Ref: ${widget.dua.reference}',
+                  style: GoogleFonts.poppins(fontSize: 10, color: Colors.grey),
                 ),
               ),
+            ),
+            const SizedBox(height: 20),
 
-            const SizedBox(height: 50),
+            // Instructions
+            if ((isUrdu && widget.dua.instructionUr.isNotEmpty) ||
+                (!isUrdu && widget.dua.instructionEn.isNotEmpty))
+              _InstructionSection(
+                text: isUrdu
+                    ? widget.dua.instructionUr
+                    : widget.dua.instructionEn,
+                isUrdu: isUrdu,
+              ),
 
-            // Counter Section (Modern Minimalist)
-            Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryTeal.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Text(
-                    '$_count / ${widget.dua.targetCount}',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w900,
-                      fontFamily: 'monospace',
-                      color: AppColors.primaryTeal,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 30),
-                ScaleTransition(
-                  scale: _scaleAnimation,
-                  child: GestureDetector(
-                    onTap: _increment,
-                    child: Container(
-                      height: 140,
-                      width: 140,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: isDark ? AppColors.primaryTeal.withOpacity(0.1) : Colors.white,
-                        border: Border.all(
-                          color: AppColors.primaryTeal.withOpacity(0.3),
-                          width: 4,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.primaryTeal.withOpacity(isDark ? 0.05 : 0.1),
-                            blurRadius: 20,
-                            spreadRadius: 5,
-                          )
-                        ],
+            const SizedBox(height: 40),
+
+            // Counter
+            Center(
+              child: ScaleTransition(
+                scale: _scaleAnimation,
+                child: GestureDetector(
+                  onTap: _decrement,
+                  child: Container(
+                    height: 120,
+                    width: 120,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: AppColors.primaryTeal.withOpacity(0.1),
+                      border: Border.all(
+                        color: AppColors.primaryTeal,
+                        width: 3,
                       ),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.touch_app,
-                              size: 40,
-                              color: AppColors.primaryTeal,
-                            ),
-                            const SizedBox(height: 8),
-                            Text(
-                           'TAP',
-                              style: TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w900,
-                                letterSpacing: 2,
-                                color: AppColors.primaryTeal.withOpacity(0.7),
+                    ),
+                    child: Center(
+                      child: _count == 0
+                          ? Icon(
+                              Icons.check_circle_rounded,
+                              size: 50,
+                              color: Colors.green,
+                            )
+                          : Text(
+                              '$_count',
+                              style: GoogleFonts.poppins(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                color: AppColors.primaryTeal,
                               ),
                             ),
-                          ],
-                        ),
-                      ),
                     ),
                   ),
                 ),
-              ],
+              ),
             ),
-            const SizedBox(height: 60),
           ],
         ),
       ),
@@ -280,60 +201,75 @@ class _ShifaDetailScreenState extends ConsumerState<ShifaDetailScreen> with Sing
 }
 
 class _TranslationSection extends StatelessWidget {
-  final String title;
-  final String text;
+  final String title, text;
   final bool isUrdu;
+  final TextStyle bodyStyle;
 
   const _TranslationSection({
     required this.title,
     required this.text,
     required this.isUrdu,
+    required this.bodyStyle,
   });
 
   @override
   Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-
-    return Container(
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: isDark ? AppColors.primaryTeal.withOpacity(0.05) : AppColors.primaryTeal.withOpacity(0.03),
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: AppColors.primaryTeal.withOpacity(0.1),
+    return Column(
+      crossAxisAlignment:  CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w700,
+            color: AppColors.primaryTeal,
+            fontSize: 12,
+          ),
         ),
+        const SizedBox(height: 8),
+        Text(
+          text,
+          textAlign: isUrdu ? TextAlign.right : TextAlign.left,
+          style: bodyStyle,
+        ),
+      ],
+    );
+  }
+}
+
+class _InstructionSection extends StatelessWidget {
+  final String text;
+  final bool isUrdu;
+
+  const _InstructionSection({required this.text, required this.isUrdu});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Colors.amber.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
-        crossAxisAlignment: isUrdu ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+        crossAxisAlignment:  CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: isUrdu ? MainAxisAlignment.end : MainAxisAlignment.start,
-            children: [
-              const SizedBox(width: 8),
-              Text(
-                title,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.2,
-                  color: AppColors.primaryTeal,
-                  fontSize: 12,
-                  fontFamily: isUrdu ? GoogleFonts.notoNastaliqUrdu().fontFamily : null,
-                ),
-              ),
-            ],
+          Text(
+            'Instructions',
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.bold,
+              color: Colors.amber.shade800,
+              fontSize: 12,
+            ),
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
           Text(
             text,
-            textDirection: isUrdu ? TextDirection.rtl : TextDirection.ltr,
             style: isUrdu
-              ? GoogleFonts.notoNastaliqUrdu(fontSize: 14, height: 2.0, color: isDark ? Colors.white70 : Colors.black87)
-              : GoogleFonts.lora(fontSize: 16, height: 1.6, color: isDark ? Colors.white70 : Colors.black87),
+                ? GoogleFonts.notoNastaliqUrdu(fontSize: 12)
+                : GoogleFonts.poppins(fontSize: 12),
           ),
         ],
       ),
     );
   }
 }
-
-

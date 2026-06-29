@@ -1,13 +1,13 @@
-import 'package:auraq/core/app_colors.dart';
-import 'package:auraq/core/services/haptic_feedback.dart';
-import 'package:auraq/core/services/settings_controller.dart';
-import 'package:auraq/features/adhkar/presentation/screens/adhkar_home_screen.dart';
-import 'package:auraq/features/hadith/presentation/screens/books_screen.dart';
-import 'package:auraq/features/shifa/presentation/screens/shifa_list_screen.dart';
-import 'package:auraq/features/dua/presentation/screens/dua_list_screen.dart';
-import 'package:auraq/features/quran/presentation/views/quran_home_screen.dart';
-import 'package:auraq/features/settings/presentation/settings_screen.dart';
-import 'package:auraq/home/controllers/prayer_provider.dart';
+import 'package:mubin/core/app_colors.dart';
+import 'package:mubin/core/services/haptic_feedback.dart';
+import 'package:mubin/core/services/settings_controller.dart';
+import 'package:mubin/features/adhkar/presentation/screens/adhkar_home_screen.dart';
+import 'package:mubin/features/hadith/presentation/screens/books_screen.dart';
+import 'package:mubin/features/shifa/presentation/screens/shifa_list_screen.dart';
+import 'package:mubin/features/dua/presentation/screens/dua_list_screen.dart';
+import 'package:mubin/features/quran/presentation/views/quran_home_screen.dart';
+import 'package:mubin/features/settings/presentation/settings_screen.dart';
+import 'package:mubin/home/controllers/prayer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_islamic_icons/flutter_islamic_icons.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -49,11 +49,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  UserProfileWidget(
-                    name: "Khadija",
-                    pUrl:
-                        "https://media.gettyimages.com/id/956842252/photo/portrait-of-a-confident-muslim-girl.jpg?s=170667a&w=gi&k=20&c=DonQKYjWv-OgPjWQxPpMK1mljHEfihmiZow2iYnpdGg=",
-                  ),
+                  const UserProfileWidget(),
                   // Settings button
                   IconButton(
                     onPressed: () {

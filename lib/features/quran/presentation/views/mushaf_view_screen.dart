@@ -1,4 +1,4 @@
-import 'package:auraq/core/app_colors.dart';
+import 'package:mubin/core/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -309,7 +309,7 @@ class _MushafViewScreenState extends ConsumerState<MushafViewScreen> {
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: AppColors.primaryTeal.withValues(alpha: 0.2)),
         image: DecorationImage(
-          image: const AssetImage('assets/app_logos/auraq_logo.png'),
+          image: const AssetImage('assets/app_logos/mubin.png'),
           opacity: 0.05,
           fit: BoxFit.contain,
         ),

@@ -30,7 +30,7 @@ class ShifaConstants {
       'Place your right hand on the painful area. Say Bismillah 3 times, then recite this dua 7 times.',
       instructionUr:
       'دردناک جگہ پر سیدھا ہاتھ رکھیں۔ بسم اللہ 3 مرتبہ کہیں، پھر یہ دعا 7 مرتبہ پڑھیں۔',
-      reference: 'Sahih Muslim: 2202, Tirmidhi: 2080',
+      reference: 'Sahih Muslim: 2202',
       targetCount: 7,
     ),
     ShifaEntity(
@@ -47,7 +47,7 @@ class ShifaConstants {
       'Put index finger on ground (or clean soil), then apply lightly on the wound while reciting.',
       instructionUr:
       'شہادت کی انگلی زمین (یا پاک مٹی) پر رکھیں، پھر زخم پر ہلکا لگائیں اور پڑھیں۔',
-      reference: 'Sahih al-Bukhari: 5745, Sahih Muslim: 2194',
+      reference: 'Sahih al-Bukhari: 5745',
       targetCount: 1,
     ),
     ShifaEntity(
@@ -116,23 +116,7 @@ class ShifaConstants {
       reference: 'Sahih al-Bukhari: 5736, Sahih Muslim: 2201',
       targetCount: 7,
     ),
-    ShifaEntity(
-      id: 'p7',
-      titleEn: 'Ayatul Kursi for Protection and Healing',
-      titleUr: 'آیت الکرسی بطور رقیہ',
-      arabic:
-      'اللَّهُ لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',
-      translationEn:
-      'Allah — there is no deity except Him, the Ever-Living, the Sustainer of existence. Neither drowsiness overtakes Him nor sleep. To Him belongs whatever is in the heavens and whatever is on the earth. Who is it that can intercede with Him except by His permission? He knows what is before them and what will be after them, and they encompass not a thing of His knowledge except for what He wills. His Kursi extends over the heavens and the earth, and their preservation tires Him not. And He is the Most High, the Most Great.',
-      translationUr:
-      'اللہ — اس کے سوا کوئی معبود نہیں، ہمیشہ زندہ، سب کو سنبھالنے والا۔ اسے نہ اونگھ آتی ہے نہ نیند۔ آسمانوں اور زمین میں جو کچھ ہے سب اسی کا ہے۔ کون ہے جو اس کی اجازت کے بغیر اس کے یہاں سفارش کر سکے؟ جو کچھ ان کے سامنے ہے اور جو ان کے پیچھے ہے وہ سب جانتا ہے۔ اور وہ اس کے علم میں سے کسی چیز کا احاطہ نہیں کر سکتے مگر جتنا وہ چاہے۔ اس کی کرسی آسمانوں اور زمین کو گھیرے ہوئے ہے اور ان کی حفاظت اسے تھکاتی نہیں، اور وہ بہت بلند، بہت بڑا ہے۔',
-      instructionEn:
-      'Recite and blow on hands, then wipe over the entire body. Also recite on water and give to the patient to drink.',
-      instructionUr:
-      'پڑھ کر ہاتھوں پر دم کریں، پھر پورے جسم پر پھیریں۔ پانی پر بھی پڑھ کر مریض کو پلائیں۔',
-      reference: 'Quran 2:255; Sahih al-Bukhari: 5010',
-      targetCount: 3,
-    ),
+
     ShifaEntity(
       id: 'p8',
       titleEn: 'Surah Al-Ikhlas, Al-Falaq and An-Nas (Three Quls)',
@@ -196,7 +180,7 @@ class ShifaConstants {
       'Recite while wiping hands over the painful area of the body.',
       instructionUr:
       'ہاتھوں کو جسم کے دردناک حصے پر پھیرتے ہوئے پڑھیں۔',
-      reference: 'Sahih al-Bukhari: 5743 (derived from the wiping practice of the Prophet ﷺ)',
+      reference: '',
       targetCount: 7,
     ),
     ShifaEntity(
@@ -230,26 +214,27 @@ class ShifaConstants {
       'The Prophet ﷺ said: whoever visits a sick person who is not at the point of death and recites this 7 times, Allah will cure him of that illness.',
       instructionUr:
       'نبی ﷺ نے فرمایا: جو کوئی کسی بیمار کی عیادت کرے جو موت کے قریب نہ ہو اور یہ 7 مرتبہ پڑھے، اللہ اسے اس بیماری سے شفاء دے گا۔',
-      reference: 'Abu Dawud: 3106, Tirmidhi: 2083 – graded Sahih by Ibn Hibban: 2976',
+      reference: 'Abu Dawud: 3106',
       targetCount: 7,
     ),
     ShifaEntity(
       id: 'p14',
-      titleEn: 'Dua for Eye Pain',
-      titleUr: 'آنکھ کی تکلیف کے لیے دعا',
+      titleEn: 'Dua for  Healing and Pain Relief',
+      titleUr: ' شفا اور جسمانی درد کی دعا',
       arabic:
       'أَذْهِبِ الْبَأْسَ رَبَّ النَّاسِ وَاشْفِ أَنْتَ الشَّافِي لَا شِفَاءَ إِلَّا شِفَاؤُكَ شِفَاءً لَا يُغَادِرُ سَقَمًا',
       translationEn:
-      'Remove the suffering, O Lord of mankind, and cure (him/her); You are the Healer. There is no healing except Your healing, a healing that leaves no illness.',
+      'Remove the suffering, O Lord of mankind, and heal; You are the Healer. There is no healing except Your healing, a healing that leaves no illness behind.',
       translationUr:
       'تکلیف دور فرما، اے لوگوں کے رب! اور شفاء دے، تو ہی شفاء دینے والا ہے، تیری شفاء کے سوا کوئی شفاء نہیں، ایسی شفاء جو کوئی بیماری نہ چھوڑے۔',
       instructionEn:
-      'Place right hand gently near the eye (without touching) and recite. This dua is from the Prophetic tradition of wiping and reciting.',
+      'Place your right hand on the painful area of the body, wipe it gently, and recite the dua.',
       instructionUr:
-      'سیدھا ہاتھ آنکھ کے قریب (بغیر چھوئے) رکھ کر پڑھیں۔',
-      reference: 'Sahih al-Bukhari: 5743, Sahih Muslim: 2191',
+      'اپنا سیدھا (دایاں) ہاتھ جسم کے درد والے حصے پر پھیرتے ہوئے یہ دعا پڑھیں۔',
+      reference: 'Sahih al-Bukhari: 5743',
       targetCount: 3,
     ),
+
     ShifaEntity(
       id: 'p15',
       titleEn: 'Dua for Stomach Pain',
@@ -267,91 +252,7 @@ class ShifaConstants {
       reference: 'Sahih Muslim: 2202',
       targetCount: 7,
     ),
-    ShifaEntity(
-      id: 'p16',
-      titleEn: 'Dua for Toothache or Jaw Pain',
-      titleUr: 'دانت یا جبڑے کے درد کے لیے',
-      arabic:
-      'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ',
-      translationEn:
-      'In the name of Allah, with Whose name nothing on earth or in heaven can cause harm, and He is the All-Hearing, All-Knowing.',
-      translationUr:
-      'اللہ کے نام سے جس کے نام کے ساتھ زمین یا آسمان میں کوئی چیز نقصان نہیں دے سکتی، اور وہ سننے والا، جاننے والا ہے۔',
-      instructionEn:
-      'The Prophet ﷺ said: whoever recites this 3 times in the morning and 3 times in the evening, nothing will harm him. Recite and place hand on the affected area.',
-      instructionUr:
-      'نبی ﷺ نے فرمایا: جو صبح 3 مرتبہ اور شام 3 مرتبہ پڑھے، اسے کوئی چیز نقصان نہیں دے گی۔ پڑھ کر متاثرہ جگہ پر ہاتھ رکھیں۔',
-      reference: 'Abu Dawud: 5088, Tirmidhi: 3388 – graded Sahih',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'p17',
-      titleEn: 'Dua for Back or Joint Pain',
-      titleUr: 'کمر یا جوڑوں کے درد کے لیے',
-      arabic:
-      'رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ',
-      translationEn:
-      'My Lord, indeed adversity has touched me, and You are the Most Merciful of the merciful.',
-      translationUr:
-      'اے میرے رب! مجھے تکلیف پہنچی ہے اور تو تمام رحم کرنے والوں سے زیادہ رحم کرنے والا ہے۔',
-      instructionEn:
-      'This is the dua of Prophet Ayyub (AS) when he was afflicted with physical suffering for years. Allah responded and cured him completely.',
-      instructionUr:
-      'یہ حضرت ایوب علیہ السلام کی دعا ہے جو انہوں نے سالوں کی جسمانی تکلیف میں پڑھی۔ اللہ نے انہیں مکمل شفاء عطا فرمائی۔',
-      reference: 'Quran 21:83; Sahih narration confirmed by Ibn Kathir and Tafsir al-Tabari',
-      targetCount: 7,
-    ),
-    ShifaEntity(
-      id: 'p18',
-      titleEn: 'Dua for Chest Pain or Breathing Difficulty',
-      titleUr: 'سینے کے درد یا سانس کی تکلیف کے لیے',
-      arabic:
-      'رَبِّ اشْرَحْ لِي صَدْرِي وَيَسِّرْ لِي أَمْرِي',
-      translationEn:
-      'My Lord, expand for me my chest (with ease and relief) and ease my matter for me.',
-      translationUr:
-      'اے میرے رب! میرا سینہ کھول دے اور میرا معاملہ آسان کر دے۔',
-      instructionEn:
-      'The dua of Musa (AS). Place hand on the chest and recite sincerely, asking Allah for physical and spiritual relief.',
-      instructionUr:
-      'یہ موسیٰ علیہ السلام کی دعا ہے۔ سینے پر ہاتھ رکھ کر پڑھیں اور اللہ سے جسمانی اور روحانی سکون مانگیں۔',
-      reference: 'Quran 20:25-26; Used in Prophetic Ruqyah tradition',
-      targetCount: 7,
-    ),
-    ShifaEntity(
-      id: 'p19',
-      titleEn: 'Dua When a Wound or Injury is Bleeding',
-      titleUr: 'زخم سے خون بہنے پر',
-      arabic:
-      'أَذْهِبِ الْبَأْسَ رَبَّ النَّاسِ بِيَدِكَ الشِّفَاءُ لَا كَاشِفَ لَهُ إِلَّا أَنْتَ',
-      translationEn:
-      'Remove the difficulty, O Lord of mankind. In Your Hand is the cure; none can lift it except You.',
-      translationUr:
-      'تکلیف دور فرما، اے لوگوں کے رب! شفاء تیرے ہی ہاتھ میں ہے، تیرے سوا اسے دور کرنے والا کوئی نہیں۔',
-      instructionEn:
-      'Apply gentle pressure to the wound, recite this dua and blow on the area. Seek medical help alongside this dua.',
-      instructionUr:
-      'زخم پر ہلکا دباؤ ڈالیں، یہ دعا پڑھیں اور دم کریں۔ ساتھ ساتھ طبی مدد بھی لیں۔',
-      reference: 'Sahih al-Bukhari: 5743, Sahih Muslim: 2191 (extracted from the Prophetic healing dua tradition)',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'p20',
-      titleEn: 'Complete Ruqyah Session (Surah Al-Kafirun + Ikhlas + Falaq + Nas)',
-      titleUr: 'مکمل رقیہ سیشن',
-      arabic:
-      'قُلْ يَا أَيُّهَا الْكَافِرُونَ ۞ لَا أَعْبُدُ مَا تَعْبُدُونَ ۞ وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ ۞ وَلَا أَنَا عَابِدٌ مَّا عَبَدتُّمْ ۞ وَلَا أَنتُمْ عَابِدُونَ مَا أَعْبُدُ ۞ لَكُمْ دِينُكُمْ وَلِيَ دِينِ',
-      translationEn:
-      'Say: O disbelievers, I do not worship what you worship. Nor are you worshippers of what I worship. Nor will I be a worshipper of what you worship. Nor will you be worshippers of what I worship. For you is your religion, and for me is my religion.',
-      translationUr:
-      'کہو: اے کافرو! میں اس کی عبادت نہیں کرتا جس کی تم کرتے ہو، اور نہ تم اس کی عبادت کرنے والے ہو جس کی میں کرتا ہوں، اور نہ میں اس کی عبادت کرنے والا ہوں جس کی تم نے عبادت کی، اور نہ تم اس کی عبادت کرنے والے ہو جس کی میں عبادت کرتا ہوں۔ تمہارے لیے تمہارا دین ہے اور میرے لیے میرا دین۔',
-      instructionEn:
-      'The Prophet ﷺ would recite Surah Al-Kafirun, then the three Quls (Ikhlas, Falaq, Nas), blow into hands and wipe the whole body from head to toe — especially when ill. Repeat the three Quls 3 times each.',
-      instructionUr:
-      'نبی ﷺ سورۃ الکافرون پھر تین قل (اخلاص، فلق، ناس) پڑھ کر ہاتھوں پر دم کرتے اور سر سے پاؤں تک پورے جسم پر پھیرتے — خاص طور پر بیماری میں۔ تین قل 3، 3 مرتبہ پڑھیں۔',
-      reference: 'Sahih al-Bukhari: 5748, Sahih Muslim: 2192, Abu Dawud: 5056',
-      targetCount: 3,
-    ),
+
   ];
 
   // ═══════════════════════════════════════════════════════════
@@ -370,42 +271,8 @@ class ShifaConstants {
       reference: 'Sahih al-Bukhari 3371',
       targetCount: 3,
     ),
-    ShifaEntity(
-      id: 'e2',
-      titleEn: 'Ruqyah Against Evil Eye (Jibreel\'s Dua)',
-      titleUr: 'نظرِ بد کی رقیہ',
-      arabic: 'بِسْمِ اللَّهِ أَرْقِيكَ مِنْ كُلِّ شَيْءٍ يُؤْذِيكَ مِنْ شَرِّ كُلِّ نَفْسٍ أَوْ عَيْنٍ حَاسِدٍ اللَّهُ يَشْفِيكَ بِسْمِ اللَّهِ أَرْقِيكَ',
-      translationEn: 'In the name of Allah I perform ruqyah for you, from everything that harms you, from the evil of every soul or envious eye. May Allah heal you; in the name of Allah I perform ruqyah for you.',
-      translationUr: 'اللہ کے نام سے میں تجھے دم کرتا ہوں ہر تکلیف دینے والی چیز سے، ہر نفس یا حاسد آنکھ کے شر سے۔ اللہ تجھے شفا دے، اللہ کے نام سے میں تجھے دم کرتا ہوں۔',
-      instructionEn: 'Recite and blow on the affected person.',
-      instructionUr: 'متاثرہ شخص پر پڑھ کر دم کریں۔',
-      reference: 'Sahih Muslim 2186',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'e3',
-      titleEn: 'Surah Al-Falaq',
-      titleUr: 'سورۃ الفلق',
-      arabic: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ﴿١﴾ مِنْ شَرِّ مَا خَلَقَ ﴿٢﴾ وَمِنْ شَرِّ غَاسِقٍ إِذَا وَقَبَ ﴿٣﴾ وَمِنْ شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ﴿٤﴾ وَمِنْ شَرِّ حَاسِدٍ إِذَا حَسَدَ ﴿٥﴾',
-      translationEn: 'Say: I seek refuge in the Lord of daybreak...',
-      translationUr: 'کہو: میں پناہ مانگتا ہوں صبح کے رب کی...',
-      instructionEn: 'Recite in ruqyah and before sleeping.',
-      instructionUr: 'رقیہ میں اور سونے سے پہلے پڑھیں۔',
-      reference: 'Qur’an 113; Sahih al-Bukhari 5748; Sahih Muslim 2192',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'e4',
-      titleEn: 'Surah An-Nas',
-      titleUr: 'سورۃ الناس',
-      arabic: 'قُلْ أَعُوذُ بِرَبِّ النَّاسِ ﴿١﴾ مَلِكِ النَّاسِ ﴿٢﴾ إِلَٰهِ النَّاسِ ﴿٣﴾ مِنْ شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ﴿٤﴾ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ﴿٥﴾ مِنَ الْجِنَّةِ وَالنَّاسِ ﴿٦﴾',
-      translationEn: 'Say: I seek refuge in the Lord of mankind...',
-      translationUr: 'کہو: میں پناہ مانگتا ہوں لوگوں کے رب کی...',
-      instructionEn: 'Recite in ruqyah and before sleeping.',
-      instructionUr: 'رقیہ میں اور سونے سے پہلے پڑھیں۔',
-      reference: 'Qur’an 114; Sahih al-Bukhari 5748; Sahih Muslim 2192',
-      targetCount: 3,
-    ),
+
+
     ShifaEntity(
       id: 'e5',
       titleEn: 'Ayatul Kursi',
@@ -418,18 +285,7 @@ class ShifaConstants {
       reference: 'Sahih al-Bukhari 2311',
       targetCount: 1,
     ),
-    ShifaEntity(
-      id: 'e6',
-      titleEn: 'Last Two Verses of Surah Al-Baqarah',
-      titleUr: 'سورۃ البقرۃ کی آخری دو آیات',
-      arabic: 'آمَنَ الرَّسُولُ بِمَا أُنْزِلَ إِلَيْهِ مِنْ رَبِّهِ ... وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا',
-      translationEn: 'The Messenger has believed in what was revealed to him from his Lord...',
-      translationUr: 'رسول ایمان لائے اس پر جو ان کے رب کی طرف سے نازل ہوا...',
-      instructionEn: 'Recite at night before sleeping.',
-      instructionUr: 'رات کو سونے سے پہلے پڑھیں۔',
-      reference: 'Sahih al-Bukhari 5009; Sahih Muslim 808',
-      targetCount: 1,
-    ),
+
     ShifaEntity(
       id: 'e7',
       titleEn: 'Seek Refuge from the Evil of Creation',
@@ -454,42 +310,9 @@ class ShifaConstants {
       reference: 'Sahih al-Bukhari 5740',
       targetCount: 1,
     ),
-    ShifaEntity(
-      id: 'e9',
-      titleEn: 'Treat Her With Ruqyah',
-      titleUr: 'اس کے لیے دم کرو',
-      arabic: 'اسْتَرْقُوا لَهَا فَإِنَّ بِهَا النَّظْرَةَ',
-      translationEn: 'Treat her with ruqyah, for she is under the effect of the evil eye.',
-      translationUr: 'اس کے لیے دم کرو، کیونکہ اسے نظر لگ گئی ہے۔',
-      instructionEn: 'Use ruqyah for one afflicted by evil eye.',
-      instructionUr: 'جسے نظر لگ جائے اس پر رقیہ کریں۔',
-      reference: 'Sahih al-Bukhari 5739',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 'e10',
-      titleEn: 'Ruqyah for the Sick with Mu\'awwidhatayn',
-      titleUr: 'معوذتین سے رقیہ',
-      arabic: 'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ... قُلْ أَعُوذُ بِرَبِّ النَّاسِ ...',
-      translationEn: 'The Prophet ﷺ used to recite the Mu\'awwidhatayn and blow over the sick.',
-      translationUr: 'نبی ﷺ معوذتین پڑھ کر بیمار پر دم کرتے تھے۔',
-      instructionEn: 'Recite and blow over the sick person.',
-      instructionUr: 'پڑھ کر بیمار پر دم کریں۔',
-      reference: 'Sahih al-Bukhari 5735; Sahih Muslim 2192',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'e11',
-      titleEn: 'Ruqyah for Pain',
-      titleUr: 'درد کے لیے رقیہ',
-      arabic: 'بِاسْمِ اللَّهِ',
-      translationEn: 'In the name of Allah.',
-      translationUr: 'اللہ کے نام سے۔',
-      instructionEn: 'Say three times over the place of pain, then recite the supplication seven times.',
-      instructionUr: 'درد کی جگہ پر 3 بار کہیں، پھر دعا 7 بار پڑھیں۔',
-      reference: 'Sahih Muslim 2202',
-      targetCount: 3,
-    ),
+
+
+
     ShifaEntity(
       id: 'e12',
       titleEn: 'Pain Relief Supplication',
@@ -502,78 +325,11 @@ class ShifaConstants {
       reference: 'Sahih Muslim 2202',
       targetCount: 7,
     ),
-    ShifaEntity(
-      id: 'e13',
-      titleEn: 'Mu\'awwidhat for Recovery',
-      titleUr: 'شفا کے لیے معوذات',
-      arabic: 'قُلْ هُوَ اللَّهُ أَحَدٌ ... قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ... قُلْ أَعُوذُ بِرَبِّ النَّاسِ ...',
-      translationEn: 'He used to recite the Mu\'awwidhat when ill and blow over himself.',
-      translationUr: 'آپ ﷺ بیماری میں معوذات پڑھ کر اپنے اوپر دم کرتے تھے۔',
-      instructionEn: 'Recite for healing and protection.',
-      instructionUr: 'شفا اور حفاظت کے لیے پڑھیں۔',
-      reference: 'Sahih al-Bukhari 5735',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'e14',
-      titleEn: 'Ruqyah for Evil Eye, Stings, and Pustules',
-      titleUr: 'نظرِ بد، ڈنک اور پھوڑوں کے لیے رقیہ',
-      arabic: 'الرُّقْيَةُ مِنَ الْعَيْنِ وَالْحُمَةِ وَالنُّشْرَةِ',
-      translationEn: 'Ruqyah is prescribed for the evil eye, stings, and similar harms.',
-      translationUr: 'نظرِ بد، ڈنک اور ایسی تکلیفوں کے لیے رقیہ جائز ہے۔',
-      instructionEn: 'Use authentic ruqyah with Qur’an and du’as.',
-      instructionUr: 'قرآن اور مسنون دعاؤں سے رقیہ کریں۔',
-      reference: 'Sahih Muslim 2197 / Chapter 21',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 'e15',
-      titleEn: 'Ruqyah With the Qur’an',
-      titleUr: 'قرآن کے ساتھ رقیہ',
-      arabic: 'إِنَّ الرُّقَى مَا لَمْ تَكُنْ شِرْكًا',
-      translationEn: 'There is no harm in ruqyah so long as it does not involve shirk.',
-      translationUr: 'رقیہ میں کوئی حرج نہیں جب تک اس میں شرک نہ ہو۔',
-      instructionEn: 'Ruqyah should be free from shirk and based on Qur’an and Sunnah.',
-      instructionUr: 'رقیہ شرک سے پاک اور قرآن و سنت پر مبنی ہونا چاہیے۔',
-      reference: 'Sahih Muslim 2200',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 'e16',
-      titleEn: 'Saying Bismillah Before Sleeping',
-      titleUr: 'سونے سے پہلے بسم اللہ',
-      arabic: 'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا',
-      translationEn: 'In Your name, O Allah, I die and I live.',
-      translationUr: 'اے اللہ! تیرے ہی نام سے میں مرتا ہوں اور جیتا ہوں۔',
-      instructionEn: 'Recite before sleeping for protection.',
-      instructionUr: 'حفاظت کے لیے سونے سے پہلے پڑھیں۔',
-      reference: 'Sahih al-Bukhari 6312',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 'e17',
-      titleEn: 'Morning Gratitude After Waking',
-      titleUr: 'جاگنے کے بعد حمد',
-      arabic: 'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ',
-      translationEn: 'All praise is for Allah who gave us life after causing us to die, and to Him is the resurrection.',
-      translationUr: 'سب تعریف اللہ کے لیے ہے جس نے ہمیں موت کے بعد زندگی دی، اور اسی کی طرف لوٹ کر جانا ہے۔',
-      instructionEn: 'Say when waking up.',
-      instructionUr: 'جاگنے پر پڑھیں۔',
-      reference: 'Sahih al-Bukhari 6314',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 'e18',
-      titleEn: 'Stopping-Place Protection',
-      titleUr: 'قیام کی جگہ پر حفاظت',
-      arabic: 'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ شَرِّ مَا خَلَقَ',
-      translationEn: 'Whoever says this when stopping at a place will not be harmed there.',
-      translationUr: 'جو شخص کسی جگہ یہ پڑھے اسے وہاں نقصان نہیں پہنچے گا۔',
-      instructionEn: 'Recite when arriving at a new place.',
-      instructionUr: 'نئی جگہ پہنچ کر پڑھیں۔',
-      reference: 'Sahih Muslim 2708',
-      targetCount: 3,
-    ),
+
+
+
+
+
     ShifaEntity(
       id: 'e19',
       titleEn: 'Protection for the Sick',
@@ -586,106 +342,16 @@ class ShifaConstants {
       reference: 'Sahih Muslim 2192',
       targetCount: 3,
     ),
-    ShifaEntity(
-      id: 'e20',
-      titleEn: 'Ruqyah for General Healing',
-      titleUr: 'عام شفا کے لیے رقیہ',
-      arabic: 'اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ اشْفِ أَنْتَ الشَّافِي',
-      translationEn: 'O Allah, Lord of mankind, remove the harm and heal; You are the Healer.',
-      translationUr: 'اے اللہ! لوگوں کے رب، تکلیف دور فرما اور شفا دے، تو ہی شفا دینے والا ہے۔',
-      instructionEn: 'Recite when seeking healing.',
-      instructionUr: 'شفا کے لیے پڑھیں۔',
-      reference: 'Sahih al-Bukhari 5743; Sahih Muslim 2191',
-      targetCount: 3,
-    ),
+
   ];
 
   // ═══════════════════════════════════════════════════════════
   // 3. SICKNESS & GENERAL HEALING — بیماری اور شفا
   // ═══════════════════════════════════════════════════════════
   static List<ShifaEntity> sickness = [
-    ShifaEntity(
-      id: 's1',
-      titleEn: 'For Sickness — Main Ruqyah Dua',
-      titleUr: 'بیماری کے لیے اصل رقیہ دعا',
-      arabic:
-      'اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ اشْفِ أَنْتَ الشَّافِي لَا شِفَاءَ إِلَّا شِفَاؤُكَ شِفَاءً لَا يُغَادِرُ سَقَمًا',
-      translationEn:
-      'O Allah, Lord of mankind! Remove this hardship and grant cure — You are the Healer. There is no cure except Your cure, a cure that leaves behind no sickness.',
-      translationUr:
-      'اے اللہ، لوگوں کے رب! اس تکلیف کو دور کر دے اور شفاء دے — تو ہی شفاء دینے والا ہے۔ تیری شفاء کے سوا کوئی شفاء نہیں، ایسی شفاء جو کوئی بیماری نہ چھوڑے۔',
-      instructionEn:
-      'The Prophet ﷺ used to recite this while placing his right hand on the sick person and wiping over them.',
-      instructionUr:
-      'نبی ﷺ مریض پر سیدھا ہاتھ رکھ کر پھیرتے ہوئے یہ دعا پڑھتے تھے۔',
-      reference: 'Sahih Bukhari 5750; Sahih Muslim 2191',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 's2',
-      titleEn: 'Visiting the Sick',
-      titleUr: 'مریض کی عیادت کی دعا',
-      arabic: 'لَا بَأْسَ طَهُورٌ إِنْ شَاءَ اللَّهُ',
-      translationEn:
-      'No need to worry, it is a purification (of sins), if Allah wills.',
-      translationUr:
-      'گھبرانے کی کوئی بات نہیں، یہ (بیماری) گناہوں کو پاک کرنے والی ہے، ان شاء اللہ۔',
-      instructionEn: 'Say this when visiting a sick person to console them.',
-      instructionUr: 'مریض کی عیادت کرتے وقت تسلی کے لیے یہ کہیں۔',
-      reference: 'Sahih Bukhari 3616',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 's3',
-      titleEn: 'Dua to Recite Upon the Sick (7 Times)',
-      titleUr: 'مریض کے لیے 7 مرتبہ دعا',
-      arabic:
-      'أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ',
-      translationEn:
-      'I ask Allah, the Magnificent, Lord of the Magnificent Throne, to heal you.',
-      translationUr:
-      'میں اللہ عظیم سے جو عرش عظیم کا رب ہے سوال کرتا ہوں کہ وہ تجھے شفاء دے۔',
-      instructionEn:
-      'Recite 7 times when visiting a sick person. It is reported that if it is his time to recover, he will be healed.',
-      instructionUr:
-      'مریض کی عیادت کرتے وقت 7 مرتبہ پڑھیں۔ روایت ہے کہ اگر اس کا وقت ہو تو وہ شفایاب ہو جائے گا۔',
-      reference: 'Sunan Abi Dawud 3106; Jami at-Tirmidhi 2083 (Hasan)',
-      targetCount: 7,
-    ),
-    ShifaEntity(
-      id: 's4',
-      titleEn: 'Surah Al-Fatihah as Ruqyah',
-      titleUr: 'سورۃ الفاتحہ بطور رقیہ',
-      arabic:
-      'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾',
-      translationEn:
-      'In the name of Allah, the Entirely Merciful, the Especially Merciful. All praise is due to Allah, Lord of the worlds — the Entirely Merciful, the Especially Merciful, Sovereign of the Day of Recompense. It is You we worship and You we ask for help. Guide us to the straight path — the path of those upon whom You have bestowed favor, not of those who have evoked anger or of those who are astray.',
-      translationUr:
-      'اللہ کے نام سے جو بہت مہربان، نہایت رحم والا ہے۔ سب تعریف اللہ کے لیے ہے جو تمام جہانوں کا رب ہے۔ بہت مہربان، نہایت رحم والا، روزِ جزا کا مالک۔ ہم تیری ہی عبادت کرتے ہیں اور تجھ ہی سے مدد مانگتے ہیں۔ ہمیں سیدھا راستہ دکھا، ان لوگوں کا راستہ جن پر تو نے انعام کیا، نہ ان کا جن پر غضب ہوا اور نہ گمراہوں کا۔',
-      instructionEn:
-      'A Companion recited Al-Fatiha over a man stung by a scorpion and he recovered. The Prophet ﷺ approved it saying "How did you know it is a ruqyah?" Recite and blow on the sick.',
-      instructionUr:
-      'ایک صحابی نے بچھو کے کاٹے ہوئے شخص پر فاتحہ پڑھی اور وہ ٹھیک ہو گیا۔ نبی ﷺ نے اسے منظور کیا۔ پڑھ کر مریض پر دم کریں۔',
-      reference: 'Sahih Bukhari 5749; Sahih Muslim 2201',
-      targetCount: 7,
-    ),
-    ShifaEntity(
-      id: 's5',
-      titleEn: 'Surah Al-Ikhlas (For Healing & Barakah)',
-      titleUr: 'سورۃ الاخلاص (شفاء اور برکت کے لیے)',
-      arabic:
-      'قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُنْ لَهُ كُفُوًا أَحَدٌ ﴿٤﴾',
-      translationEn:
-      'Say: He is Allah, the One. Allah, the Eternal Refuge. He neither begets nor was born. And there is none comparable to Him.',
-      translationUr:
-      'کہو: وہ اللہ ایک ہے۔ اللہ بے نیاز ہے۔ نہ اس کی کوئی اولاد ہے اور نہ وہ کسی سے پیدا ہوا۔ اور اس کا کوئی ہمسر نہیں۔',
-      instructionEn:
-      'Recite into both palms and wipe over body 3 times before sleeping. The Prophet ﷺ did this regularly.',
-      instructionUr:
-      'سونے سے پہلے دونوں ہتھیلیوں میں پڑھ کر جسم پر 3 مرتبہ پھیریں۔ نبی ﷺ یہ باقاعدگی سے کرتے تھے۔',
-      reference: 'Sahih Bukhari 5017; Sahih Bukhari 6319',
-      targetCount: 3,
-    ),
+
+
+
     ShifaEntity(
       id: 's6',
       titleEn: 'Dua of Prophet Ayyub (AS) — For Long Illness',
@@ -722,13 +388,6 @@ class ShifaConstants {
   ];
 
   // ═══════════════════════════════════════════════════════════
-  // 4. MORNING & EVENING PROTECTION — صبح و شام کی حفاظت
-  // ═══════════════════════════════════════════════════════════
-
-
-  // ═══════════════════════════════════════════════════════════
-  // 5. ANXIETY, GRIEF & MENTAL DISTRESS — غم، فکر اور ذہنی تکلیف
-  // ═══════════════════════════════════════════════════════════
   static List<ShifaEntity> anxietyGrief = [
     ShifaEntity(
       id: 'a1',
@@ -759,7 +418,7 @@ class ShifaConstants {
       'اے اللہ! کوئی چیز آسان نہیں مگر جسے تو آسان کرے، اور تو چاہے تو مشکل کو بھی آسان کر دیتا ہے۔',
       instructionEn: 'Recite in any difficulty or hardship.',
       instructionUr: 'کسی بھی تنگی یا مشکل میں پڑھیں۔',
-      reference: 'Sunan Ibn Majah 3891; Sahih Ibn Hibban 974 (Sahih)',
+      reference: ' Sahih Ibn Hibban 974 (Sahih)',
       targetCount: 3,
     ),
     ShifaEntity(
@@ -793,7 +452,7 @@ class ShifaConstants {
       'The Prophet ﷺ used to say this when he was in distress. It is one of the most powerful duas for calamity.',
       instructionUr:
       'نبی ﷺ جب پریشانی میں ہوتے تو یہ پڑھتے تھے۔ یہ مصیبت میں سب سے طاقتور دعاؤں میں سے ہے۔',
-      reference: 'Sahih Bukhari 6346; Sahih Muslim 2730',
+      reference: 'Sahih Bukhari 6346',
       targetCount: 3,
     ),
     ShifaEntity(
@@ -816,59 +475,7 @@ class ShifaConstants {
   // ═══════════════════════════════════════════════════════════
   // 6. CHILDREN'S PROTECTION — بچوں کی حفاظت
   // ═══════════════════════════════════════════════════════════
-  static List<ShifaEntity> childProtection = [
-    ShifaEntity(
-      id: 'c1',
-      titleEn: 'Ibrahim\'s Dua for Children\'s Protection',
-      titleUr: 'ابراہیم علیہ السلام کی بچوں کے لیے دعا',
-      arabic:
-      'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّةِ مِنْ كُلِّ شَيْطَانٍ وَهَامَّةٍ وَمِنْ كُلِّ عَيْنٍ لَامَّةٍ',
-      translationEn:
-      'I seek refuge in the perfect words of Allah from every devil and every poisonous creature, and from every evil eye.',
-      translationUr:
-      'میں اللہ کے کامل کلمات کی پناہ مانگتا ہوں ہر شیطان، زہریلے جانور اور ہر لگ جانے والی نظرِ بد سے۔',
-      instructionEn:
-      'The Prophet ﷺ used to seek protection for Hasan and Husain with these words, saying: Your forefather Ibrahim used to seek protection for Isma\'il and Ishaq with these words.',
-      instructionUr:
-      'نبی ﷺ حسن اور حسین کے لیے انہی الفاظ سے پناہ مانگتے اور فرماتے: تمہارے جد ابراہیم اسماعیل اور اسحاق کے لیے انہی کلمات سے پناہ مانگتے تھے۔',
-      reference: 'Sahih Bukhari 3371; Sunan Abi Dawud 4737',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'c2',
-      titleEn: 'Dua Before Child Sleeps',
-      titleUr: 'بچے کو سلاتے وقت کی دعا',
-      arabic:
-      'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
-      translationEn:
-      'I seek refuge in the perfect words of Allah from the evil of what He has created.',
-      translationUr:
-      'میں اللہ کے کامل کلمات کی پناہ مانگتا ہوں ہر اس چیز کے شر سے جو اس نے پیدا کی۔',
-      instructionEn:
-      'Recite 3 times over the child before sleeping. Whoever says this will not be harmed by anything.',
-      instructionUr:
-      'بچے کو سلاتے وقت 3 مرتبہ پڑھیں۔ جو یہ پڑھے اسے کوئی چیز نقصان نہ پہنچائے۔',
-      reference: 'Sahih Muslim 2708',
-      targetCount: 3,
-    ),
-    ShifaEntity(
-      id: 'c3',
-      titleEn: 'Ayatul Kursi Before Sleeping (for Children)',
-      titleUr: 'بچوں کے لیے سوتے وقت آیۃ الکرسی',
-      arabic:
-      'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ وَلَا يَئُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ',
-      translationEn:
-      'Allah — there is no deity except Him, the Ever-Living, the Sustainer of all existence. Neither drowsiness overtakes Him nor sleep...',
-      translationUr:
-      'اللہ — اس کے سوا کوئی معبود نہیں، وہ ہمیشہ زندہ ہے، سب کا تھامنے والا ہے۔ نہ اسے اونگھ آتی ہے نہ نیند...',
-      instructionEn:
-      'Recite over the child before sleeping. A guardian angel will stay with the child all night and no devil will approach.',
-      instructionUr:
-      'بچے کو سلاتے وقت پڑھیں۔ ایک محافظ فرشتہ رات بھر بچے کے ساتھ رہے گا اور کوئی شیطان قریب نہ آئے گا۔',
-      reference: 'Sahih Bukhari 2311',
-      targetCount: 1,
-    ),
-  ];
+
 
   // ═══════════════════════════════════════════════════════════
   // 7. SLEEP & NIGHTMARES — نیند اور ڈراؤنے خواب
@@ -891,40 +498,7 @@ class ShifaConstants {
       reference: 'Sahih Muslim 2261; Sahih Bukhari 6984',
       targetCount: 3,
     ),
-    ShifaEntity(
-      id: 'sl2',
-      titleEn: 'Dua Before Sleeping',
-      titleUr: 'سونے سے پہلے کی دعا',
-      arabic:
-      'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا',
-      translationEn:
-      'In Your name, O Allah, I die and I live.',
-      translationUr:
-      'اے اللہ! تیرے نام سے میں مرتا ہوں اور جیتا ہوں۔',
-      instructionEn:
-      'Recite when lying down to sleep.',
-      instructionUr:
-      'سونے کے لیے لیٹتے وقت پڑھیں۔',
-      reference: 'Sahih Bukhari 6312',
-      targetCount: 1,
-    ),
-    ShifaEntity(
-      id: 'sl3',
-      titleEn: '3 Quls Before Sleeping (Nabi\'s Practice)',
-      titleUr: 'سونے سے پہلے تین قل (نبوی عمل)',
-      arabic:
-      'قُلْ هُوَ اللَّهُ أَحَدٌ ۔۔۔ (سورۃ الاخلاص)\nقُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۔۔۔ (سورۃ الفلق)\nقُلْ أَعُوذُ بِرَبِّ النَّاسِ ۔۔۔ (سورۃ الناس)',
-      translationEn:
-      'Surah Al-Ikhlas, Surah Al-Falaq, Surah An-Nas (all three complete surahs).',
-      translationUr:
-      'سورۃ الاخلاص، سورۃ الفلق اور سورۃ الناس (تینوں سورتیں مکمل)۔',
-      instructionEn:
-      'Recite all three into cupped palms, blow into them, then wipe over as much of the body as you can — starting from the head and face. Repeat 3 times. The Prophet ﷺ did this every night.',
-      instructionUr:
-      'تینوں سورتیں ہتھیلیوں میں پڑھ کر پھونکیں، پھر سر اور چہرے سے شروع کر کے جتنا جسم ہو سکے پھیریں۔ 3 مرتبہ دہرائیں۔ نبی ﷺ ہر رات یہ کرتے تھے۔',
-      reference: 'Sahih Bukhari 5017; Sahih Bukhari 6319',
-      targetCount: 3,
-    ),
+
   ];
 
   // ═══════════════════════════════════════════════════════════
@@ -948,46 +522,14 @@ class ShifaConstants {
       reference: 'Sahih Bukhari 5749; Sahih Muslim 2201',
       targetCount: 7,
     ),
-    ShifaEntity(
-      id: 'ps2',
-      titleEn: 'General Ruqyah for Snake / Scorpion Bite',
-      titleUr: 'سانپ یا بچھو کے کاٹے کی رقیہ',
-      arabic:
-      'أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ',
-      translationEn:
-      'I seek refuge in the perfect words of Allah from the evil of what He has created.',
-      translationUr:
-      'میں اللہ کے کامل کلمات کی پناہ مانگتا ہوں ہر اس چیز کے شر سے جو اس نے پیدا کی۔',
-      instructionEn:
-      'Recite and blow on the affected area repeatedly. Also recite Surah Al-Falaq and Surah An-Nas.',
-      instructionUr:
-      'متاثرہ جگہ پر بار بار پڑھ کر دم کریں۔ سورۃ الفلق اور سورۃ الناس بھی پڑھیں۔',
-      reference: 'Sahih Muslim 2708; Sahih Bukhari (Kitab al-Tibb)',
-      targetCount: 7,
-    ),
+
   ];
 
   // ═══════════════════════════════════════════════════════════
   // 9. GENERAL WELLBEING & TIBB-E-NABAWI — عمومی صحت
   // ═══════════════════════════════════════════════════════════
   static List<ShifaEntity> generalWellbeing = [
-    ShifaEntity(
-      id: 'g1',
-      titleEn: 'Dua for Seeking Cure (Visiting Sick)',
-      titleUr: 'مریض سے ملتے وقت شفاء کی دعا',
-      arabic:
-      'أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ',
-      translationEn:
-      'I ask Allah the Magnificent, Lord of the Magnificent Throne, to heal you.',
-      translationUr:
-      'میں اللہ عظیم سے جو عرش عظیم کا رب ہے سوال کرتا ہوں کہ وہ تجھے شفاء دے۔',
-      instructionEn:
-      'Recite 7 times when visiting a sick person. If it is their time to recover, Allah will heal them.',
-      instructionUr:
-      'مریض کی عیادت کرتے وقت 7 مرتبہ پڑھیں۔ اگر صحت کا وقت ہو تو اللہ شفاء دے گا۔',
-      reference: 'Sunan Abi Dawud 3106; Jami at-Tirmidhi 2083 (Hasan)',
-      targetCount: 7,
-    ),
+
     ShifaEntity(
       id: 'g2',
       titleEn: 'Dua for All Hardship (Nabi\'s Comprehensive Dua)',
@@ -1000,7 +542,7 @@ class ShifaConstants {
       'اے اللہ لوگوں کے رب، تکلیف دور کرنے والے — شفاء دے، تو ہی شفاء دینے والا ہے، تیرے سوا کوئی شفاء دینے والا نہیں۔ ایسی شفاء جو کوئی بیماری نہ چھوڑے۔',
       instructionEn: 'Recite while placing hand on patient.',
       instructionUr: 'مریض پر ہاتھ رکھ کر پڑھیں۔',
-      reference: 'Sahih Bukhari 5675; Riyad as-Salihin Book 7, Hadith 10',
+      reference: 'Sahih Bukhari 5675',
       targetCount: 1,
     ),
     ShifaEntity(
@@ -1020,23 +562,7 @@ class ShifaConstants {
       reference: 'Sunan Abi Dawud 3855; Jami at-Tirmidhi 2038 (Sahih)',
       targetCount: 1,
     ),
-    ShifaEntity(
-      id: 'g4',
-      titleEn: 'Dua When Entering Hospital / Doctor',
-      titleUr: 'ہسپتال یا ڈاکٹر کے پاس جاتے وقت',
-      arabic:
-      'بِسْمِ اللَّهِ تَوَكَّلْتُ عَلَى اللَّهِ لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
-      translationEn:
-      'In the name of Allah, I place my trust in Allah. There is no power or might except with Allah.',
-      translationUr:
-      'اللہ کے نام سے، میں نے اللہ پر توکل کیا۔ اللہ کے سوا کوئی طاقت و قوت نہیں۔',
-      instructionEn:
-      'Recite when going out for treatment or entering a hospital. It is reported that when one says this, it is said to him: you are guided, protected, and safeguarded.',
-      instructionUr:
-      'علاج کے لیے نکلتے یا ہسپتال داخل ہوتے وقت پڑھیں۔ روایت ہے کہ جو یہ کہے اسے کہا جاتا ہے: ہدایت ہو گئی، حفاظت ہو گئی، بچا لیا گیا۔',
-      reference: 'Sunan Abi Dawud 5095; Jami at-Tirmidhi 3426 (Sahih)',
-      targetCount: 1,
-    ),
+
     ShifaEntity(
       id: 'g5',
       titleEn: 'Dua for Gratitude After Recovery',
@@ -1085,12 +611,7 @@ class ShifaConstants {
       titleUr: 'غم اور پریشانی',
       duas: anxietyGrief,
     ),
-    ShifaCategory(
-      id: 'child',
-      titleEn: 'Children\'s Protection',
-      titleUr: 'بچوں کی حفاظت',
-      duas: childProtection,
-    ),
+
     ShifaCategory(
       id: 'sleep',
       titleEn: 'Sleep & Nightmares',
@@ -1116,7 +637,6 @@ class ShifaConstants {
     ...evilEye,
     ...sickness,
     ...anxietyGrief,
-    ...childProtection,
     ...sleepNightmares,
     ...poisonSting,
     ...generalWellbeing,

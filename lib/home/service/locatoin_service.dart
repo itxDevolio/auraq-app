@@ -1,4 +1,4 @@
-import 'package:auraq/home/service/check_location_permission.dart';
+import 'package:mubin/home/service/check_location_permission.dart';
 import 'package:geolocator/geolocator.dart';
 
 Future<Position?> locationService() async {

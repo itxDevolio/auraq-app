@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:auraq/core/services/settings_controller.dart';
-import 'package:auraq/features/quran/domain/entities/reciter.dart';
+import 'package:mubin/core/services/settings_controller.dart';
+import 'package:mubin/features/quran/domain/entities/reciter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

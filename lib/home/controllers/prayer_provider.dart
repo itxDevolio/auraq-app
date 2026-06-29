@@ -1,8 +1,8 @@
 import 'package:adhan_dart/adhan_dart.dart';
-import 'package:auraq/core/constant/db_consts.dart';
-import 'package:auraq/core/services/settings_controller.dart';
-import 'package:auraq/home/service/locatoin_service.dart';
-import 'package:auraq/home/service/prayer_service.dart';
+import 'package:mubin/core/constant/db_consts.dart';
+import 'package:mubin/core/services/settings_controller.dart';
+import 'package:mubin/home/service/locatoin_service.dart';
+import 'package:mubin/home/service/prayer_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:hive/hive.dart';

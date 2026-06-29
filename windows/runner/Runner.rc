@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.devolio" "\0"
-            VALUE "FileDescription", "auraq" "\0"
+            VALUE "FileDescription", "Mubin" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "auraq" "\0"
+            VALUE "InternalName", "Mubin" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.devolio. All rights reserved." "\0"
-            VALUE "OriginalFilename", "auraq.exe" "\0"
-            VALUE "ProductName", "auraq" "\0"
+            VALUE "OriginalFilename", "mubin.exe" "\0"
+            VALUE "ProductName", "Mubin" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

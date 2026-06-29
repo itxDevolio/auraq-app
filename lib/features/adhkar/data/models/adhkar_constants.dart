@@ -32,12 +32,12 @@ safety.""",
     DhikrEntity(
       id: 'm2',
       arabic:
-          'قُلْ هُوَ اللَّهُ أَحَدٌ،'
-          ' قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ،'
+          'قُلْ هُوَ اللَّهُ أَحَدٌ،\n'
+          ' قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ\n'
           ' قُلْ أَعُوذُ بِرَبِّ النَّاسِ',
       english: 'Recitation of the Three Muawwidhat',
       urdu: 'تینوں معوذات کی تلاوت',
-      reference: 'Jami` at-Tirmidhi 3575, Sunan Abi Dawud 5082',
+      reference: 'Jami` at-Tirmidhi 3575',
       fazilatEnglish:
           'The recitation of Muawwidhat will suffice you against everything (against Jinn and magic).',
       fazilatUrdu:
@@ -53,7 +53,7 @@ safety.""",
           'There is none worthy of worship but Allah alone with no partner or associate, He is the dominion, to Him is praise and He has power over all things.',
       urdu:
           'نہیں کوئی معبود مگر اللہ، وہ اکیلا ہے، نہیں کوئی شریک اُسکا، اُسی کی بادشاہی ہے، اور اسی کے لئے سب تعریفیں ہیں، اور وہ ہر شے پر پوری طرح قدرت رکھتا ہے۔',
-      reference: 'Sahih Muslim 6844, Sunan Abi Dawud 5077',
+      reference: 'Sunan Abi Dawud 5082',
       fazilatEnglish:
           'The one who recites these words gets reward of freeing 4 slaves. And he is guarded against every dangerous thing and Shaitan during the entire day and night. (Note: Reciting 100 times everyday is the best practice - Bukhari: 6403, Muslim: 6842)',
       fazilatUrdu:
@@ -100,7 +100,7 @@ safety.""",
           'I seek refuge (of Allah) in the Perfect Words of Allah from the evil of that which He has created.',
       urdu:
           'میں اللہ کے کلماتِ کاملہ کی پناہ پکڑتا ہوں ہر اس چیز کے شر سے جو اُس نے پیدا کی۔',
-      reference: 'Muslim 6880, Musnad Ahmad 7885',
+      reference: 'Muslim 6880',
       fazilatEnglish:
           'The sting of the poisonous animal will not cause harm to the person who recites these words. (Recite 3 times in the morning.)',
       fazilatUrdu:
@@ -182,7 +182,7 @@ safety.""",
           'We have entered the morning while we are on the innateness of Islam, the word of sincere devotion, the religion of our Prophet Muhammad and on the creed of our forefather Abraham, he was upright, and a Muslim. He was not from those who associate partners with Allah.',
       urdu:
           'ہم نے صبح کی فطرتِ اسلام پر، اور کلمہ اخلاص پر، اور ہمارے نبی محمد ﷺ کے دین پر، اور ہمارے باپ ابراہیم علیہ السلام کی ملت پر جو یکسو مسلم تھے اور مشرک نہ تھے۔',
-      reference: 'Musnad Ahmad 15397',
+      reference: 'Musnad Ahmad 15360',
       fazilatEnglish: 'Dhikr of the morning.',
       fazilatUrdu: 'صبح کے اذکار میں سے ایک دُعا۔',
       count: 0,
@@ -192,17 +192,19 @@ safety.""",
     DhikrEntity(
       id: 'm12',
       arabic:
-          'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
+      'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
       english:
-          'We have reached the morning and the Dominion belongs to Allah...',
+      'We have reached the morning and the Dominion belongs to Allah, and all praise is for Allah. There is no deity worthy of worship except Allah, alone, without partner. To Him belongs the dominion and to Him belongs all praise, and He is over all things Omnipotent. My Lord, I ask You for the good of this day and the good of what follows it, and I seek refuge in You from the evil of this day and the evil of what follows it. My Lord, I seek refuge in You from laziness and the hardships of old age. My Lord, I seek refuge in You from the punishment of the Fire and the punishment of the grave.',
       urdu:
-          'ہم نے صبح کی اور اللہ کا ملک صبح ہوا... اے میرے رب! میں تجھ سے اس دن کی خیر مانگتا ہوں...',
-      reference: 'Muslim 6908',
-      fazilatEnglish: 'Asking for protection and goodness.',
-      fazilatUrdu: 'دن بھر کی خیر اور برائی سے بچنے کی دُعا۔',
+      'ہم نے صبح کی اور صبح کے وقت سارا ملک اللہ ہی کا رہا، اور تمام تعریفیں اللہ ہی کے لیے ہیں۔ اللہ کے سوا کوئی معبودِ برحق نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہت ہے اور اسی کے لیے تعریف ہے، اور وہ ہر چیز پر کامل قدرت رکھتا ہے۔ اے میرے رب! میں تجھ سے اس دن کی خیر اور اس کے بعد کی خیر کا سوال کرتا ہوں، اور میں اس دن کے شر اور اس کے بعد کے شر سے تیری پناہ مانگتا ہوں۔ اے میرے رب! میں سستی اور بڑھاپے کی خرابیوں سے تیری پناہ مانگتا ہوں۔ اے میرے رب! میں دوزخ کے عذاب سے اور قبر کے عذاب سے تیری پناہ مانگتا ہوں۔',
+      reference: 'Sahih Muslim 6908',
+      fazilatEnglish: 'A comprehensive prophetic morning prayer for general safety, well-being, and seeking refuge from physical and spiritual harms throughout the day.',
+      fazilatUrdu: 'دن بھر کی خیر و برکت پانے، اور سستی، برے بڑھاپے، عذابِ قبر و دوزخ سے بچنے کی بہترین مسنون دُعا۔',
       count: 0,
       targetCount: 1,
-    ), // 13
+    ),
+
+    // 13
     DhikrEntity(
       id: 'm13',
       arabic:
@@ -274,63 +276,31 @@ safety.""",
       count: 0,
       targetCount: 100,
     ),
-    // 19
+
     DhikrEntity(
       id: 'm19',
-      arabic: 'سُبْحَانَ اللَّهِ',
-      english: 'Glory be to Allah.',
-      urdu: 'سبحان اللہ (100 غلام آزاد کرنے کا ثواب)',
-      reference: 'Sunan an-Nasa\'i: 10680',
-      count: 0,
-      targetCount: 100,
-    ),
-    DhikrEntity(
-      id: 'm19_b',
-      arabic: 'الْحَمْدُ لِلهِ',
-      english: 'Praise be to Allah.',
-      urdu: 'الحمد للہ (100 گھوڑے جہاد میں بھیجنے کا ثواب)',
-      reference: 'Sunan an-Nasa\'i: 10680',
-      count: 0,
-      targetCount: 100,
-    ),
-    DhikrEntity(
-      id: 'm19_c',
-      arabic: 'اللهُ أَكْبَرُ',
-      english: 'Allah is the Greatest.',
-      urdu: 'اللہ اکبر (100 اونٹ اللہ کی راہ میں قربان کرنے کا ثواب)',
-      reference: 'Sunan an-Nasa\'i: 10680',
-      count: 0,
-      targetCount: 100,
-    ),
-    DhikrEntity(
-      id: 'm19_d',
-      arabic: 'لَا إِلَهَ إِلَّا اللهُ',
-      english: 'There is none worthy of worship but Allah.',
-      urdu: 'لا الہ الا اللہ (زمین و آسمان کو بھر دیتا ہے)',
-      reference: 'Sunan an-Nasa\'i: 10680',
-      count: 0,
-      targetCount: 100,
-    ),
-    // 20
-    DhikrEntity(
-      id: 'm20',
-      arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ',
-      english: 'There is no power and no strength except with Allah.',
-      urdu:
-          'نہیں ہے گناہ سے بچنے کی ہمت اور نہیں ہے نیکی کرنے کی طاقت مگر اللہ کی توفیق سے۔',
-      reference: 'Bukhari: 6409, Muslim: 6862',
+      arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
+      english:
+          'Allah is sufficient for us and He is the Best Disposer of Affairs.',
+      urdu: 'ہم نے اللہ پر بھروسہ کیا اور وہی بہترین کارساز ہے۔',
+      reference: 'Al-Imran: 173, Bukhari: 4563',
+      fazilatEnglish: 'Recited by the Prophet in difficult situations.',
+      fazilatUrdu: 'رسول اللہ ﷺ نے مشکل حالات میں یہ کلمات پڑھے۔',
       count: 0,
       targetCount: 1,
-    ),// 21
-    DhikrEntity(id: 'm21', arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', english: 'Allah is sufficient for us and He is the Best Disposer of Affairs.', urdu: 'ہم نے اللہ پر بھروسہ کیا اور وہی بہترین کارساز ہے۔', reference: 'Al-Imran: 173, Bukhari: 4563', fazilatEnglish: 'Recited by the Prophet in difficult situations.', fazilatUrdu: 'رسول اللہ ﷺ نے مشکل حالات میں یہ کلمات پڑھے۔', count: 0, targetCount: 1),
-    // 22
-    DhikrEntity(id: 'm22', arabic: 'سورة البقرة (آخری دو آیات)', english: 'Last 2 verses of Surah Al-Baqarah.', urdu: 'سورۃ البقرہ کی آخری آیات', reference: 'Bukhari: 4008, Muslim: 1878', fazilatEnglish: 'Sufficient for the slave.', fazilatUrdu: 'بندہ کے لئے نفع دینے میں کافی ہو جاتی ہے۔', count: 0, targetCount: 1),
-    // 23
-    DhikrEntity(id: 'm23', arabic: 'سورة الملك', english: 'Surah Al-Mulk.', urdu: 'سورۃ الملک', reference: 'Sunan Abi Dawud: 1400', fazilatEnglish: 'Will intercede for the person.', fazilatUrdu: 'سفارش کرتی رہے گی حتی کہ بخشش ہو جائے۔', count: 0, targetCount: 1),
-    // 24
-    DhikrEntity(id: 'm24', arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ', english: 'Darood Sharif.', urdu: 'درود شریف (10 مرتبہ)', reference: 'Majma` az-Zawa\'id: 17022', fazilatEnglish: 'Deserves intercession of the Prophet.', fazilatUrdu: 'پڑھنے والا شخص شفاعت کا حقدار ہو جاتا ہے۔', count: 0, targetCount: 10),
-    // 25
-    DhikrEntity(id: 'm25', arabic: 'الحمد لله والصلاة والسلام على رسول الله', english: 'Praising Allah and sending Salat.', urdu: 'اللہ کی حمد اور درود و سلام', reference: 'Jami` at-Tirmidhi: 593', fazilatEnglish: 'Best source for acceptance of supplications.', fazilatUrdu: 'دُعاؤں کی قبولیت کا بہترین ذریعہ ہے۔', count: 0, targetCount: 1),
+    ),
+    DhikrEntity(
+      id: 'm20', // آپ اپنی ترتیب کے مطابق id بدل سکتے ہیں
+      arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',
+      english: 'O Allah, send blessings and peace upon our Prophet Muhammad.',
+      urdu: 'اے اللہ! ہمارے نبی محمد ﷺ پر رحمتیں اور سلامتی نازل فرما۔',
+      reference: 'Al-Mu\'jam al-Kabir lilt-Tabarani, Hisn al-Muslim 91',
+      fazilatEnglish: 'Whoever recites it 10 times in the morning and 10 times in the evening will attain the intercession of the Prophet on the Day of Resurrection.',
+      fazilatUrdu: 'جو شخص صبح اور شام 10، 10 مرتبہ درود بھیجے گا، قیامت کے دن اسے رسول اللہ ﷺ کی شفاعت نصیب ہوگی۔',
+      count: 0,
+      targetCount: 10,
+    ),
+
   ];
 
   static List<DhikrEntity> eveningAdhkar = [
@@ -353,7 +323,7 @@ safety.""",
           'قُلْ هُوَ اللَّهُ أَحَدٌ، قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ، قُلْ أَعُوذُ بِرَبِّ النَّاسِ',
       english: 'Recitation of the Three Muawwidhat',
       urdu: 'تینوں معوذات کی تلاوت',
-      reference: 'Jami` at-Tirmidhi 3575, Sunan Abi Dawud 5082',
+      reference: 'Jami` at-Tirmidhi 3575,',
       fazilatEnglish:
           'The recitation of Muawwidhat will suffice you against everything (against Jinn and magic).',
       fazilatUrdu:
@@ -369,7 +339,7 @@ safety.""",
           'There is none worthy of worship but Allah alone with no partner or associate, He is the dominion, to Him is praise and He has power over all things.',
       urdu:
           'نہیں کوئی معبود مگر اللہ، وہ اکیلا ہے، نہیں کوئی شریک اُسکا، اُسی کی بادشاہی ہے، اور اسی کے لئے سب تعریفیں ہیں، اور وہ ہر شے پر پوری طرح قدرت رکھتا ہے۔',
-      reference: 'Sahih Muslim 6844, Sunan Abi Dawud 5077',
+      reference: 'Sahih Muslim 6844, Sunan Abi Dawud 5082',
       fazilatEnglish:
           'The one who recites these words gets reward of freeing 4 slaves. And he is guarded against every dangerous thing and Shaitan during the entire day and night. (Note: Reciting 100 times everyday is the best practice - Bukhari: 6403, Muslim: 6842)',
       fazilatUrdu:
@@ -401,7 +371,7 @@ safety.""",
           'In the name of Allah with whose name nothing on earth or in the heaven can cause harm and He is the Hearing, the Knowing.',
       urdu:
           'اللہ کے نام کے ساتھ، جس کے نام کے ساتھ زمین و آسمان میں کوئی چیز نقصان نہیں پہنچا سکتی، اور وہی سننے والا جاننے والا ہے۔',
-      reference: 'Jami` at-Tirmidhi 3388, Sunan Abi Dawud 5088',
+      reference: 'Sunan Abi Dawud 5088',
       fazilatEnglish:
           'Nothing can harm the person who recites these words nor will any sudden disaster reach him. (Recite 3 times in the morning and in the evening.)',
       fazilatUrdu:
@@ -417,7 +387,7 @@ safety.""",
           'I seek refuge (of Allah) in the Perfect Words of Allah from the evil of that which He has created.',
       urdu:
           'میں اللہ کے کلماتِ کاملہ کی پناہ پکڑتا ہوں ہر اس چیز کے شر سے جو اُس نے پیدا کی۔',
-      reference: 'Muslim 6880, Musnad Ahmad 7885',
+      reference: 'Muslim 6880',
       fazilatEnglish:
           'The sting of the poisonous animal will not cause harm to the person who recites these words. (Recite 3 times in the evening.)',
       fazilatUrdu:
@@ -499,7 +469,7 @@ safety.""",
           'We have entered the evening while we are on the innateness of Islam...',
       urdu:
           'ہم نے شام کی فطرتِ اسلام پر، اور کلمہ اخلاص پر، اور ہمارے نبی محمد ﷺ کے دین پر...',
-      reference: 'Musnad Ahmad 15397',
+      reference: 'Musnad Ahmad 15360',
       fazilatEnglish: 'Dhikr of the evening.',
       fazilatUrdu: 'شام کے اذکار میں سے ایک دُعا۔',
       count: 0,
@@ -509,46 +479,115 @@ safety.""",
     DhikrEntity(
       id: 'e12',
       arabic:
-          'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
+      'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ وَالْحَمْدُ لِلَّهِ لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابِ فِي الْقَبْرِ',
       english:
-          'We have reached the evening and the Dominion belongs to Allah...',
+      'We have reached the evening and the Dominion belongs to Allah, and all praise is for Allah. There is no deity worthy of worship except Allah, alone, without partner. To Him belongs the dominion and to Him belongs all praise, and He is over all things Omnipotent. My Lord, I ask You for the good of this night and the good of what follows it, and I seek refuge in You from the evil of this night and the evil of what follows it. My Lord, I seek refuge in You from laziness and the hardships of old age. My Lord, I seek refuge in You from the punishment of the Fire and the punishment of the grave.',
       urdu:
-          'ہم نے شام کی اور اللہ کا ملک شام ہوا... اے میرے رب! میں تجھ سے اس رات کی خیر مانگتا ہوں...',
-      reference: 'Muslim 6908',
-      fazilatEnglish: 'Asking for protection and goodness.',
-      fazilatUrdu: 'رات بھر کی خیر اور برائی سے بچنے کی دُعا۔',
+      'ہم نے شام کی اور شام کے وقت سارا ملک اللہ ہی کا رہا، اور تمام تعریفیں اللہ ہی کے لیے ہیں۔ اللہ کے سوا کوئی معبودِ برحق نہیں، وہ اکیلا ہے، اس کا کوئی شریک نہیں، اسی کی بادشاہت ہے اور اسی کے لیے تعریف ہے، اور وہ ہر چیز پر کامل قدرت رکھتا ہے۔ اے میرے رب! میں تجھ سے اس رات کی خیر اور اس کے بعد کی خیر کا سوال کرتا ہوں، اور میں اس رات کے شر اور اس کے بعد کے شر سے تیری پناہ مانگتا ہوں۔ اے میرے رب! میں سستی اور بڑھاپے کی خرابیوں سے تیری پناہ مانگتا ہوں۔ اے میرے رب! میں دوزخ کے عذاب سے اور قبر کے عذاب سے تیری پناہ مانگتا ہوں۔۔',
+      reference: 'Sahih Muslim 6908',
+      fazilatEnglish: 'A comprehensive prophetic evening prayer for general safety, well-being, and seeking refuge from physical and spiritual harms.',
+      fazilatUrdu: 'رات بھر کی خیر و برکت پانے، اور سستی، برے بڑھاپے، عذابِ قبر و دوزخ سے بچنے کی بہترین مسنون دُعا۔',
       count: 0,
       targetCount: 1,
-    ),// 13
-    DhikrEntity(id: 'e13', arabic: 'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيْتُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ', english: 'O Ever Living One, O Eternal One, by Your mercy I call on You. Set right all my affairs. Do not place me in charge of my soul even for the blinking of an eye.', urdu: 'اے خود سے زندہ، ہر چیز کو قائم رکھنے والے میں تیری رحمت کے ساتھ تجھ سے مدد مانگتا ہوں۔ درست فرما دے میرے تمام کام اور مجھے پلک جھپکنے کے برابر بھی میرے نفس کے حوالے نہ کرنا۔', reference: 'Al-Mustadrak al-Hakim: 2000', count: 0, targetCount: 1),
-    // 14
-    DhikrEntity(id: 'e14', arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي', english: 'O Allah, I ask You for well being in this world and in the Hereafter...', urdu: 'اے اللہ! میں تجھ سے سوال کرتا ہوں عافیت کا دنیا اور آخرت میں...', reference: 'Sunan Abi Dawud: 5074', count: 0, targetCount: 1),
-    // 15
-    DhikrEntity(id: 'e15', arabic: 'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ', english: 'O Allah! Knower of the Unseen and the Seen...', urdu: 'اے اللہ! جاننے والے غیب اور حاضر کے، پیدا کرنے والے آسمانوں اور زمین کو...', reference: 'Jami` at-Tirmidhi: 3392', count: 0, targetCount: 1),
-    // 16
-    DhikrEntity(id: 'e16', arabic: 'اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ', english: 'O Allah! You are my Lord...', urdu: 'اے اللہ! تو ہی میرا رب ہے، نہیں ہے کوئی معبود مگر تو...', reference: 'Bukhari: 6306', count: 0, targetCount: 1),
-    // 17
-    DhikrEntity(id: 'e17', arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', english: 'Glory and praise is to Allah.', urdu: 'اللہ پاک ہے اور اپنی تعریف کے ساتھ ہے۔', reference: 'Bukhari: 6405, Muslim: 6842, 6843', count: 0, targetCount: 100),
-    // 18
-    DhikrEntity(id: 'e18', arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ', english: 'I seek Allah’s forgiveness and I turn to Him in repentance.', urdu: 'میں اللہ سے مغفرت طلب کرتا ہوں اور میں اُسی کی طرف توبہ کرتا ہوں۔', reference: 'Bukhari: 6307, Muslim: 6858', count: 0, targetCount: 100),
-    // 19
-    DhikrEntity(id: 'e19', arabic: 'سُبْحَانَ اللَّهِ', english: 'Glory be to Allah.', urdu: 'سبحان اللہ (100 غلام آزاد کرنے کا ثواب)', reference: 'Sunan an-Nasa\'i: 10680', count: 0, targetCount: 100),
-    DhikrEntity(id: 'e19_b', arabic: 'الْحَمْدُ لِلهِ', english: 'Praise be to Allah.', urdu: 'الحمد للہ (100 گھوڑے جہاد میں بھیجنے کا ثواب)', reference: 'Sunan an-Nasa\'i: 10680', count: 0, targetCount: 100),
-    DhikrEntity(id: 'e19_c', arabic: 'اللهُ أَكْبَرُ', english: 'Allah is the Greatest.', urdu: 'اللہ اکبر (100 اونٹ اللہ کی راہ میں قربان کرنے کا ثواب)', reference: 'Sunan an-Nasa\'i: 10680', count: 0, targetCount: 100),
-    DhikrEntity(id: 'e19_d', arabic: 'لَا إِلَهَ إِلَّا اللهُ', english: 'There is none worthy of worship but Allah.', urdu: 'لا الہ الا اللہ (زمین و آسمان کو بھر دیتا ہے)', reference: 'Sunan an-Nasa\'i: 10680', count: 0, targetCount: 100),
-    // 20
-    DhikrEntity(id: 'e20', arabic: 'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ', english: 'There is no power and no strength except with Allah.', urdu: 'نہیں ہے گناہ سے بچنے کی ہمت اور نہیں ہے نیکی کرنے کی طاقت مگر اللہ کی توفیق سے۔', reference: 'Bukhari: 6409, Muslim: 6862', count: 0, targetCount: 1),
+    ),
 
-// 21
-    DhikrEntity(id: 'e21', arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', english: 'Allah is sufficient for us and He is the Best Disposer of Affairs.', urdu: 'ہم نے اللہ پر بھروسہ کیا اور وہی بہترین کارساز ہے۔', reference: 'Al-Imran: 173, Bukhari: 4563', fazilatEnglish: 'Recited by the Prophet in difficult situations.', fazilatUrdu: 'رسول اللہ ﷺ نے مشکل حالات میں یہ کلمات پڑھے۔', count: 0, targetCount: 1),
-    // 22
-    DhikrEntity(id: 'e22', arabic: 'سورة البقرة (آخری دو آیات)', english: 'Last 2 verses of Surah Al-Baqarah (1 time at night).', urdu: 'سورۃ البقرہ کی آخری آیات (رات 1 بار)', reference: 'Bukhari: 4008, Muslim: 1878', fazilatEnglish: 'Sufficient for the slave.', fazilatUrdu: 'بندہ کے لئے نفع دینے میں کافی ہو جاتی ہے۔', count: 0, targetCount: 1),
-    // 23
-    DhikrEntity(id: 'e23', arabic: 'سورة الملك', english: 'Surah Al-Mulk (1 time at night).', urdu: 'سورۃ الملک (رات 1 بار)', reference: 'Sunan Abi Dawud: 1400', fazilatEnglish: 'Will intercede for the person.', fazilatUrdu: 'سفارش کرتی رہے گی حتی کہ بخشش ہو جائے۔', count: 0, targetCount: 1),
+    DhikrEntity(
+      id: 'e13',
+      arabic:
+          'يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيْتُ أَصْلِحْ لِي شَأْنِي كُلَّهُ وَلَا تَكِلْنِي إِلَى نَفْسِي طَرْفَةَ عَيْنٍ',
+      english:
+          'O Ever Living One, O Eternal One, by Your mercy I call on You. Set right all my affairs. Do not place me in charge of my soul even for the blinking of an eye.',
+      urdu:
+          'اے خود سے زندہ، ہر چیز کو قائم رکھنے والے میں تیری رحمت کے ساتھ تجھ سے مدد مانگتا ہوں۔ درست فرما دے میرے تمام کام اور مجھے پلک جھپکنے کے برابر بھی میرے نفس کے حوالے نہ کرنا۔',
+      reference: 'Al-Mustadrak al-Hakim: 2000',
+      count: 0,
+      targetCount: 1,
+    ),
+    // 14
+    DhikrEntity(
+      id: 'e14',
+      arabic:
+          'اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالْآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَايَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَيَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي',
+      english:
+          'O Allah, I ask You for well being in this world and in the Hereafter...',
+      urdu: 'اے اللہ! میں تجھ سے سوال کرتا ہوں عافیت کا دنیا اور آخرت میں...',
+      reference: 'Sunan Abi Dawud: 5074',
+      count: 0,
+      targetCount: 1,
+    ),
+    // 15
+    DhikrEntity(
+      id: 'e15',
+      arabic:
+          'اللَّهُمَّ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ رَبَّ كُلِّ شَيْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَمِنْ شَرِّ الشَّيْطَانِ وَشِرْكِهِ',
+      english: 'O Allah! Knower of the Unseen and the Seen...',
+      urdu:
+          'اے اللہ! جاننے والے غیب اور حاضر کے، پیدا کرنے والے آسمانوں اور زمین کو...',
+      reference: 'Jami` at-Tirmidhi: 3392',
+      count: 0,
+      targetCount: 1,
+    ),
+    // 16
+    DhikrEntity(
+      id: 'e16',
+      arabic:
+          'اللَّهُمَّ أَنْتَ رَبِّي، لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ',
+      english: 'O Allah! You are my Lord...',
+      urdu: 'اے اللہ! تو ہی میرا رب ہے، نہیں ہے کوئی معبود مگر تو...',
+      reference: 'Bukhari: 6306',
+      count: 0,
+      targetCount: 1,
+    ),
+    // 17
+    DhikrEntity(
+      id: 'e17',
+      arabic: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+      english: 'Glory and praise is to Allah.',
+      urdu: 'اللہ پاک ہے اور اپنی تعریف کے ساتھ ہے۔',
+      reference: 'Bukhari: 6405',
+      count: 0,
+      targetCount: 100,
+    ),
+    // 18
+    DhikrEntity(
+      id: 'e18',
+      arabic: 'أَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ',
+      english: 'I seek Allah’s forgiveness and I turn to Him in repentance.',
+      urdu: 'میں اللہ سے مغفرت طلب کرتا ہوں اور میں اُسی کی طرف توبہ کرتا ہوں۔',
+      reference: 'Bukhari: 6307, Muslim: 6858',
+      count: 0,
+      targetCount: 100,
+    ),
+    // 19
+
+
+    // 21
+    DhikrEntity(
+      id: 'e19',
+      arabic: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
+      english:
+          'Allah is sufficient for us and He is the Best Disposer of Affairs.',
+      urdu: 'ہم نے اللہ پر بھروسہ کیا اور وہی بہترین کارساز ہے۔',
+      reference: 'Al-Imran: 173, Bukhari: 4563',
+      fazilatEnglish: 'Recited by the Prophet in difficult situations.',
+      fazilatUrdu: 'رسول اللہ ﷺ نے مشکل حالات میں یہ کلمات پڑھے۔',
+      count: 0,
+      targetCount: 1,
+    ),
+
+
     // 24
-    DhikrEntity(id: 'e24', arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ', english: 'Darood Sharif (10 times).', urdu: 'درود شریف (10 مرتبہ شام)', reference: 'Majma` az-Zawa\'id: 17022', fazilatEnglish: 'Deserves intercession of the Prophet.', fazilatUrdu: 'پڑھنے والا شخص شفاعت کا حقدار ہو جاتا ہے۔', count: 0, targetCount: 10),
-    // 25
-    DhikrEntity(id: 'e25', arabic: 'الحمد لله والصلاة والسلام على رسول الله', english: 'Praising Allah and sending Salat.', urdu: 'اللہ کی حمد اور درود و سلام', reference: 'Jami` at-Tirmidhi: 593', fazilatEnglish: 'Best source for acceptance of supplications.', fazilatUrdu: 'دُعاؤں کی قبولیت کا بہترین ذریعہ ہے۔', count: 0, targetCount: 1),
+    DhikrEntity(
+      id: 'e20',
+      arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى نَبِيِّنَا مُحَمَّدٍ',
+      english: 'Darood Sharif (10 times).',
+      urdu: 'درود شریف (10 مرتبہ شام)',
+      reference: 'Majma` az-Zawa\'id: 17022',
+      fazilatEnglish: 'Deserves intercession of the Prophet.',
+      fazilatUrdu: 'پڑھنے والا شخص شفاعت کا حقدار ہو جاتا ہے۔',
+      count: 0,
+      targetCount: 10,
+    ),
 
   ];
 
